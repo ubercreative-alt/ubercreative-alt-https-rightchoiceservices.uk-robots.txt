@@ -32,7 +32,7 @@ const HeroContent = () => (
     </h1>
     <p className="mt-6 max-w-xl text-white/80 text-base leading-relaxed">{HERO.description}</p>
     <div className="mt-9 flex flex-wrap items-center gap-6">
-      <a href="#contact" className="rc-btn-pill" data-testid="hero-primary-cta">
+      <a href="/referrals" className="rc-btn-pill" data-testid="hero-primary-cta">
         {HERO.primaryCta}
       </a>
       <a

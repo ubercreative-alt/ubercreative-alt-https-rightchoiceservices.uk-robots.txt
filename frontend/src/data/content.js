@@ -6,11 +6,11 @@ export const CONTACT = {
 };
 
 export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "How We Work", href: "#how-we-work" },
-  { label: "FAQs", href: "#faqs" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "How We Work", href: "/#how-we-work" },
+  { label: "Referrals", href: "/referrals" },
 ];
 
 export const HERO = {
@@ -395,23 +395,36 @@ export const NEWS = {
   ],
 };
 
+export const REFERRALS_PAGE = {
+  label: "Referral Programme",
+  title: "Make a Referral",
+  intro:
+    "We strive to ensure that working with us is as easy as possible. To streamline our processes you can now refer directly and easily by completing the referral form. Please use it to request supported accommodation or support services for a young person.",
+  steps: [
+    { number: "01.", title: "Submit the Form", text: "Complete the referral form with the young person's details and your contact information." },
+    { number: "02.", title: "We Get in Touch", text: "Our team reviews the referral and contacts you to discuss needs, timescales and availability." },
+    { number: "03.", title: "Placement & Plan", text: "We carry out a needs assessment and put a bespoke support and pathway plan in place." },
+  ],
+  areas: ["North London", "Essex", "Medway", "Other"],
+};
+
 export const FOOTER = {
   about:
     "A distinctive programme devoted to the welfare and development of young individuals navigating the transition from the care of local authorities and/or custody in the South East of England.",
   quickLinks: [
-    { label: "Homepage", href: "#home" },
-    { label: "About Us", href: "#about" },
-    { label: "Our Services", href: "#services" },
-    { label: "How We Work", href: "#how-we-work" },
-    { label: "FAQs", href: "#faqs" },
-    { label: "Contact Us", href: "#contact" },
+    { label: "Homepage", href: "/#home" },
+    { label: "About Us", href: "/#about" },
+    { label: "Our Services", href: "/#services" },
+    { label: "How We Work", href: "/#how-we-work" },
+    { label: "FAQs", href: "/#faqs" },
+    { label: "Contact Us", href: "/#contact" },
   ],
   featuredLinks: [
-    { label: "Supported Accommodation", href: "#services" },
-    { label: "Keywork & Life Skills", href: "#services" },
-    { label: "Outreach Support", href: "#services" },
-    { label: "Safeguarding", href: "#how-we-work" },
-    { label: "Service Areas", href: "#areas" },
-    { label: "Make a Referral", href: "#contact" },
+    { label: "Supported Accommodation", href: "/#services" },
+    { label: "Keywork & Life Skills", href: "/#services" },
+    { label: "Outreach Support", href: "/#services" },
+    { label: "Safeguarding", href: "/#how-we-work" },
+    { label: "Service Areas", href: "/#areas" },
+    { label: "Make a Referral", href: "/referrals" },
   ],
 };

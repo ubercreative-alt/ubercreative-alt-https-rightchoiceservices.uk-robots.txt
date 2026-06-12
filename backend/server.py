@@ -61,6 +61,28 @@ class NewsletterSubscriber(BaseModel):
 class NewsletterSubscribe(BaseModel):
     email: EmailStr
 
+class Referral(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    email: EmailStr
+    phone: str
+    organisation: str = ""
+    service_area: str = ""
+    details: str
+    gdpr_consent: bool
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class ReferralCreate(BaseModel):
+    name: str
+    email: EmailStr
+    phone: str
+    organisation: str = ""
+    service_area: str = ""
+    details: str
+    gdpr_consent: bool
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root() -> dict:
@@ -118,6 +140,22 @@ async def subscribe_newsletter(input: NewsletterSubscribe) -> NewsletterSubscrib
     doc['created_at'] = doc['created_at'].isoformat()
     await db.newsletter_subscribers.insert_one(doc)
     return obj
+
+@api_router.post("/referrals", response_model=Referral)
+async def create_referral(input: ReferralCreate) -> Referral:
+    obj = Referral(**input.model_dump())
+    doc = obj.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    await db.referrals.insert_one(doc)
+    return obj
+
+@api_router.get("/referrals", response_model=List[Referral])
+async def get_referrals() -> List[Referral]:
+    docs = await db.referrals.find({}, {"_id": 0}).to_list(1000)
+    for d in docs:
+        if isinstance(d['created_at'], str):
+            d['created_at'] = datetime.fromisoformat(d['created_at'])
+    return docs
 
 # Include the router in the main app
 app.include_router(api_router)

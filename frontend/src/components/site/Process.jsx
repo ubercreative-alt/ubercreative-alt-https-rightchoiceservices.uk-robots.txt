@@ -12,7 +12,7 @@ export const Process = () => (
           </p>
           <h2 className="rc-h2 mt-4" data-testid="process-title">{PROCESS.title}</h2>
           <p className="mt-5 text-[var(--rc-ink-soft)] leading-relaxed max-w-xl">{PROCESS.description}</p>
-          <a href="#contact" className="rc-btn-pill mt-8 inline-flex" data-testid="process-cta">
+          <a href="/referrals" className="rc-btn-pill mt-8 inline-flex" data-testid="process-cta">
             {PROCESS.cta} <ArrowRight size={15} />
           </a>
         </div>

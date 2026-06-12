@@ -83,6 +83,62 @@ class TestContact:
         assert isinstance(r.json(), list)
 
 
+# ---------- Referrals ----------
+def _referral_payload() -> dict:
+    return {
+        "name": "TEST_Referrer",
+        "email": f"test_ref_{uuid.uuid4().hex[:8]}@example.com",
+        "phone": "01992 850277",
+        "organisation": "Test Local Authority",
+        "service_area": "Essex",
+        "details": "Young person, 17, requires supported accommodation from next month.",
+        "gdpr_consent": True,
+    }
+
+
+class TestReferrals:
+    def test_create_referral_valid(self, client: requests.Session) -> None:
+        payload = _referral_payload()
+        r = client.post(f"{API}/referrals", json=payload)
+        assert r.status_code == 200, r.text
+        data = r.json()
+        assert data["name"] == payload["name"]
+        assert data["service_area"] == "Essex"
+        assert data["gdpr_consent"] is True
+        assert isinstance(data.get("id"), str) and len(data["id"]) > 0
+
+    def test_create_referral_is_persisted(self, client: requests.Session) -> None:
+        created = client.post(f"{API}/referrals", json=_referral_payload()).json()
+        r = client.get(f"{API}/referrals")
+        assert r.status_code == 200
+        assert any(ref.get("id") == created["id"] for ref in r.json())
+
+    def test_optional_fields_default_empty(self, client: requests.Session) -> None:
+        payload = _referral_payload()
+        del payload["organisation"]
+        del payload["service_area"]
+        r = client.post(f"{API}/referrals", json=payload)
+        assert r.status_code == 200
+        assert r.json()["organisation"] == ""
+        assert r.json()["service_area"] == ""
+
+    @pytest.mark.parametrize(
+        "missing_field",
+        ["name", "email", "phone", "details", "gdpr_consent"],
+    )
+    def test_missing_required_field_rejected(self, client: requests.Session, missing_field: str) -> None:
+        payload = _referral_payload()
+        del payload[missing_field]
+        r = client.post(f"{API}/referrals", json=payload)
+        assert r.status_code == 422
+
+    def test_invalid_email_rejected(self, client: requests.Session) -> None:
+        payload = _referral_payload()
+        payload["email"] = "not-an-email"
+        r = client.post(f"{API}/referrals", json=payload)
+        assert r.status_code == 422
+
+
 # ---------- Newsletter ----------
 class TestNewsletter:
     def test_subscribe_valid(self, client: requests.Session) -> None:

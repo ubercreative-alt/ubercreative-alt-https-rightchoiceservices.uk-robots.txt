@@ -4,7 +4,7 @@ import { NAV_LINKS } from "@/data/content";
 import logoMark from "@/assets/logo-mark.png";
 
 export const Logo = () => (
-  <a href="#home" data-testid="site-logo" className="flex items-center gap-3">
+  <a href="/" data-testid="site-logo" className="flex items-center gap-3">
     <img src={logoMark} alt="Right Choice Services Ltd logo" className="h-12 w-auto" />
     <span className="font-heading font-bold leading-tight text-white">
       <span className="block text-lg tracking-wide">Right Choice</span>
@@ -29,7 +29,7 @@ const DesktopNav = () => (
 
 const MobileNav = ({ onNavigate }) => (
   <nav data-testid="mobile-nav" className="lg:hidden bg-[var(--rc-indigo-900)] px-6 pb-6 space-y-1">
-    {[...NAV_LINKS, { label: "Contact Us", href: "#contact" }].map((link) => (
+    {[...NAV_LINKS, { label: "Contact Us", href: "/#contact" }].map((link) => (
       <a
         key={link.label}
         href={link.href}
@@ -66,7 +66,7 @@ export const Header = () => {
         <Logo />
         <DesktopNav />
         <div className="flex items-center gap-3">
-          <a href="#contact" data-testid="header-contact-btn" className="hidden sm:inline-flex rc-btn-pill">
+          <a href="/#contact" data-testid="header-contact-btn" className="hidden sm:inline-flex rc-btn-pill">
             Contact Us
           </a>
           <button

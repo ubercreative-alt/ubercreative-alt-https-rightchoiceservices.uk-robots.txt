@@ -17,13 +17,14 @@ Build a new website for "Right Choice Services Ltd" (UK youth accommodation & su
 
 ## Architecture
 - Frontend: React (CRA + craco), Tailwind, shadcn/ui, lucide-react, sonner toasts
-  - Single-page home at `/` composed in `/app/frontend/src/pages/Home.jsx`
-  - Section components in `/app/frontend/src/components/site/` (TopBar, Header, Hero, PartnersStrip, WhoWeAre, SupportPillars, Approach, FeaturedServices, Benefits, Process, Safeguarding, CtaContact, Testimonials, ServiceAreas, Faq, NewsSection, Footer)
+  - Pages: `/` (Home.jsx), `/referrals` (Referrals.jsx) — routed in App.js
+  - Section components in `/app/frontend/src/components/site/` (TopBar, Header, Hero, PartnersStrip, WhoWeAre, SupportPillars, Approach, FeaturedServices, Benefits, Process, Safeguarding, CtaContact, ContactForm, ReferralForm, Team, Testimonials, ServiceAreas, Faq, NewsSection, NewsletterForm, SocialLinks, Footer)
   - All content centralized in `/app/frontend/src/data/content.js`
   - Theme: CSS variables in index.css (--rc-indigo-950..500, --rc-lavender, --rc-paper); fonts Quicksand (headings) + Mulish (body)
 - Backend: FastAPI + MongoDB (motor) in `/app/backend/server.py`
   - POST/GET `/api/contact` — contact form messages (collection: contact_messages)
   - POST `/api/newsletter` — newsletter subscribe, idempotent on duplicate email (collection: newsletter_subscribers)
+  - POST/GET `/api/referrals` — referral submissions (collection: referrals)
 - Tests: `/app/backend/tests/test_api.py` (pytest regression suite, 8 cases)
 
 ## What's Implemented (2026-06-12)
@@ -37,6 +38,8 @@ Build a new website for "Right Choice Services Ltd" (UK youth accommodation & su
 - ✅ 5 named Team Leaders with full bios from user ODT files (Brikelda Shabanaj, Deborah Howlett, Erjona Selko, Eugen Bardho, Fatmira Pjetri) + "Read Bio" dialog (shadcn Dialog). PHOTO↔NAME PAIRING IS BEST-GUESS (member order maps to PHOTOS array order in Team.jsx: Brikelda=team-1, Deborah=team-2, Erjona=team-3, Eugen=team-4, Fatmira=team-5) — user asked to "just upload to start with"; awaiting confirmation/corrections. Remaining 4 photos (team-6..9) are "Team Member" placeholders
 - ✅ Fixed scrolled-header bug: `bg-[var(--rc-indigo-900)]/95` opacity modifier doesn't compile in Tailwind v3 → replaced with `bg-[#2a2566]/95`
 - ✅ Code review round 2: shared useSubmit hook (src/hooks/useSubmit.js) used by ContactForm + NewsletterForm, craco console.warn removed, Python type hints added to server.py routes and test_api.py (10 tests pass)
+
+- ✅ Referral page (/referrals, 2026-06-12): page hero, "What happens next" 3 steps, Got Questions card, referral form modelled on original site (name, email, phone, organisation, service area select, individual details, GDPR consent) → POST /api/referrals (collection: referrals) + GET /api/referrals. All "Make a Referral" CTAs (hero, process, area cards, footer) now link to /referrals. Nav updated to /#anchor links + "Referrals" item; Logo links to "/". 19 pytest tests pass; e2e form submission verified
 
 ## Backlog / Next Tasks
 - P0: User to verify photo↔name pairing for the 5 Team Leaders and send names/bios for the remaining 4 placeholder members

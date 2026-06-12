@@ -32,7 +32,7 @@ const AreaCard = ({ area }) => {
         ))}
       </ul>
       <a
-        href="#contact"
+        href="/referrals"
         data-testid="area-referral-btn"
         className={`mt-9 inline-flex justify-center rounded-full px-7 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] transition-all duration-300 ${
           featured
