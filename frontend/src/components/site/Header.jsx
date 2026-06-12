@@ -1,17 +1,45 @@
 import { useEffect, useState } from "react";
-import { Menu, X, HeartHandshake } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/data/content";
+import logoMark from "@/assets/logo-mark.png";
 
-export const Logo = ({ light = true }) => (
-  <a href="#home" data-testid="site-logo" className="flex items-center gap-2.5">
-    <span className="grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--rc-lavender)] to-[var(--rc-indigo-600)]">
-      <HeartHandshake size={22} className="text-white" />
-    </span>
-    <span className={`font-heading font-bold leading-tight ${light ? "text-white" : "text-[var(--rc-indigo-900)]"}`}>
+export const Logo = () => (
+  <a href="#home" data-testid="site-logo" className="flex items-center gap-3">
+    <img src={logoMark} alt="Right Choice Services Ltd logo" className="h-12 w-auto" />
+    <span className="font-heading font-bold leading-tight text-white">
       <span className="block text-lg tracking-wide">Right Choice</span>
       <span className="block text-[10px] uppercase tracking-[0.28em] text-[var(--rc-lavender)] font-semibold">Services Ltd</span>
     </span>
   </a>
+);
+
+const DesktopNav = () => (
+  <nav className="hidden lg:flex items-center gap-9" data-testid="desktop-nav">
+    {NAV_LINKS.map((link) => (
+      <a
+        key={link.label}
+        href={link.href}
+        className="text-[13px] font-semibold uppercase tracking-[0.12em] text-white/85 hover:text-[var(--rc-lavender)] transition-colors"
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+);
+
+const MobileNav = ({ onNavigate }) => (
+  <nav data-testid="mobile-nav" className="lg:hidden bg-[var(--rc-indigo-900)] px-6 pb-6 space-y-1">
+    {[...NAV_LINKS, { label: "Contact Us", href: "#contact" }].map((link) => (
+      <a
+        key={link.label}
+        href={link.href}
+        onClick={onNavigate}
+        className="block py-3 text-sm font-semibold uppercase tracking-widest text-white/85 border-b border-white/10"
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
 );
 
 export const Header = () => {
@@ -19,6 +47,8 @@ export const Header = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    // `onScroll` is declared inside the effect and `setScrolled` is a stable
+    // setter, so the listener only needs to be attached once.
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -33,17 +63,7 @@ export const Header = () => {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
         <Logo />
-        <nav className="hidden lg:flex items-center gap-9" data-testid="desktop-nav">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-[13px] font-semibold uppercase tracking-[0.12em] text-white/85 hover:text-[var(--rc-lavender)] transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <DesktopNav />
         <div className="flex items-center gap-3">
           <a href="#contact" data-testid="header-contact-btn" className="hidden sm:inline-flex rc-btn-pill">
             Contact Us
@@ -58,20 +78,7 @@ export const Header = () => {
           </button>
         </div>
       </div>
-      {open && (
-        <nav data-testid="mobile-nav" className="lg:hidden bg-[var(--rc-indigo-900)] px-6 pb-6 space-y-1">
-          {[...NAV_LINKS, { label: "Contact Us", href: "#contact" }].map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="block py-3 text-sm font-semibold uppercase tracking-widest text-white/85 border-b border-white/10"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      )}
+      {open && <MobileNav onNavigate={() => setOpen(false)} />}
     </header>
   );
 };

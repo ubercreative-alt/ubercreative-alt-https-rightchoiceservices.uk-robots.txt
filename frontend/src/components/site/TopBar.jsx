@@ -1,4 +1,5 @@
-import { MapPin, PhoneCall, Facebook, Twitter, Youtube, Instagram } from "lucide-react";
+import { MapPin, PhoneCall } from "lucide-react";
+import { SocialLinks } from "@/components/site/SocialLinks";
 import { CONTACT } from "@/data/content";
 
 export const TopBar = () => (
@@ -14,13 +15,7 @@ export const TopBar = () => (
           {CONTACT.phone}
         </a>
       </div>
-      <div className="flex items-center gap-4">
-        {[Facebook, Twitter, Youtube, Instagram].map((Icon, i) => (
-          <a key={i} href="#home" aria-label="social link" className="hover:text-white transition-colors">
-            <Icon size={14} />
-          </a>
-        ))}
-      </div>
+      <SocialLinks />
     </div>
   </div>
 );

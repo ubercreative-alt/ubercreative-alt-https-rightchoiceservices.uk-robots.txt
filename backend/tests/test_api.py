@@ -31,36 +31,55 @@ class TestHealth:
 
 
 # ---------- Contact ----------
+def _contact_payload():
+    return {
+        "name": "TEST_Alice",
+        "email": f"test_{uuid.uuid4().hex[:8]}@example.com",
+        "message": "Hello, I'd like to refer a young person.",
+    }
+
+
 class TestContact:
-    def test_create_contact_valid(self, client):
-        payload = {
-            "name": "TEST_Alice",
-            "email": f"test_{uuid.uuid4().hex[:8]}@example.com",
-            "message": "Hello, I'd like to refer a young person.",
-        }
+    def test_create_contact_returns_fields(self, client):
+        payload = _contact_payload()
         r = client.post(f"{API}/contact", json=payload)
         assert r.status_code == 200, r.text
         data = r.json()
         assert data["name"] == payload["name"]
         assert data["email"] == payload["email"]
         assert data["message"] == payload["message"]
-        assert "id" in data and isinstance(data["id"], str) and len(data["id"]) > 0
+
+    def test_create_contact_generates_id_and_timestamp(self, client):
+        r = client.post(f"{API}/contact", json=_contact_payload())
+        assert r.status_code == 200, r.text
+        data = r.json()
+        assert isinstance(data.get("id"), str) and len(data["id"]) > 0
         assert "created_at" in data
 
-        # GET to verify persistence
+    def test_create_contact_is_persisted(self, client):
+        payload = _contact_payload()
+        created = client.post(f"{API}/contact", json=payload).json()
         get_r = client.get(f"{API}/contact")
         assert get_r.status_code == 200
         msgs = get_r.json()
-        assert any(m.get("id") == data["id"] and m.get("email") == payload["email"] for m in msgs)
+        assert any(m.get("id") == created["id"] and m.get("email") == payload["email"] for m in msgs)
 
-    def test_create_contact_invalid_email(self, client):
-        payload = {"name": "TEST_Bob", "email": "not-an-email", "message": "test"}
+    @pytest.mark.parametrize(
+        "payload",
+        [
+            {"name": "TEST_Bob", "email": "not-an-email", "message": "test"},  # invalid email
+            {"name": "x", "email": "a@b.com"},  # missing message
+        ],
+        ids=["invalid_email", "missing_field"],
+    )
+    def test_create_contact_invalid_payload_rejected(self, client, payload):
         r = client.post(f"{API}/contact", json=payload)
         assert r.status_code == 422
 
-    def test_create_contact_missing_field(self, client):
-        r = client.post(f"{API}/contact", json={"name": "x", "email": "a@b.com"})
-        assert r.status_code == 422
+    def test_get_contact_list(self, client):
+        r = client.get(f"{API}/contact")
+        assert r.status_code == 200
+        assert isinstance(r.json(), list)
 
     def test_get_contact_list(self, client):
         r = client.get(f"{API}/contact")

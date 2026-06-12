@@ -6,26 +6,30 @@ const AVATARS = [
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=60",
 ];
 
+const MARQUEE_COPIES = ["a", "b"];
+
 export const PartnersStrip = () => (
   <section data-testid="partners-strip" className="grid lg:grid-cols-[2fr_1fr]">
     <div className="bg-[var(--rc-indigo-800)] relative overflow-hidden py-14 flex items-center">
       <div className="absolute -left-10 -top-16 w-64 h-64 rounded-full bg-white/5" />
       <div className="rc-marquee">
         <div className="rc-marquee-track">
-          {[...PARTNERS, ...PARTNERS].map((name, i) => (
-            <span key={i} className="mx-8 inline-flex items-center gap-8 font-heading font-bold text-xl text-white/85 whitespace-nowrap">
-              {name}
-              <span className="w-2 h-2 rounded-full bg-[var(--rc-lavender)]" />
-            </span>
-          ))}
+          {MARQUEE_COPIES.flatMap((copy) =>
+            PARTNERS.map((name) => (
+              <span key={`${copy}-${name}`} className="mx-8 inline-flex items-center gap-8 font-heading font-bold text-xl text-white/85 whitespace-nowrap">
+                {name}
+                <span className="w-2 h-2 rounded-full bg-[var(--rc-lavender)]" />
+              </span>
+            ))
+          )}
         </div>
       </div>
     </div>
     <div className="bg-[var(--rc-indigo-700)] py-12 px-10 flex flex-col justify-center" data-testid="partners-stat-block">
       <div className="flex items-center gap-4">
         <div className="flex -space-x-3">
-          {AVATARS.map((src, i) => (
-            <img key={i} src={src} alt="young person" className="w-11 h-11 rounded-full border-2 border-[var(--rc-indigo-700)] object-cover" />
+          {AVATARS.map((src) => (
+            <img key={src} src={src} alt="young person" className="w-11 h-11 rounded-full border-2 border-[var(--rc-indigo-700)] object-cover" />
           ))}
         </div>
         <p className="font-heading font-bold text-white text-4xl">

@@ -23,12 +23,12 @@ export const Faq = () => {
         </div>
 
         <div className="mt-12 grid lg:grid-cols-2 gap-x-10 gap-y-0 items-start">
-          {columns.map((column, c) => (
-            <Accordion key={c} type="single" collapsible className="space-y-4">
-              {column.map((item, i) => (
+          {columns.map((column) => (
+            <Accordion key={column[0].q} type="single" collapsible className="space-y-4">
+              {column.map((item) => (
                 <AccordionItem
                   key={item.q}
-                  value={`faq-${c}-${i}`}
+                  value={item.q}
                   data-testid="faq-item"
                   className="rounded-2xl border border-[var(--rc-lavender)]/30 bg-[var(--rc-paper)] px-7 data-[state=open]:border-[var(--rc-indigo-500)]"
                 >

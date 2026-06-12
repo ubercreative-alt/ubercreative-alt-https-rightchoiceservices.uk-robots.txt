@@ -143,7 +143,9 @@ function useToast() {
         listeners.splice(index, 1)
       }
     };
-  }, [state])
+    // `listeners` is a stable module-level array and `setState` is a stable
+    // React state setter, so the subscription only needs to run once.
+  }, [])
 
   return {
     ...state,

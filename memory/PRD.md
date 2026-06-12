@@ -31,9 +31,10 @@ Build a new website for "Right Choice Services Ltd" (UK youth accommodation & su
 - ✅ Backend contact + newsletter endpoints with email validation
 - ✅ Tested by testing agent: 100% backend, 100% frontend (iteration_1.json)
 - ✅ Hero fallback background fix for header contrast
+- ✅ Code review fixes: stable keys, component extraction (ContactForm, NewsletterForm, SocialLinks, DesktopNav/MobileNav, AreaCard), use-toast effect deps, craco console.warn guarded, parametrized pytest suite (10 tests pass)
+- ✅ Real brand logo applied (user upload): /app/frontend/src/assets/logo-full.png (full lockup), logo-mark.png (icon used in Header/Footer Logo component), favicon at /app/frontend/public/favicon.png
 
 ## Backlog / Next Tasks
-- P1: Real logo + brand assets once user provides PDFs (Image1–Image12)
 - P1: User review of copy/images; swap stock photos if user provides team photos
 - P2: Dedicated pages (About, Services, Referrals form page, Contact) with routing
 - P2: Referral form (structured fields: young person details, referring agency) like rightchoiceservices.org/referrals
