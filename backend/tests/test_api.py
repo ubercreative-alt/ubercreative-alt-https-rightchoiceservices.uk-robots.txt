@@ -8,6 +8,7 @@ Covers:
 """
 import os
 import uuid
+
 import pytest
 import requests
 
@@ -16,7 +17,7 @@ API = f"{BASE_URL}/api"
 
 
 @pytest.fixture(scope="module")
-def client():
+def client() -> requests.Session:
     s = requests.Session()
     s.headers.update({"Content-Type": "application/json"})
     return s
@@ -24,14 +25,14 @@ def client():
 
 # ---------- Health ----------
 class TestHealth:
-    def test_root(self, client):
+    def test_root(self, client: requests.Session) -> None:
         r = client.get(f"{API}/")
         assert r.status_code == 200
         assert r.json().get("message") == "Hello World"
 
 
 # ---------- Contact ----------
-def _contact_payload():
+def _contact_payload() -> dict:
     return {
         "name": "TEST_Alice",
         "email": f"test_{uuid.uuid4().hex[:8]}@example.com",
@@ -40,7 +41,7 @@ def _contact_payload():
 
 
 class TestContact:
-    def test_create_contact_returns_fields(self, client):
+    def test_create_contact_returns_fields(self, client: requests.Session) -> None:
         payload = _contact_payload()
         r = client.post(f"{API}/contact", json=payload)
         assert r.status_code == 200, r.text
@@ -49,14 +50,14 @@ class TestContact:
         assert data["email"] == payload["email"]
         assert data["message"] == payload["message"]
 
-    def test_create_contact_generates_id_and_timestamp(self, client):
+    def test_create_contact_generates_id_and_timestamp(self, client: requests.Session) -> None:
         r = client.post(f"{API}/contact", json=_contact_payload())
         assert r.status_code == 200, r.text
         data = r.json()
         assert isinstance(data.get("id"), str) and len(data["id"]) > 0
         assert "created_at" in data
 
-    def test_create_contact_is_persisted(self, client):
+    def test_create_contact_is_persisted(self, client: requests.Session) -> None:
         payload = _contact_payload()
         created = client.post(f"{API}/contact", json=payload).json()
         get_r = client.get(f"{API}/contact")
@@ -72,16 +73,11 @@ class TestContact:
         ],
         ids=["invalid_email", "missing_field"],
     )
-    def test_create_contact_invalid_payload_rejected(self, client, payload):
+    def test_create_contact_invalid_payload_rejected(self, client: requests.Session, payload: dict) -> None:
         r = client.post(f"{API}/contact", json=payload)
         assert r.status_code == 422
 
-    def test_get_contact_list(self, client):
-        r = client.get(f"{API}/contact")
-        assert r.status_code == 200
-        assert isinstance(r.json(), list)
-
-    def test_get_contact_list(self, client):
+    def test_get_contact_list(self, client: requests.Session) -> None:
         r = client.get(f"{API}/contact")
         assert r.status_code == 200
         assert isinstance(r.json(), list)
@@ -89,7 +85,7 @@ class TestContact:
 
 # ---------- Newsletter ----------
 class TestNewsletter:
-    def test_subscribe_valid(self, client):
+    def test_subscribe_valid(self, client: requests.Session) -> None:
         email = f"test_news_{uuid.uuid4().hex[:8]}@example.com"
         r = client.post(f"{API}/newsletter", json={"email": email})
         assert r.status_code == 200, r.text
@@ -104,10 +100,10 @@ class TestNewsletter:
         assert r2.json()["id"] == first_id
         assert r2.json()["email"] == email
 
-    def test_subscribe_invalid_email(self, client):
+    def test_subscribe_invalid_email(self, client: requests.Session) -> None:
         r = client.post(f"{API}/newsletter", json={"email": "bad"})
         assert r.status_code == 422
 
-    def test_subscribe_missing_email(self, client):
+    def test_subscribe_missing_email(self, client: requests.Session) -> None:
         r = client.post(f"{API}/newsletter", json={})
         assert r.status_code == 422

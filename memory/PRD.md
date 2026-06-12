@@ -33,8 +33,9 @@ Build a new website for "Right Choice Services Ltd" (UK youth accommodation & su
 - ✅ Hero fallback background fix for header contrast
 - ✅ Code review fixes: stable keys, component extraction (ContactForm, NewsletterForm, SocialLinks, DesktopNav/MobileNav, AreaCard), use-toast effect deps, craco console.warn guarded, parametrized pytest suite (10 tests pass)
 - ✅ Real brand logo applied (user upload): /app/frontend/src/assets/logo-full.png (full lockup), logo-mark.png (icon used in Header/Footer Logo component), favicon at /app/frontend/public/favicon.png
-- ✅ Team section (#team) added between Contact and Testimonials with 4 real team photos from user PDFs (Image 1–5; Image 4 & 5 were duplicates) saved at /app/frontend/src/assets/team-1..4.jpg. Names/roles are PLACEHOLDERS ("Team Member" + generic roles) — awaiting real names/roles from user. Data in TEAM object in content.js
+- ✅ Team section (#team) added between Contact and Testimonials with 9 real team photos from user PDFs (Images 1–10; Image 4 & 5 were duplicates) saved at /app/frontend/src/assets/team-1..9.jpg, 3-col grid. Names/roles are PLACEHOLDERS ("Team Member" + generic roles) — awaiting real names/roles from user. Data in TEAM object in content.js
 - ✅ Fixed scrolled-header bug: `bg-[var(--rc-indigo-900)]/95` opacity modifier doesn't compile in Tailwind v3 → replaced with `bg-[#2a2566]/95`
+- ✅ Code review round 2: shared useSubmit hook (src/hooks/useSubmit.js) used by ContactForm + NewsletterForm, craco console.warn removed, Python type hints added to server.py routes and test_api.py (10 tests pass)
 
 ## Backlog / Next Tasks
 - P0: Get real team member names + job titles from user and update TEAM.members in content.js

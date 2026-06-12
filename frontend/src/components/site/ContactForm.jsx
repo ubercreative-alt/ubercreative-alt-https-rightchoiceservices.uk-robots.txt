@@ -1,28 +1,22 @@
 import { useState } from "react";
-import axios from "axios";
-import { toast } from "sonner";
 import { Send } from "lucide-react";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { useSubmit } from "@/hooks/useSubmit";
 
 const EMPTY_FORM = { name: "", email: "", message: "" };
 
 export const ContactForm = () => {
   const [form, setForm] = useState(EMPTY_FORM);
-  const [sending, setSending] = useState(false);
+  const { sending, submit } = useSubmit({
+    path: "/contact",
+    successMessage: "Thank you! Your message has been sent. We'll be in touch shortly.",
+    errorMessage: "Something went wrong sending your message. Please try again.",
+  });
 
-  const handleSubmit = async (e) => {
+  const setField = (field) => (e) => setForm({ ...form, [field]: e.target.value });
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setSending(true);
-    try {
-      await axios.post(`${API}/contact`, form);
-      toast.success("Thank you! Your message has been sent. We'll be in touch shortly.");
-      setForm(EMPTY_FORM);
-    } catch {
-      toast.error("Something went wrong sending your message. Please try again.");
-    } finally {
-      setSending(false);
-    }
+    submit(form, () => setForm(EMPTY_FORM));
   };
 
   return (
@@ -33,7 +27,7 @@ export const ContactForm = () => {
           data-testid="contact-name-input"
           required
           value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
+          onChange={setField("name")}
           placeholder="Your Name *"
           className="rc-input"
         />
@@ -42,7 +36,7 @@ export const ContactForm = () => {
           required
           type="email"
           value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
+          onChange={setField("email")}
           placeholder="Your Email *"
           className="rc-input"
         />
@@ -51,7 +45,7 @@ export const ContactForm = () => {
           required
           rows={4}
           value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
+          onChange={setField("message")}
           placeholder="Your Message *"
           className="rc-input resize-none"
         />

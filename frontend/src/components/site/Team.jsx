@@ -3,8 +3,13 @@ import team1 from "@/assets/team-1.jpg";
 import team2 from "@/assets/team-2.jpg";
 import team3 from "@/assets/team-3.jpg";
 import team4 from "@/assets/team-4.jpg";
+import team5 from "@/assets/team-5.jpg";
+import team6 from "@/assets/team-6.jpg";
+import team7 from "@/assets/team-7.jpg";
+import team8 from "@/assets/team-8.jpg";
+import team9 from "@/assets/team-9.jpg";
 
-const PHOTOS = [team1, team2, team3, team4];
+const PHOTOS = [team1, team2, team3, team4, team5, team6, team7, team8, team9];
 
 const TeamCard = ({ member, photo }) => (
   <article data-testid="team-card" className="group">
@@ -38,7 +43,7 @@ export const Team = () => (
         <p className="mt-4 text-[var(--rc-ink-soft)] leading-relaxed">{TEAM.description}</p>
       </div>
 
-      <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-7">
+      <div className="mt-14 grid grid-cols-2 lg:grid-cols-3 gap-7">
         {TEAM.members.map((member, i) => (
           <TeamCard key={member.id} member={member} photo={PHOTOS[i]} />
         ))}

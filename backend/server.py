@@ -63,11 +63,11 @@ class NewsletterSubscribe(BaseModel):
 
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
-async def root():
+async def root() -> dict:
     return {"message": "Hello World"}
 
 @api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(input: StatusCheckCreate):
+async def create_status_check(input: StatusCheckCreate) -> StatusCheck:
     status_dict = input.model_dump()
     status_obj = StatusCheck(**status_dict)
     
@@ -79,7 +79,7 @@ async def create_status_check(input: StatusCheckCreate):
     return status_obj
 
 @api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
+async def get_status_checks() -> List[StatusCheck]:
     # Exclude MongoDB's _id field from the query results
     status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
     
@@ -91,7 +91,7 @@ async def get_status_checks():
     return status_checks
 
 @api_router.post("/contact", response_model=ContactMessage)
-async def create_contact_message(input: ContactMessageCreate):
+async def create_contact_message(input: ContactMessageCreate) -> ContactMessage:
     obj = ContactMessage(**input.model_dump())
     doc = obj.model_dump()
     doc['created_at'] = doc['created_at'].isoformat()
@@ -99,7 +99,7 @@ async def create_contact_message(input: ContactMessageCreate):
     return obj
 
 @api_router.get("/contact", response_model=List[ContactMessage])
-async def get_contact_messages():
+async def get_contact_messages() -> List[ContactMessage]:
     docs = await db.contact_messages.find({}, {"_id": 0}).to_list(1000)
     for d in docs:
         if isinstance(d['created_at'], str):
@@ -107,7 +107,7 @@ async def get_contact_messages():
     return docs
 
 @api_router.post("/newsletter", response_model=NewsletterSubscriber)
-async def subscribe_newsletter(input: NewsletterSubscribe):
+async def subscribe_newsletter(input: NewsletterSubscribe) -> NewsletterSubscriber:
     existing = await db.newsletter_subscribers.find_one({"email": input.email}, {"_id": 0})
     if existing:
         if isinstance(existing['created_at'], str):
@@ -138,5 +138,5 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
-async def shutdown_db_client():
+async def shutdown_db_client() -> None:
     client.close()

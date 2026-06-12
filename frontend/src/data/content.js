@@ -233,6 +233,11 @@ export const TEAM = {
     { id: "member-2", name: "Team Member", role: "Senior Keyworker" },
     { id: "member-3", name: "Team Member", role: "Outreach Worker" },
     { id: "member-4", name: "Team Member", role: "Support Worker" },
+    { id: "member-5", name: "Team Member", role: "Support Worker" },
+    { id: "member-6", name: "Team Member", role: "Responsible Adult" },
+    { id: "member-7", name: "Team Member", role: "Keyworker" },
+    { id: "member-8", name: "Team Member", role: "Support Worker" },
+    { id: "member-9", name: "Team Member", role: "Outreach Worker" },
   ],
 };
 

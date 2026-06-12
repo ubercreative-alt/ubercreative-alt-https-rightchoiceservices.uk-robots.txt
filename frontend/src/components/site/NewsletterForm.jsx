@@ -1,29 +1,21 @@
 import { useState } from "react";
-import axios from "axios";
-import { toast } from "sonner";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { useSubmit } from "@/hooks/useSubmit";
 
 export const NewsletterForm = () => {
   const [email, setEmail] = useState("");
-  const [sending, setSending] = useState(false);
+  const { sending, submit } = useSubmit({
+    path: "/newsletter",
+    successMessage: "Thank you for subscribing!",
+    errorMessage: "Subscription failed. Please try again.",
+  });
 
-  const subscribe = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setSending(true);
-    try {
-      await axios.post(`${API}/newsletter`, { email });
-      toast.success("Thank you for subscribing!");
-      setEmail("");
-    } catch {
-      toast.error("Subscription failed. Please try again.");
-    } finally {
-      setSending(false);
-    }
+    submit({ email }, () => setEmail(""));
   };
 
   return (
-    <form onSubmit={subscribe} className="flex rounded-full bg-white/10 border border-white/15 p-1.5" data-testid="newsletter-form">
+    <form onSubmit={handleSubmit} className="flex rounded-full bg-white/10 border border-white/15 p-1.5" data-testid="newsletter-form">
       <input
         data-testid="newsletter-email-input"
         type="email"
