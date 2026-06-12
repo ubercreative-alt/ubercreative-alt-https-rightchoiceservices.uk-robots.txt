@@ -4,6 +4,11 @@ import { useSubmit } from "@/hooks/useSubmit";
 
 const EMPTY_FORM = { name: "", email: "", message: "" };
 
+const FIELDS = [
+  { name: "name", type: "text", placeholder: "Your Name *", testId: "contact-name-input" },
+  { name: "email", type: "email", placeholder: "Your Email *", testId: "contact-email-input" },
+];
+
 export const ContactForm = () => {
   const [form, setForm] = useState(EMPTY_FORM);
   const { sending, submit } = useSubmit({
@@ -23,23 +28,18 @@ export const ContactForm = () => {
     <form onSubmit={handleSubmit} data-testid="contact-form" className="rounded-3xl bg-white p-8 lg:p-10 shadow-2xl">
       <h3 className="font-heading font-bold text-[var(--rc-ink)] text-xl">Send us a message</h3>
       <div className="mt-6 space-y-4">
-        <input
-          data-testid="contact-name-input"
-          required
-          value={form.name}
-          onChange={setField("name")}
-          placeholder="Your Name *"
-          className="rc-input"
-        />
-        <input
-          data-testid="contact-email-input"
-          required
-          type="email"
-          value={form.email}
-          onChange={setField("email")}
-          placeholder="Your Email *"
-          className="rc-input"
-        />
+        {FIELDS.map((field) => (
+          <input
+            key={field.name}
+            data-testid={field.testId}
+            required
+            type={field.type}
+            value={form[field.name]}
+            onChange={setField(field.name)}
+            placeholder={field.placeholder}
+            className="rc-input"
+          />
+        ))}
         <textarea
           data-testid="contact-message-input"
           required
