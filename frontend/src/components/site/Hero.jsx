@@ -2,7 +2,7 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { HERO } from "@/data/content";
 
 export const Hero = () => (
-  <section id="home" data-testid="hero-section" className="relative min-h-[92vh] flex items-center overflow-hidden">
+  <section id="home" data-testid="hero-section" className="relative min-h-[92vh] flex items-center overflow-hidden bg-[var(--rc-indigo-900)]">
     <div className="absolute inset-0">
       <img
         src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1920&q=70"
