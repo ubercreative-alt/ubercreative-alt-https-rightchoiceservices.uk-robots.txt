@@ -35,14 +35,16 @@ Build a new website for "Right Choice Services Ltd" (UK youth accommodation & su
 - ✅ Code review fixes: stable keys, component extraction (ContactForm, NewsletterForm, SocialLinks, DesktopNav/MobileNav, AreaCard), use-toast effect deps, craco console.warn guarded, parametrized pytest suite (10 tests pass)
 - ✅ Real brand logo applied (user upload): /app/frontend/src/assets/logo-full.png (full lockup), logo-mark.png (icon used in Header/Footer Logo component), favicon at /app/frontend/public/favicon.png
 - ✅ Team section (#team) added between Contact and Testimonials with 9 real team photos from user PDFs (Images 1–10; Image 4 & 5 were duplicates) saved at /app/frontend/src/assets/team-1..9.jpg, 3-col grid
-- ✅ 5 named Team Leaders with full bios from user ODT files (Brikelda Shabanaj, Deborah Howlett, Erjona Selko, Eugen Bardho, Fatmira Pjetri) + "Read Bio" dialog (shadcn Dialog). PHOTO↔NAME PAIRING IS BEST-GUESS (member order maps to PHOTOS array order in Team.jsx: Brikelda=team-1, Deborah=team-2, Erjona=team-3, Eugen=team-4, Fatmira=team-5) — user asked to "just upload to start with"; awaiting confirmation/corrections. Remaining 4 photos (team-6..9) are "Team Member" placeholders
+- ✅ 5 named Team Leaders with full bios from user ODT files (Brikelda Shabanaj, Deborah Howlett, Erjona Selko, Eugen Bardho, Fatmira Pjetri) + "Read Bio" dialog (shadcn Dialog). Photo↔name pairing CONFIRMED by user (Brikelda=team-1, Deborah=team-2, Erjona=team-3, Eugen=team-4, Fatmira=team-5)
+- ✅ Final 4 team members added from second ODT batch: Robert Toska (Nominated Individual, team-6 gray-haired man — confident match, only male left), Rita Cleary (team-7), Linda Madimutsa (team-8), Riada Mjeshtri (team-9). Robert displayed FIRST in the grid. The 3 women's photo pairing is BEST-GUESS — awaiting user confirmation. Used document spellings (Mjeshtri/Cleary) over filename spellings (Mjeshti/Clearly). No placeholders remain
 - ✅ Fixed scrolled-header bug: `bg-[var(--rc-indigo-900)]/95` opacity modifier doesn't compile in Tailwind v3 → replaced with `bg-[#2a2566]/95`
 - ✅ Code review round 2: shared useSubmit hook (src/hooks/useSubmit.js) used by ContactForm + NewsletterForm, craco console.warn removed, Python type hints added to server.py routes and test_api.py (10 tests pass)
 
 - ✅ Referral page (/referrals, 2026-06-12): page hero, "What happens next" 3 steps, Got Questions card, referral form modelled on original site (name, email, phone, organisation, service area select, individual details, GDPR consent) → POST /api/referrals (collection: referrals) + GET /api/referrals. All "Make a Referral" CTAs (hero, process, area cards, footer) now link to /referrals. Nav updated to /#anchor links + "Referrals" item; Logo links to "/". 19 pytest tests pass; e2e form submission verified
 
 ## Backlog / Next Tasks
-- P0: User to verify photo↔name pairing for the 5 Team Leaders and send names/bios for the remaining 4 placeholder members
+- P0: User to confirm photo pairing for Rita Cleary / Linda Madimutsa / Riada Mjeshtri (best-guess assignment)
+- NOTE: App is DEPLOYED to production (https://services-refresh-1.emergent.host). User must redeploy to push latest changes live
 - P1: User review of copy/images; swap stock photos if user provides team photos
 - P2: Dedicated pages (About, Services, Referrals form page, Contact) with routing
 - P2: Referral form (structured fields: young person details, referring agency) like rightchoiceservices.org/referrals

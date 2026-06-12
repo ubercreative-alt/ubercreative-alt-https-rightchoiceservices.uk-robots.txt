@@ -16,7 +16,10 @@ import team7 from "@/assets/team-7.jpg";
 import team8 from "@/assets/team-8.jpg";
 import team9 from "@/assets/team-9.jpg";
 
-const PHOTOS = [team1, team2, team3, team4, team5, team6, team7, team8, team9];
+// Photo order matches TEAM.members order:
+// Robert(team-6), Brikelda(team-1), Deborah(team-2), Erjona(team-3),
+// Eugen(team-4), Fatmira(team-5), Rita(team-7), Linda(team-8), Riada(team-9)
+const PHOTOS = [team6, team1, team2, team3, team4, team5, team7, team8, team9];
 
 const BioDialog = ({ member, photo }) => (
   <Dialog>

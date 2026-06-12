@@ -230,6 +230,17 @@ export const TEAM = {
     "Our dedicated support staff work alongside relevant professionals to help young people build a firm foundation for future success.",
   members: [
     {
+      id: "robert-toska",
+      name: "Robert Toska",
+      role: "Nominated Individual",
+      bio: [
+        "Robert is a highly accomplished social care professional with over 20 years of experience in safeguarding, quality assurance, and leadership within children's services. He has held a range of senior roles, including Independent Reviewing Officer (IRO), Team Manager, and Deputy Head of Service for a Leaving Care Service. His extensive expertise spans Looked After Children, safeguarding practice, fostering regulations, court proceedings, and transition planning.",
+        "As an IRO for over a decade, Robert has been a consistent advocate for the voice of the child, ensuring care and permanency plans are child-centred, legally compliant, and outcome-focused. He has led multi-agency reviews, chaired complex planning meetings, conducted in-depth case audits, and managed formal dispute resolution processes to drive improvements in care quality.",
+        "In his leadership roles, Robert has managed teams of Social Workers, overseen service budgets, developed and implemented policies, and embedded health and safety and risk management protocols. He has also delivered workforce training, chaired transition panels, and played a key role in preparing services for Ofsted inspections, contributing to positive outcomes.",
+        "With a strong track record in service development, robust safeguarding knowledge, and proven leadership capabilities, Robert is deeply committed to promoting the welfare of children and young people while ensuring full compliance with statutory and regulatory framework standards.",
+      ],
+    },
+    {
       id: "brikelda-shabanaj",
       name: "Brikelda Shabanaj",
       role: "Team Leader",
@@ -278,10 +289,33 @@ export const TEAM = {
         "Fatmira holds a degree in English from \"Aleksander Xhuvani\" University and has completed numerous professional development programs, including international child protection training, project management for development practitioners, and specialized courses in disability rights and inclusive education. She is fluent in English, proficient in Italian, and is passionate about empowering vulnerable communities, promoting equity, and ensuring high-quality, sustainable services for children and youth.",
       ],
     },
-    { id: "member-6", name: "Team Member", role: "Support Worker" },
-    { id: "member-7", name: "Team Member", role: "Keyworker" },
-    { id: "member-8", name: "Team Member", role: "Support Worker" },
-    { id: "member-9", name: "Team Member", role: "Outreach Worker" },
+    { id: "rita-cleary",
+      name: "Rita Cleary",
+      role: "Team Leader",
+      bio: [
+        "Rita is a highly experienced Team Leader with a strong background in residential and supported living settings for children and young people. She brings expertise in staff management, safeguarding, and care for vulnerable individuals, including those with complex needs.",
+        "Rita holds a wide range of specialist certifications, including Safeguarding Children and Adults, Mental Health for Young People, Managing Challenging Behaviour, First Aid, Risk Management, Child Sexual Exploitation, Gangs & County Lines, and many more. Her training ensures safe, person-centred care while supporting and mentoring staff effectively.",
+        "Calm, compassionate, and adaptable, Rita is dedicated to creating a positive, nurturing environment where children and young people can thrive.",
+      ],
+    },
+    { id: "linda-madimutsa",
+      name: "Linda Madimutsa",
+      role: "Team Leader",
+      bio: [
+        "Linda is an experienced and dedicated care professional with over a decade of hands-on experience supporting vulnerable adults, young people, and those with complex needs. She has worked across residential, mental health, and community care settings, delivering person-centred support with compassion and professionalism.",
+        "Holding a Bachelor's degree in Education and an NVQ Level 5 in Leadership and Management, Linda combines strong academic knowledge with practical expertise in care planning, safeguarding, and supporting individuals with dignity and respect. She has also completed extensive specialist training, including safeguarding children and adults, first aid, psychological first aid, mental health awareness, risk assessment, and working with young people at risk of exploitation, abuse, or challenging circumstances.",
+        "Passionate about improving lives, Linda is committed to maintaining the highest standards of care, fostering inclusive environments, and empowering people to reach their full potential.",
+      ],
+    },
+    { id: "riada-mjeshtri",
+      name: "Riada Mjeshtri",
+      role: "Team Leader",
+      bio: [
+        "Riada is a highly experienced educator and children's support professional with over a decade of teaching experience in primary and secondary schools. She combines her expertise in curriculum planning, special needs education, and modern teaching methods with extensive training in safeguarding, child protection, and managing challenging behaviours.",
+        "Trained in key areas including Safeguarding Children and Adults, Mental Health for Young People, De-escalation Techniques, First Aid, and Risk Management, Riada is equipped to lead a team in providing safe, nurturing, and structured support for children and young people in residential or supported living settings.",
+        "Riada is a skilled communicator and team leader, adept at mentoring staff, managing day-to-day operations, and creating positive, developmental environments where young people can thrive. Her leadership, professional integrity, and dedication make her a trusted figure for both colleagues and the children in her care.",
+      ],
+    },
   ],
 };
 
