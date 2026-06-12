@@ -1,0 +1,77 @@
+import { useEffect, useState } from "react";
+import { Menu, X, HeartHandshake } from "lucide-react";
+import { NAV_LINKS } from "@/data/content";
+
+export const Logo = ({ light = true }) => (
+  <a href="#home" data-testid="site-logo" className="flex items-center gap-2.5">
+    <span className="grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--rc-lavender)] to-[var(--rc-indigo-600)]">
+      <HeartHandshake size={22} className="text-white" />
+    </span>
+    <span className={`font-heading font-bold leading-tight ${light ? "text-white" : "text-[var(--rc-indigo-900)]"}`}>
+      <span className="block text-lg tracking-wide">Right Choice</span>
+      <span className="block text-[10px] uppercase tracking-[0.28em] text-[var(--rc-lavender)] font-semibold">Services Ltd</span>
+    </span>
+  </a>
+);
+
+export const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header
+      data-testid="site-header"
+      className={`fixed inset-x-0 z-50 transition-all duration-300 ${
+        scrolled ? "top-0 bg-[var(--rc-indigo-900)]/95 backdrop-blur-md shadow-lg shadow-black/20" : "top-0 md:top-11 bg-transparent"
+      }`}
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
+        <Logo />
+        <nav className="hidden lg:flex items-center gap-9" data-testid="desktop-nav">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-[13px] font-semibold uppercase tracking-[0.12em] text-white/85 hover:text-[var(--rc-lavender)] transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <div className="flex items-center gap-3">
+          <a href="#contact" data-testid="header-contact-btn" className="hidden sm:inline-flex rc-btn-pill">
+            Contact Us
+          </a>
+          <button
+            data-testid="mobile-menu-toggle"
+            onClick={() => setOpen(!open)}
+            className="lg:hidden text-white p-2"
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
+      </div>
+      {open && (
+        <nav data-testid="mobile-nav" className="lg:hidden bg-[var(--rc-indigo-900)] px-6 pb-6 space-y-1">
+          {[...NAV_LINKS, { label: "Contact Us", href: "#contact" }].map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="block py-3 text-sm font-semibold uppercase tracking-widest text-white/85 border-b border-white/10"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      )}
+    </header>
+  );
+};
