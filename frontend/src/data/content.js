@@ -223,6 +223,19 @@ export const TESTIMONIALS = {
   ],
 };
 
+export const TEAM = {
+  label: "Our Team",
+  title: "Meet the dedicated people behind Right Choice.",
+  description:
+    "Our dedicated support staff work alongside relevant professionals to help young people build a firm foundation for future success.",
+  members: [
+    { id: "member-1", name: "Team Member", role: "Support Worker" },
+    { id: "member-2", name: "Team Member", role: "Senior Keyworker" },
+    { id: "member-3", name: "Team Member", role: "Outreach Worker" },
+    { id: "member-4", name: "Team Member", role: "Support Worker" },
+  ],
+};
+
 export const AREAS = {
   label: "Where We Work",
   title: "Supporting young people across the South East.",

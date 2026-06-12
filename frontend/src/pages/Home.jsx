@@ -11,6 +11,7 @@ import { Process } from "@/components/site/Process";
 import { Safeguarding } from "@/components/site/Safeguarding";
 import { CtaContact } from "@/components/site/CtaContact";
 import { Testimonials } from "@/components/site/Testimonials";
+import { Team } from "@/components/site/Team";
 import { ServiceAreas } from "@/components/site/ServiceAreas";
 import { Faq } from "@/components/site/Faq";
 import { NewsSection } from "@/components/site/NewsSection";
@@ -32,6 +33,7 @@ export default function Home() {
         <Process />
         <Safeguarding />
         <CtaContact />
+        <Team />
         <Testimonials />
         <ServiceAreas />
         <Faq />

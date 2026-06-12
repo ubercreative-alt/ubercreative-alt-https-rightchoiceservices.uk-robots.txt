@@ -58,7 +58,7 @@ export const Header = () => {
     <header
       data-testid="site-header"
       className={`fixed inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "top-0 bg-[var(--rc-indigo-900)]/95 backdrop-blur-md shadow-lg shadow-black/20" : "top-0 md:top-11 bg-transparent"
+        scrolled ? "top-0 bg-[#2a2566]/95 backdrop-blur-md shadow-lg shadow-black/20" : "top-0 md:top-11 bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
