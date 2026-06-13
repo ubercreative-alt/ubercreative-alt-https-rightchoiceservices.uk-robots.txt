@@ -4,6 +4,9 @@ import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/data/content";
 import logoMark from "@/assets/logo-mark.png";
 
+const MENU_ICON_SIZE = 26;
+const SCROLLED_THRESHOLD_PX = 60;
+
 export const Logo = () => (
   <Link to="/" data-testid="site-logo" className="flex items-center gap-3">
     <img src={logoMark} alt="Right Choice Services Ltd logo" className="h-12 w-auto" />
@@ -56,9 +59,13 @@ export const Header = () => {
   const isHome = location.pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    // `onScroll` is declared inside the effect (not a closure dep) and
+    // `setScrolled` is a stable React setter, so this listener only needs
+    // to be attached once.
+    const onScroll = () => setScrolled(window.scrollY > SCROLLED_THRESHOLD_PX);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Solid header on inner pages, transparent on home until scrolled
@@ -84,7 +91,7 @@ export const Header = () => {
             className="lg:hidden text-white p-2"
             aria-label="Toggle menu"
           >
-            {open ? <X size={26} /> : <Menu size={26} />}
+            {open ? <X size={MENU_ICON_SIZE} /> : <Menu size={MENU_ICON_SIZE} />}
           </button>
         </div>
       </div>

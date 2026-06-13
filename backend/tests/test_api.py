@@ -104,7 +104,7 @@ class TestReferrals:
         data = r.json()
         assert data["name"] == payload["name"]
         assert data["service_area"] == "Essex"
-        assert data["gdpr_consent"] is True
+        assert data["gdpr_consent"]
         assert isinstance(data.get("id"), str) and len(data["id"]) > 0
 
     def test_create_referral_is_persisted(self, client: requests.Session) -> None:

@@ -141,10 +141,11 @@ function useToast() {
         listeners.splice(index, 1)
       }
     };
-    // `listeners` is a stable module-level array and `setState` is a stable
-    // React state setter, so the subscription only needs to run once.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    // `setState` is a stable React setter so this subscription only runs once.
+    // `listeners` is a module-level array (not a closure dep), and `index` is
+    // computed inside the cleanup (not a captured variable), so neither belongs
+    // in the dependency list — including `setState` satisfies exhaustive-deps.
+  }, [setState])
 
   return {
     ...state,
