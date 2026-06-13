@@ -6,11 +6,12 @@ export const CONTACT = {
 };
 
 export const NAV_LINKS = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
-  { label: "How We Work", href: "/#how-we-work" },
-  { label: "Referrals", href: "/referrals" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Team", href: "/team" },
+  { label: "News", href: "/news" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const HERO = {
@@ -446,19 +447,19 @@ export const FOOTER = {
   about:
     "A distinctive programme devoted to the welfare and development of young individuals navigating the transition from the care of local authorities and/or custody in the South East of England.",
   quickLinks: [
-    { label: "Homepage", href: "/#home" },
-    { label: "About Us", href: "/#about" },
-    { label: "Our Services", href: "/#services" },
-    { label: "How We Work", href: "/#how-we-work" },
-    { label: "FAQs", href: "/#faqs" },
-    { label: "Contact Us", href: "/#contact" },
+    { label: "Homepage", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Our Services", href: "/services" },
+    { label: "Our Team", href: "/team" },
+    { label: "FAQs", href: "/faq" },
+    { label: "Contact Us", href: "/contact" },
   ],
   featuredLinks: [
-    { label: "Supported Accommodation", href: "/#services" },
-    { label: "Keywork & Life Skills", href: "/#services" },
-    { label: "Outreach Support", href: "/#services" },
-    { label: "Safeguarding", href: "/#how-we-work" },
-    { label: "Service Areas", href: "/#areas" },
+    { label: "Supported Accommodation", href: "/services" },
+    { label: "Keywork & Life Skills", href: "/services" },
+    { label: "Outreach Support", href: "/services" },
+    { label: "Safeguarding", href: "/about" },
+    { label: "Latest News", href: "/news" },
     { label: "Make a Referral", href: "/referrals" },
   ],
 };

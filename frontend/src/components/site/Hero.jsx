@@ -36,7 +36,7 @@ const HeroContent = () => (
         {HERO.primaryCta}
       </a>
       <a
-        href="#services"
+        href="/services"
         data-testid="hero-secondary-cta"
         className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.14em] text-white hover:text-[var(--rc-lavender)] transition-colors"
       >

@@ -36,7 +36,7 @@ export const Approach = () => (
           ))}
         </div>
 
-        <a href="#how-we-work" className="rc-btn-pill mt-9 inline-flex" data-testid="approach-learn-more">
+        <a href="/services" className="rc-btn-pill mt-9 inline-flex" data-testid="approach-learn-more">
           Learn More <ArrowRight size={15} />
         </a>
       </div>

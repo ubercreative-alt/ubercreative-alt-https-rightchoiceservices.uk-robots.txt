@@ -65,7 +65,7 @@ export const WhoWeAre = () => (
         <SupportMediaRow />
         <CheckList items={WHO_WE_ARE.checks} />
 
-        <a href="#services" className="rc-btn-pill mt-9 inline-flex" data-testid="about-learn-more">
+        <a href="/services" className="rc-btn-pill mt-9 inline-flex" data-testid="about-learn-more">
           Learn More <ArrowRight size={15} />
         </a>
       </div>

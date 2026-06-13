@@ -35,7 +35,7 @@ export const FeaturedServices = () => (
               </span>
               <h3 className="mt-6 font-heading font-bold text-white text-xl leading-snug">{service.title}</h3>
               <p className="mt-3 text-sm text-white/65 leading-relaxed">{service.text}</p>
-              <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[var(--rc-lavender)] group-hover:text-white transition-colors">
+              <a href="/contact" className="mt-6 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[var(--rc-lavender)] group-hover:text-white transition-colors">
                 Learn more <ArrowRight size={14} />
               </a>
             </article>

@@ -12,7 +12,7 @@ export const NewsSection = () => (
           </p>
           <h2 className="rc-h2 mt-4" data-testid="news-title">{NEWS.title}</h2>
         </div>
-        <a href="#contact" className="rc-btn-pill" data-testid="news-discover-btn">
+        <a href="/contact" className="rc-btn-pill" data-testid="news-discover-btn">
           Get In Touch <ArrowRight size={15} />
         </a>
       </div>
@@ -37,7 +37,7 @@ export const NewsSection = () => (
                 {post.title}
               </h3>
               <p className="mt-3 text-sm text-[var(--rc-ink-soft)] leading-relaxed">{post.text}</p>
-              <a href="#contact" className="mt-5 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[var(--rc-indigo-600)]">
+              <a href="/contact" className="mt-5 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[var(--rc-indigo-600)]">
                 Read More <ArrowRight size={14} />
               </a>
             </div>

@@ -42,14 +42,14 @@ Build a new website for "Right Choice Services Ltd" (UK youth accommodation & su
 
 - ✅ Referral page (/referrals, 2026-06-12): page hero, "What happens next" 3 steps, Got Questions card, referral form modelled on original site (name, email, phone, organisation, service area select, individual details, GDPR consent) → POST /api/referrals (collection: referrals) + GET /api/referrals. All "Make a Referral" CTAs (hero, process, area cards, footer) now link to /referrals. Nav updated to /#anchor links + "Referrals" item; Logo links to "/". 19 pytest tests pass; e2e form submission verified
 
+- ✅ Multi-page split (2026-02-13): site converted from one-page-scroll to multi-page React Router app. New routes: `/` (slim Home with Hero + Partners + intro + preview cards + service preview + team preview + 3 latest news), `/about` (WhoWeAre + Approach + Safeguarding + Testimonials), `/services` (SupportPillars + FeaturedServices + Benefits + Process + ServiceAreas), `/team` (full Team grid + bio dialogs), `/news` (NewsSection), `/faq` (Faq), `/contact` (ContactForm + contact details), `/referrals` (existing). Added shared `PageShell` + `PageHero` (`/app/frontend/src/components/site/PageShell.jsx`) and `ScrollToTop` (`/app/frontend/src/components/site/ScrollToTop.jsx`). Header uses react-router `NavLink` with active-state highlighting; inner pages render solid header by default. Nav reduced to Home/About/Services/Team/News/Contact. All in-page anchor links (`#services`, `#contact`, `#how-we-work`) replaced with real routes. Footer links updated. All 8 routes verified loading with smoke screenshots.
+
 ## Backlog / Next Tasks
-- P0: User to confirm photo pairing for Rita Cleary / Linda Madimutsa / Riada Mjeshtri (best-guess assignment)
 - NOTE: App is DEPLOYED to production (https://services-refresh-1.emergent.host). User must redeploy to push latest changes live
 - P1: User review of copy/images; swap stock photos if user provides team photos
-- P2: Dedicated pages (About, Services, Referrals form page, Contact) with routing
 - P2: Referral form (structured fields: young person details, referring agency) like rightchoiceservices.org/referrals
 - P3: Admin view for contact messages / newsletter subscribers (auth needed)
-- P3: SEO meta tags, sitemap, OG images
+- P3: SEO meta tags, sitemap, OG images, per-route document titles
 
 ## Credentials
 None — public marketing site, no auth.
