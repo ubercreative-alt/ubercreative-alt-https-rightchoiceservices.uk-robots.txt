@@ -232,6 +232,7 @@ export const TEAM = {
   members: [
     {
       id: "robert-toska",
+      photoKey: "robert",
       name: "Robert Toska",
       role: "Nominated Individual",
       bio: [
@@ -242,7 +243,28 @@ export const TEAM = {
       ],
     },
     {
+      id: "tara",
+      photoKey: "tara",
+      name: "Tara",
+      role: "Registered Service Manager & Designated Safeguarding Lead",
+      bio: [
+        "Tara is the Registered Service Manager and Designated Safeguarding Lead. With over 18 years of experience in the children and families sector, including children's homes, supported accommodation, and schools across both private and local authority settings, she brings exceptional expertise and dedication to her role. Tara holds a BA Honours in Education Studies from Middlesex University and a Level 5 Diploma in Leadership & Management for Children and Young People, achieved with distinction. She has also completed extensive higher-level training in safeguarding, safer recruitment, managing allegations, exploitation, and related specialist areas.",
+        "Tara has a strong focus on bringing therapeutic ways of working into supported accommodation, a provision that is relatively newly regulated by Ofsted, and is always seeking ways to improve the service and support we provide to young people. She takes a hands-on approach in her management style, often working alongside young people on the \"shop floor\" to ensure she is fully connected to their needs. Tara ensures compliance with the Supported Accommodation 2023 regulations and oversees the day-to-day running of the homes, including policies and procedures, auditing, quality assurance, safeguarding, training, health and safety, and matching placements. Known for her professionalism, warmth, and forward-thinking approach, Tara ensures the service is safe, supportive, and tailored to help every young person thrive.",
+      ],
+    },
+    {
+      id: "florian-shabanaj",
+      photoKey: "florian",
+      name: "Florian Shabanaj",
+      role: "Team Leader",
+      bio: [
+        "Florian is a dedicated Team Leader supporting young people aged 16–18 in Ofsted-regulated supported accommodation. He has particular expertise in managing solo placements and challenging behaviours, ensuring each young person receives safe, consistent, and personalised care. Florian combines strong problem-solving and organisational skills with a compassionate, hands-on approach that helps young people feel supported and empowered.",
+        "Fluent in Albanian and English, with good Italian, Florian is highly trained in safeguarding children and adults, risk management, health and safety, mental health, and youth exploitation. He is committed to creating structured, safe, and nurturing environments where young people can thrive and achieve positive outcomes.",
+      ],
+    },
+    {
       id: "brikelda-shabanaj",
+      photoKey: "brikelda",
       name: "Brikelda Shabanaj",
       role: "Team Leader",
       bio: [
@@ -254,6 +276,7 @@ export const TEAM = {
     },
     {
       id: "deborah-howlett",
+      photoKey: "deborah",
       name: "Deborah Howlett",
       role: "Team Leader",
       bio: [
@@ -263,6 +286,7 @@ export const TEAM = {
     },
     {
       id: "erjona-selko",
+      photoKey: "erjona",
       name: "Erjona Selko",
       role: "Team Leader",
       bio: [
@@ -273,6 +297,7 @@ export const TEAM = {
     },
     {
       id: "eugen-bardho",
+      photoKey: "eugen",
       name: "Eugen Bardho",
       role: "Team Leader",
       bio: [
@@ -282,6 +307,7 @@ export const TEAM = {
     },
     {
       id: "fatmira-pjetri",
+      photoKey: "fatmira",
       name: "Fatmira Pjetri",
       role: "Team Leader",
       bio: [
@@ -290,16 +316,9 @@ export const TEAM = {
         "Fatmira holds a degree in English from \"Aleksander Xhuvani\" University and has completed numerous professional development programs, including international child protection training, project management for development practitioners, and specialized courses in disability rights and inclusive education. She is fluent in English, proficient in Italian, and is passionate about empowering vulnerable communities, promoting equity, and ensuring high-quality, sustainable services for children and youth.",
       ],
     },
-    { id: "rita-cleary",
-      name: "Rita Cleary",
-      role: "Team Leader",
-      bio: [
-        "Rita is a highly experienced Team Leader with a strong background in residential and supported living settings for children and young people. She brings expertise in staff management, safeguarding, and care for vulnerable individuals, including those with complex needs.",
-        "Rita holds a wide range of specialist certifications, including Safeguarding Children and Adults, Mental Health for Young People, Managing Challenging Behaviour, First Aid, Risk Management, Child Sexual Exploitation, Gangs & County Lines, and many more. Her training ensures safe, person-centred care while supporting and mentoring staff effectively.",
-        "Calm, compassionate, and adaptable, Rita is dedicated to creating a positive, nurturing environment where children and young people can thrive.",
-      ],
-    },
-    { id: "linda-madimutsa",
+    {
+      id: "linda-madimutsa",
+      photoKey: "linda",
       name: "Linda Madimutsa",
       role: "Team Leader",
       bio: [
@@ -308,7 +327,9 @@ export const TEAM = {
         "Passionate about improving lives, Linda is committed to maintaining the highest standards of care, fostering inclusive environments, and empowering people to reach their full potential.",
       ],
     },
-    { id: "riada-mjeshtri",
+    {
+      id: "riada-mjeshtri",
+      photoKey: "riada",
       name: "Riada Mjeshtri",
       role: "Team Leader",
       bio: [
@@ -316,6 +337,45 @@ export const TEAM = {
         "Trained in key areas including Safeguarding Children and Adults, Mental Health for Young People, De-escalation Techniques, First Aid, and Risk Management, Riada is equipped to lead a team in providing safe, nurturing, and structured support for children and young people in residential or supported living settings.",
         "Riada is a skilled communicator and team leader, adept at mentoring staff, managing day-to-day operations, and creating positive, developmental environments where young people can thrive. Her leadership, professional integrity, and dedication make her a trusted figure for both colleagues and the children in her care.",
       ],
+    },
+    {
+      id: "rita-cleary",
+      photoKey: "rita",
+      name: "Rita Cleary",
+      role: "Team Leader",
+      bio: [
+        "Rita is a highly experienced Team Leader with a strong background in residential and supported living settings for children and young people. She brings expertise in staff management, safeguarding, and care for vulnerable individuals, including those with complex needs.",
+        "Rita holds a wide range of specialist certifications, including Safeguarding Children and Adults, Mental Health for Young People, Managing Challenging Behaviour, First Aid, Risk Management, Child Sexual Exploitation, Gangs & County Lines, and many more. Her training ensures safe, person-centred care while supporting and mentoring staff effectively.",
+        "Calm, compassionate, and adaptable, Rita is dedicated to creating a positive, nurturing environment where children and young people can thrive.",
+      ],
+    },
+    {
+      id: "gentiana-vasili",
+      photoKey: "gentiana",
+      name: "Gentiana (Genta) Vasili",
+      role: "Admin & Health and Safety Officer",
+      bio: [
+        "Gentiana is a proactive and detail-oriented Admin and Health & Safety Officer with over four years' experience in supported accommodation and organisational operations. She has a proven track record in HR administration, recruitment, onboarding, compliance, and staff training, combined with expertise in health and safety management across multiple housing sites.",
+        "Skilled in conducting audits, risk assessments, and ensuring regulatory compliance, she excels in developing policies that maintain safe, well-governed environments. Gentiana is highly organised, dependable, and confident in liaising with external agencies, regulators, and payroll providers. With strong interpersonal and problem-solving skills, she builds effective working relationships while ensuring high standards of operational and safety compliance across the organisation.",
+      ],
+    },
+    {
+      id: "conrad-rowe",
+      photoKey: "conrad",
+      name: "Conrad Rowe",
+      role: "Team Member",
+    },
+    {
+      id: "raze-cenalia",
+      photoKey: "raze",
+      name: "Raze Cenalia",
+      role: "Team Member",
+    },
+    {
+      id: "zoe-ellina",
+      photoKey: "zoe",
+      name: "Zoe Ellina",
+      role: "Team Member",
     },
   ],
 };

@@ -6,20 +6,42 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { TEAM } from "@/data/content";
-import team1 from "@/assets/team-1.jpg";
-import team2 from "@/assets/team-2.jpg";
-import team3 from "@/assets/team-3.jpg";
-import team4 from "@/assets/team-4.jpg";
-import team5 from "@/assets/team-5.jpg";
-import team6 from "@/assets/team-6.jpg";
-import team7 from "@/assets/team-7.jpg";
-import team8 from "@/assets/team-8.jpg";
-import team9 from "@/assets/team-9.jpg";
+import placeholder from "@/assets/t-placeholder.svg";
+import robert from "@/assets/t-robert.jpg";
+import tara from "@/assets/t-placeholder.svg";
+import florian from "@/assets/t-florian.jpg";
+import brikelda from "@/assets/t-placeholder.svg";
+import deborah from "@/assets/t-deborah.jpg";
+import erjona from "@/assets/t-erjona.jpg";
+import eugen from "@/assets/t-eugen.jpg";
+import fatmira from "@/assets/t-fatmira.jpg";
+import linda from "@/assets/t-linda.jpg";
+import riada from "@/assets/t-riada.jpg";
+import rita from "@/assets/t-rita.jpg";
+import gentiana from "@/assets/t-gentiana.jpg";
+import conrad from "@/assets/t-conrad.jpg";
+import raze from "@/assets/t-raze.jpg";
+import zoe from "@/assets/t-zoe.jpg";
 
-// Photo order matches TEAM.members order:
-// Robert(team-6), Brikelda(team-1), Deborah(team-2), Erjona(team-3),
-// Eugen(team-4), Fatmira(team-5), Rita(team-7), Linda(team-8), Riada(team-9)
-const PHOTOS = [team6, team1, team2, team3, team4, team5, team7, team8, team9];
+const PHOTO_MAP = {
+  robert,
+  tara,
+  florian,
+  brikelda,
+  deborah,
+  erjona,
+  eugen,
+  fatmira,
+  linda,
+  riada,
+  rita,
+  gentiana,
+  conrad,
+  raze,
+  zoe,
+};
+
+const photoFor = (key) => PHOTO_MAP[key] || placeholder;
 
 const BioDialog = ({ member, photo }) => (
   <Dialog>
@@ -50,26 +72,37 @@ const BioDialog = ({ member, photo }) => (
   </Dialog>
 );
 
-const TeamCard = ({ member, photo }) => (
-  <article data-testid="team-card" className="group">
-    <div className="relative rounded-3xl overflow-hidden aspect-[3/4]">
-      <img
-        src={photo}
-        alt={member.name}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        style={{ objectPosition: "center 30%" }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-[var(--rc-indigo-900)]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-    </div>
-    <div className="mt-5 text-center">
-      <h3 className="font-heading font-bold text-[var(--rc-ink)] text-lg group-hover:text-[var(--rc-indigo-600)] transition-colors">
-        {member.name}
-      </h3>
-      <p className="mt-1 text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--rc-indigo-500)]">{member.role}</p>
-      {member.bio && <BioDialog member={member} photo={photo} />}
-    </div>
-  </article>
-);
+const TeamCard = ({ member }) => {
+  const photo = photoFor(member.photoKey);
+  const hasPhoto = PHOTO_MAP[member.photoKey] && member.photoKey !== "tara" && member.photoKey !== "brikelda";
+  const hasBio = Array.isArray(member.bio) && member.bio.length > 0;
+
+  return (
+    <article data-testid="team-card" className="group">
+      <div className="relative rounded-3xl overflow-hidden aspect-[3/4] bg-[var(--rc-indigo-800)]">
+        <img
+          src={photo}
+          alt={member.name}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          style={{ objectPosition: "center 30%" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--rc-indigo-900)]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {!hasPhoto && (
+          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-white/90 text-[var(--rc-indigo-700)] text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1.5">
+            Photo coming soon
+          </span>
+        )}
+      </div>
+      <div className="mt-5 text-center">
+        <h3 className="font-heading font-bold text-[var(--rc-ink)] text-lg group-hover:text-[var(--rc-indigo-600)] transition-colors">
+          {member.name}
+        </h3>
+        <p className="mt-1 text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--rc-indigo-500)]">{member.role}</p>
+        {hasBio && <BioDialog member={member} photo={photo} />}
+      </div>
+    </article>
+  );
+};
 
 export const Team = () => (
   <section id="team" data-testid="team-section" className="bg-white py-24 lg:py-32">
@@ -84,8 +117,8 @@ export const Team = () => (
       </div>
 
       <div className="mt-14 grid grid-cols-2 lg:grid-cols-3 gap-7">
-        {TEAM.members.map((member, i) => (
-          <TeamCard key={member.id} member={member} photo={PHOTOS[i]} />
+        {TEAM.members.map((member) => (
+          <TeamCard key={member.id} member={member} />
         ))}
       </div>
     </div>
