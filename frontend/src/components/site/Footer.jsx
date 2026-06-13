@@ -3,6 +3,7 @@ import { Logo } from "@/components/site/Header";
 import { SocialLinks } from "@/components/site/SocialLinks";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { CONTACT, FOOTER } from "@/data/content";
+import { ICON_SM } from "@/constants/ui";
 
 const LinkColumn = ({ title, links, testId }) => (
   <div data-testid={testId}>
@@ -25,15 +26,15 @@ const FooterContact = () => (
     <p className="mt-6 text-sm text-white/65 leading-relaxed max-w-sm">{FOOTER.about}</p>
     <ul className="mt-6 space-y-3 text-sm text-white/80">
       <li className="flex items-center gap-3">
-        <Mail size={15} className="text-[var(--rc-lavender)]" />
+        <Mail size={ICON_SM} className="text-[var(--rc-lavender)]" />
         <a href={`mailto:${CONTACT.email}`} className="hover:text-white transition-colors" data-testid="footer-email">{CONTACT.email}</a>
       </li>
       <li className="flex items-center gap-3">
-        <PhoneCall size={15} className="text-[var(--rc-lavender)]" />
+        <PhoneCall size={ICON_SM} className="text-[var(--rc-lavender)]" />
         <a href={`tel:${CONTACT.phone.replace(/\s/g, "")}`} className="hover:text-white transition-colors" data-testid="footer-phone">{CONTACT.phone} · {CONTACT.mobile}</a>
       </li>
       <li className="flex items-start gap-3">
-        <MapPin size={15} className="text-[var(--rc-lavender)] mt-0.5" />
+        <MapPin size={ICON_SM} className="text-[var(--rc-lavender)] mt-0.5" />
         <span data-testid="footer-address">{CONTACT.address}</span>
       </li>
     </ul>

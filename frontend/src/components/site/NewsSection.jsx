@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { NEWS } from "@/data/content";
+import { ICON_SM } from "@/constants/ui";
 
 export const NewsSection = () => (
   <section id="news" data-testid="news-section" className="bg-[var(--rc-paper)] py-24 lg:py-32">
@@ -13,7 +14,7 @@ export const NewsSection = () => (
           <h2 className="rc-h2 mt-4" data-testid="news-title">{NEWS.title}</h2>
         </div>
         <a href="/contact" className="rc-btn-pill" data-testid="news-discover-btn">
-          Get In Touch <ArrowRight size={15} />
+          Get In Touch <ArrowRight size={ICON_SM} />
         </a>
       </div>
 

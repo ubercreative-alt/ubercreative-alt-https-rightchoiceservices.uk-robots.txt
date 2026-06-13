@@ -1,5 +1,6 @@
 import { Check, Play, HeartPulse, ArrowRight } from "lucide-react";
 import { WHO_WE_ARE } from "@/data/content";
+import { ICON_SM } from "@/constants/ui";
 
 const SupportMediaRow = () => (
   <div className="mt-8 grid sm:grid-cols-[1.2fr_1fr] gap-5">
@@ -66,7 +67,7 @@ export const WhoWeAre = () => (
         <CheckList items={WHO_WE_ARE.checks} />
 
         <a href="/services" className="rc-btn-pill mt-9 inline-flex" data-testid="about-learn-more">
-          Learn More <ArrowRight size={15} />
+          Learn More <ArrowRight size={ICON_SM} />
         </a>
       </div>
     </div>

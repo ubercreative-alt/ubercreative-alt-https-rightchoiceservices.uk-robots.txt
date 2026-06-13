@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Send } from "lucide-react";
 import { useSubmit } from "@/hooks/useSubmit";
 import { REFERRALS_PAGE } from "@/data/content";
+import { ICON_SM } from "@/constants/ui";
 
 const EMPTY_FORM = {
   name: "",
@@ -92,7 +93,7 @@ export const ReferralForm = () => {
         <GdprConsent checked={form.gdpr_consent} onToggle={toggleConsent} />
       </div>
       <button type="submit" disabled={sending} data-testid="referral-submit-btn" className="rc-btn-pill w-full mt-6 justify-center disabled:opacity-60">
-        {sending ? "Submitting..." : "Submit Referral"} <Send size={15} />
+        {sending ? "Submitting..." : "Submit Referral"} <Send size={ICON_SM} />
       </button>
     </form>
   );

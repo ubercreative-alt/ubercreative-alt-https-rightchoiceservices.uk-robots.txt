@@ -59,14 +59,13 @@ export const Header = () => {
   const isHome = location.pathname === "/";
 
   useEffect(() => {
-    // `onScroll` is declared inside the effect (not a closure dep) and
-    // `setScrolled` is a stable React setter, so this listener only needs
-    // to be attached once.
+    // `onScroll` is defined inside the effect (not a closure dep) and
+    // `SCROLLED_THRESHOLD_PX` is a module-level constant. `setScrolled` is
+    // the only stable dep React's exhaustive-deps rule expects.
     const onScroll = () => setScrolled(window.scrollY > SCROLLED_THRESHOLD_PX);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [setScrolled]);
 
   // Solid header on inner pages, transparent on home until scrolled
   const isSolid = scrolled || !isHome;

@@ -1,5 +1,6 @@
 import { Home, PhoneCall, KeyRound, Footprints, ShieldCheck, Route } from "lucide-react";
 import { BENEFITS } from "@/data/content";
+import { ICON_LG } from "@/constants/ui";
 
 const ICONS = { Home, PhoneCall, KeyRound, Footprints, ShieldCheck, Route };
 
@@ -28,7 +29,7 @@ export const Benefits = () => (
             const Icon = ICONS[item.icon];
             return (
               <div key={item.title} data-testid="benefit-item">
-                <Icon size={26} className="text-[var(--rc-lavender)]" strokeWidth={1.6} />
+                <Icon size={ICON_LG} className="text-[var(--rc-lavender)]" strokeWidth={1.6} />
                 <h4 className="mt-4 font-heading font-bold text-white text-[15px]">{item.title}</h4>
                 <p className="mt-1.5 text-[13px] text-white/60 leading-relaxed">{item.text}</p>
               </div>

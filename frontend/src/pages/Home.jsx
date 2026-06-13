@@ -4,6 +4,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { Hero } from "@/components/site/Hero";
 import { PartnersStrip } from "@/components/site/PartnersStrip";
 import { WHO_WE_ARE, SERVICES, TEAM, NEWS } from "@/data/content";
+import { ICON_MD, ICON_SM } from "@/constants/ui";
 
 const PREVIEW_CARDS = [
   {
@@ -62,7 +63,7 @@ const PreviewSection = () => (
             className="group rounded-3xl bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5"
           >
             <span className="grid place-items-center w-12 h-12 rounded-2xl bg-[var(--rc-indigo-50,#eef0ff)] text-[var(--rc-indigo-600)]">
-              <Icon size={22} />
+              <Icon size={ICON_MD} />
             </span>
             <p className="mt-6 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--rc-indigo-500)]">{card.label}</p>
             <h3 className="mt-2 font-heading font-bold text-[var(--rc-ink)] text-xl group-hover:text-[var(--rc-indigo-600)] transition-colors">
@@ -89,7 +90,7 @@ const HomeIntro = () => (
       <h2 className="rc-h2 mt-4">{WHO_WE_ARE.title}</h2>
       <p className="mt-6 text-[var(--rc-ink-soft)] leading-relaxed">{WHO_WE_ARE.description}</p>
       <Link to="/about" className="rc-btn-pill mt-9 inline-flex" data-testid="home-about-cta">
-        About Right Choice <ArrowRight size={15} />
+        About Right Choice <ArrowRight size={ICON_SM} />
       </Link>
     </div>
   </section>
@@ -107,7 +108,7 @@ const HomeNewsPreview = () => (
           <h2 className="rc-h2 mt-4">{NEWS.title}</h2>
         </div>
         <Link to="/news" className="rc-btn-pill" data-testid="home-news-all">
-          View All News <ArrowRight size={15} />
+          View All News <ArrowRight size={ICON_SM} />
         </Link>
       </div>
       <div className="mt-14 grid md:grid-cols-3 gap-7">
@@ -157,7 +158,7 @@ const HomeServicesPreview = () => (
       </div>
       <div className="mt-10">
         <Link to="/services" className="rc-btn-pill" data-testid="home-services-cta">
-          See All Services <ArrowRight size={15} />
+          See All Services <ArrowRight size={ICON_SM} />
         </Link>
       </div>
     </div>
@@ -175,7 +176,7 @@ const HomeTeamPreview = () => (
         <h2 className="rc-h2 mt-4 text-white">{TEAM.title}</h2>
         <p className="mt-5 text-white/75 leading-relaxed max-w-lg">{TEAM.description}</p>
         <Link to="/team" className="rc-btn-pill mt-9 inline-flex" data-testid="home-team-cta">
-          Meet the Team <ArrowRight size={15} />
+          Meet the Team <ArrowRight size={ICON_SM} />
         </Link>
       </div>
       <div className="grid grid-cols-3 gap-4">

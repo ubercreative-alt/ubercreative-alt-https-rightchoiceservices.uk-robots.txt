@@ -186,14 +186,18 @@ export const PROCESS = {
   ],
 };
 
+// Display percentages for the Safeguarding progress bars (out of 100)
+const SAFEGUARDING_HEALTH_PROGRESS = 92;
+const SAFEGUARDING_ETE_PROGRESS = 86;
+
 export const SAFEGUARDING = {
   label: "Safeguarding & Wellbeing",
   title: "Keeping young people safe while building independence.",
   description:
     "We plan and deliver programmes related to health, fitness, smoking, drugs, gang affiliation and risk, relationships and bullying — ensuring basic needs, health, safety and well-being are safeguarded.",
   bars: [
-    { label: "Health & Wellbeing Programmes", value: 92 },
-    { label: "Education, Training & Employment", value: 86 },
+    { label: "Health & Wellbeing Programmes", value: SAFEGUARDING_HEALTH_PROGRESS },
+    { label: "Education, Training & Employment", value: SAFEGUARDING_ETE_PROGRESS },
   ],
   cardTitle: "Resilience and Well-being",
   cardText: "Diversion from re-offending and pathways to brighter futures.",

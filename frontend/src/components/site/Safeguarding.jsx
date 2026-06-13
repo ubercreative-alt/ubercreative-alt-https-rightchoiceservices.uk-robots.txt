@@ -1,5 +1,6 @@
 import { Play, Sparkles } from "lucide-react";
 import { SAFEGUARDING } from "@/data/content";
+import { ICON_MD } from "@/constants/ui";
 
 export const Safeguarding = () => (
   <section data-testid="safeguarding-section" className="bg-white py-24 lg:py-32">
@@ -8,7 +9,7 @@ export const Safeguarding = () => (
         <img src={SAFEGUARDING.image} alt="One-to-one support session" className="w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" />
         <span className="absolute inset-0 grid place-items-center">
           <span className="grid place-items-center w-16 h-16 rounded-full bg-[var(--rc-indigo-600)] text-white shadow-xl">
-            <Play size={22} fill="currentColor" />
+            <Play size={ICON_MD} fill="currentColor" />
           </span>
         </span>
       </div>

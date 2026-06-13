@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
 import { useSubmit } from "@/hooks/useSubmit";
+import { ICON_SM } from "@/constants/ui";
 
 const EMPTY_FORM = { name: "", email: "", message: "" };
 
@@ -51,7 +52,7 @@ export const ContactForm = () => {
         />
       </div>
       <button type="submit" disabled={sending} data-testid="contact-submit-btn" className="rc-btn-pill w-full mt-6 justify-center disabled:opacity-60">
-        {sending ? "Sending..." : "Send Message"} <Send size={15} />
+        {sending ? "Sending..." : "Send Message"} <Send size={ICON_SM} />
       </button>
     </form>
   );

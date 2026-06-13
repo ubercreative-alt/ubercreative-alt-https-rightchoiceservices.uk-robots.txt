@@ -1,5 +1,6 @@
 import { ArrowRight, Home, ClipboardList, Users } from "lucide-react";
 import { SERVICES } from "@/data/content";
+import { ICON_LG } from "@/constants/ui";
 
 const ICONS = { Home, ClipboardList, Users };
 
@@ -31,7 +32,7 @@ export const FeaturedServices = () => (
               style={{ transitionDelay: `${i * 40}ms` }}
             >
               <span className="grid place-items-center w-14 h-14 rounded-2xl bg-[var(--rc-lavender)]/20 text-[var(--rc-lavender)]">
-                <Icon size={26} />
+                <Icon size={ICON_LG} />
               </span>
               <h3 className="mt-6 font-heading font-bold text-white text-xl leading-snug">{service.title}</h3>
               <p className="mt-3 text-sm text-white/65 leading-relaxed">{service.text}</p>

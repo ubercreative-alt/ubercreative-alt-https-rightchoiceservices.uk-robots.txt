@@ -141,10 +141,9 @@ function useToast() {
         listeners.splice(index, 1)
       }
     };
-    // `setState` is a stable React setter so this subscription only runs once.
-    // `listeners` is a module-level array (not a closure dep), and `index` is
-    // computed inside the cleanup (not a captured variable), so neither belongs
-    // in the dependency list — including `setState` satisfies exhaustive-deps.
+    // `setState` is a stable React setter so this subscription runs once.
+    // `listeners` is a module-level array and `index` is a cleanup-local
+    // constant — neither is a closure dep that exhaustive-deps should flag.
   }, [setState])
 
   return {

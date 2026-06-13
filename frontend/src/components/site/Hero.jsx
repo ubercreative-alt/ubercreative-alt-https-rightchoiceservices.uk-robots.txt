@@ -1,5 +1,6 @@
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { HERO } from "@/data/content";
+import { ICON_MD } from "@/constants/ui";
 
 const HeroServiceCards = () => (
   <div
@@ -14,7 +15,7 @@ const HeroServiceCards = () => (
             <h3 className="font-heading font-bold text-white text-lg">{card.title}</h3>
             <p className="mt-2 text-sm text-white/70 leading-relaxed">{card.text}</p>
           </div>
-          <ArrowUpRight size={22} className="shrink-0 text-[var(--rc-lavender)] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          <ArrowUpRight size={ICON_MD} className="shrink-0 text-[var(--rc-lavender)] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
         </div>
       </div>
     ))}

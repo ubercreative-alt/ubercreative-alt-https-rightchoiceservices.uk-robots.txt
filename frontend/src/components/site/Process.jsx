@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { PROCESS } from "@/data/content";
+import { ICON_SM } from "@/constants/ui";
 
 export const Process = () => (
   <section id="how-we-work" data-testid="process-section" className="bg-[var(--rc-paper)] py-24 lg:py-32">
@@ -13,7 +14,7 @@ export const Process = () => (
           <h2 className="rc-h2 mt-4" data-testid="process-title">{PROCESS.title}</h2>
           <p className="mt-5 text-[var(--rc-ink-soft)] leading-relaxed max-w-xl">{PROCESS.description}</p>
           <a href="/referrals" className="rc-btn-pill mt-8 inline-flex" data-testid="process-cta">
-            {PROCESS.cta} <ArrowRight size={15} />
+            {PROCESS.cta} <ArrowRight size={ICON_SM} />
           </a>
         </div>
         <img src={PROCESS.image} alt="Meeting with partner agencies" className="rounded-[2rem] w-full h-[340px] object-cover shadow-lg shadow-[var(--rc-indigo-900)]/10" />

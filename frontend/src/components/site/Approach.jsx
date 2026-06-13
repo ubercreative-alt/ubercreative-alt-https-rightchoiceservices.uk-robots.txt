@@ -1,5 +1,6 @@
 import { Check, Play, ArrowRight } from "lucide-react";
 import { APPROACH } from "@/data/content";
+import { ICON_MD, ICON_SM } from "@/constants/ui";
 
 export const Approach = () => (
   <section data-testid="approach-section" className="bg-[var(--rc-paper)] py-24 lg:py-32 relative overflow-hidden">
@@ -9,7 +10,7 @@ export const Approach = () => (
         <img src={APPROACH.image} alt="Our team working together" className="w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" />
         <span className="absolute inset-0 grid place-items-center">
           <span className="grid place-items-center w-16 h-16 rounded-full bg-white text-[var(--rc-indigo-700)] shadow-xl">
-            <Play size={22} fill="currentColor" />
+            <Play size={ICON_MD} fill="currentColor" />
           </span>
         </span>
       </div>
@@ -26,7 +27,7 @@ export const Approach = () => (
           {APPROACH.points.map((point) => (
             <div key={point.title} className="flex gap-3.5">
               <span className="mt-1 shrink-0">
-                <Check size={22} className="text-[var(--rc-indigo-500)]" strokeWidth={3} />
+                <Check size={ICON_MD} className="text-[var(--rc-indigo-500)]" strokeWidth={3} />
               </span>
               <div>
                 <h4 className="font-heading font-bold text-[var(--rc-ink)]">{point.title}</h4>
@@ -37,7 +38,7 @@ export const Approach = () => (
         </div>
 
         <a href="/services" className="rc-btn-pill mt-9 inline-flex" data-testid="approach-learn-more">
-          Learn More <ArrowRight size={15} />
+          Learn More <ArrowRight size={ICON_SM} />
         </a>
       </div>
     </div>
