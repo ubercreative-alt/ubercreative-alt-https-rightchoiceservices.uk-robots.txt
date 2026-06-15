@@ -7,8 +7,8 @@ export default function TeamPage() {
       <PageHero
         testId="team-hero"
         label="Our Team"
-        title="Meet the dedicated people behind Right Choice."
-        description="Our experienced support workers and leaders bring decades of combined experience in safeguarding, social care, keywork and youth development."
+        title="The Right Choice Services Team."
+        description="Here at Right Choice Services LTD, we are incredibly proud of our staff and their level of professionalism, care and respect. Our ethos is to ensure that all staff are well-equipped to undertake their role safely and confidently."
       />
       <Team />
     </PageShell>

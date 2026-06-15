@@ -24,7 +24,7 @@ import raze from "@/assets/t-raze.jpg";
 import zoe from "@/assets/t-zoe.jpg";
 import shirley from "@/assets/t-shirley.jpg";
 import teamMember1 from "@/assets/t-team-1.jpg";
-import teamMember2 from "@/assets/t-team-2.jpg";
+import arjan from "@/assets/t-arjan.jpg";
 
 const PHOTO_MAP = {
   robert,
@@ -44,7 +44,7 @@ const PHOTO_MAP = {
   zoe,
   shirley,
   teamMember1,
-  teamMember2,
+  arjan,
 };
 
 const photoFor = (key) => PHOTO_MAP[key] || placeholder;
@@ -113,13 +113,17 @@ const TeamCard = ({ member }) => {
 export const Team = () => (
   <section id="team" data-testid="team-section" className="bg-white py-24 lg:py-32">
     <div className="mx-auto max-w-7xl px-6 lg:px-10">
-      <div className="text-center max-w-2xl mx-auto">
+      <div className="text-center max-w-3xl mx-auto">
         <p className="rc-label justify-center text-[var(--rc-indigo-600)]">
           <span className="rc-label-line bg-[var(--rc-indigo-600)]" />
           {TEAM.label}
         </p>
         <h2 className="rc-h2 mt-4" data-testid="team-title">{TEAM.title}</h2>
         <p className="mt-4 text-[var(--rc-ink-soft)] leading-relaxed">{TEAM.description}</p>
+      </div>
+
+      <div className="mt-10 max-w-4xl mx-auto rounded-3xl bg-[var(--rc-paper)] p-7 lg:p-9 text-center" data-testid="team-staff-note">
+        <p className="text-sm text-[var(--rc-ink-soft)] leading-relaxed">{TEAM.staffNote}</p>
       </div>
 
       <div className="mt-14 grid grid-cols-2 lg:grid-cols-3 gap-7">

@@ -10,7 +10,8 @@ export const NAV_LINKS = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Team", href: "/team" },
-  { label: "News", href: "/news" },
+  { label: "Testimonials", href: "/testimonials" },
+  { label: "Policies", href: "/policies" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -57,17 +58,18 @@ export const STATS = {
 };
 
 export const WHO_WE_ARE = {
-  label: "Who We Are",
-  title: "The young people that we support.",
+  label: "About Us",
+  title: "Welcome to Right Choice Services Ltd.",
   description:
-    "The young people we work with come to us from a variety of situations — directly from their family home, after previously failed placements, when struggling in care, or during transition periods. They may still be attending school or college, or be unable to access education for any reason.",
+    "Our commitment is to provide exceptional supported accommodation in and around the South East of England as well as bespoke support services to young people. We specialise in catering to the unique needs of a diverse range of young individuals, offering a comprehensive range of support to empower them on their journey towards independence.",
   quote:
-    "We provide a fresh start. Something different that young people can engage with to forge a better future, while their basic needs, health, safety and well-being are safeguarded.",
+    "We provide both physical and emotional space for young people to be themselves, make mistakes, and learn from them without fear of ridicule.",
   cardTitle: "Practical & Holistic Support",
   cardText: "Helping young people get back on track and build firm foundations.",
   checks: [
-    "Tailored, needs-led support within the framework of looked-after children",
-    "Safety, health and well-being safeguarded at every step",
+    "Supported accommodation for 16–18 year olds, including 24-hour supervised units",
+    "Shared accommodation for 18–21 year olds with floating support",
+    "Emergency placements available within 72 hours of agreement",
   ],
 };
 
@@ -109,18 +111,18 @@ export const PILLARS = {
 };
 
 export const APPROACH = {
-  label: "Our Approach",
-  title: "Practical and holistic approaches to get back on track.",
+  label: "Our Mission",
+  title: "Helping young people transition smoothly into adulthood.",
   description:
-    "They might not be able to imagine a brighter future for themselves — we can. Our dedicated support staff, alongside relevant professionals, help young people build a firm foundation for future success while ensuring safety in the short term.",
+    "At Right Choice Services Ltd, we recognise the challenges that young people face when entering supported accommodation and we are dedicated to making this transition smoother. Our focus is on providing a safe and nurturing environment where young people can explore their individuality, learn from their experiences, and develop essential life skills at their own pace.",
   points: [
     {
-      title: "Goal-Led Support",
-      text: "Working with partner agencies to identify need and deliver goal-led support.",
+      title: "Pathway Planning",
+      text: "We create robust daily action placement plans to ensure real and meaningful progress — going beyond documentation.",
     },
     {
-      title: "Needs-Led Framework",
-      text: "Bespoke packages put together with each young person's needs in mind.",
+      title: "Space to Grow",
+      text: "Personal physical and emotional space for young people to manage their lives, discover and develop their potential.",
     },
   ],
   image:
@@ -128,25 +130,25 @@ export const APPROACH = {
 };
 
 export const SERVICES = {
-  label: "Featured Services",
-  title: "Comprehensive services designed around young people.",
+  label: "Our Services",
+  title: "A unique service for young people with specific needs.",
   description:
-    "Bespoke packages within a dedicated framework — covering planning, safeguarding, administration and meeting specific needs.",
+    "Right Choice Services LTD offers a unique service that provides for young people with specific and individual needs. We assist our young adults to re-settle in the wider community and reach their potential. Services are needs-led and within the framework of looked-after children. Comprehensive and bespoke packages are put together with each young person's needs in mind.",
   items: [
     {
       icon: "Home",
-      title: "Accommodation & Living Support",
-      text: "Supported accommodation for 16–18s and 18+, with 24/7/365 support worker contact and responsible adult support.",
+      title: "Dedicated Accommodation & Living Support",
+      text: "High-quality supported accommodation for 16–18 and 18+, with designated support hours, 24/7/365 worker contact, outreach and keyworking.",
     },
     {
       icon: "ClipboardList",
       title: "Support Planning & Administration",
-      text: "Ongoing assessment of need, pathway plans, casework to divert from re-offending and end of placement reports.",
+      text: "Ongoing assessment of need, pathway plans, casework to divert from re-offending, exit planning and end of placement reports.",
     },
     {
       icon: "Users",
-      title: "Working with Service Users",
-      text: "Mentoring, befriending, counselling, arts-based activities, outdoor education and outreach with at-risk groups.",
+      title: "Working With Our Service Users",
+      text: "Mentoring, befriending, counselling, arts-based and outdoor activities, and outreach with at-risk groups in cafés, restaurants and on the street.",
     },
   ],
   bgImage:
@@ -206,8 +208,10 @@ export const SAFEGUARDING = {
 };
 
 export const TESTIMONIALS = {
-  label: "Success Stories",
+  label: "Testimonials",
   title: "What professionals and young people say.",
+  intro:
+    "Many of the specifics of the work that we undertake here at Right Choice Services can't be shared with the public due to privacy and safeguarding reasons. We are incredibly grateful, therefore, when previous service users, agencies and other professionals who have worked with us take the time out of their busy day to leave us a testimonial. We hope these reviews help illustrate the way that we support young people and the impact that our programmes can have.",
   items: [
     {
       quote:
@@ -230,30 +234,30 @@ export const TESTIMONIALS = {
 
 export const TEAM = {
   label: "Our Team",
-  title: "Meet the dedicated people behind Right Choice.",
+  title: "The Right Choice Services Team.",
   description:
-    "Our dedicated support staff work alongside relevant professionals to help young people build a firm foundation for future success.",
+    "Here at Right Choice Services LTD, we are incredibly proud of our staff and their level of professionalism, care and respect. Right Choice Services' ethos is to ensure that all staff are well-equipped to undertake their role safely and confidently.",
+  staffNote:
+    "Our staff team ensures that effective care and support at an appropriate ratio is offered at all times. Our team includes Team Leaders, Support Workers, a Designated Safeguarding Lead, a Deputy Safeguarding Lead, plus valuable maintenance and administration roles.",
   members: [
     {
-      id: "robert-toska",
-      photoKey: "robert",
-      name: "Robert Toska",
-      role: "Nominated Individual",
+      id: "arjan",
+      photoKey: "arjan",
+      name: "Arjan",
+      role: "Director & Nominated Person",
       bio: [
-        "Robert is a highly accomplished social care professional with over 20 years of experience in safeguarding, quality assurance, and leadership within children's services. He has held a range of senior roles, including Independent Reviewing Officer (IRO), Team Manager, and Deputy Head of Service for a Leaving Care Service. His extensive expertise spans Looked After Children, safeguarding practice, fostering regulations, court proceedings, and transition planning.",
-        "As an IRO for over a decade, Robert has been a consistent advocate for the voice of the child, ensuring care and permanency plans are child-centred, legally compliant, and outcome-focused. He has led multi-agency reviews, chaired complex planning meetings, conducted in-depth case audits, and managed formal dispute resolution processes to drive improvements in care quality.",
-        "In his leadership roles, Robert has managed teams of Social Workers, overseen service budgets, developed and implemented policies, and embedded health and safety and risk management protocols. He has also delivered workforce training, chaired transition panels, and played a key role in preparing services for Ofsted inspections, contributing to positive outcomes.",
-        "With a strong track record in service development, robust safeguarding knowledge, and proven leadership capabilities, Robert is deeply committed to promoting the welfare of children and young people while ensuring full compliance with statutory and regulatory framework standards.",
+        "Our Director and Nominated Person holds a Diploma in Leadership and Management and an NVQ3 qualification in Health and Social Care.",
+        "With over 17 years of social care experience, he has gained a wealth of knowledge and skills in working with children and young people in a semi-independent setting, residential care homes, challenging behaviour, fostering services and outreach support.",
       ],
     },
     {
       id: "tara",
       photoKey: "tara",
       name: "Tara",
-      role: "Registered Service Manager & Designated Safeguarding Lead",
+      role: "Service Manager & Designated Safeguarding Lead",
       bio: [
-        "Tara is the Registered Service Manager and Designated Safeguarding Lead. With over 18 years of experience in the children and families sector, including children's homes, supported accommodation, and schools across both private and local authority settings, she brings exceptional expertise and dedication to her role. Tara holds a BA Honours in Education Studies from Middlesex University and a Level 5 Diploma in Leadership & Management for Children and Young People, achieved with distinction. She has also completed extensive higher-level training in safeguarding, safer recruitment, managing allegations, exploitation, and related specialist areas.",
-        "Tara has a strong focus on bringing therapeutic ways of working into supported accommodation, a provision that is relatively newly regulated by Ofsted, and is always seeking ways to improve the service and support we provide to young people. She takes a hands-on approach in her management style, often working alongside young people on the \"shop floor\" to ensure she is fully connected to their needs. Tara ensures compliance with the Supported Accommodation 2023 regulations and oversees the day-to-day running of the homes, including policies and procedures, auditing, quality assurance, safeguarding, training, health and safety, and matching placements. Known for her professionalism, warmth, and forward-thinking approach, Tara ensures the service is safe, supportive, and tailored to help every young person thrive.",
+        "Our Service Manager holds a BA (Hons) in Education Studies and a Level 5 Leadership and Management in Children & Young People's Services.",
+        "She has over 15 years of experience working with children and young people in various settings including residential, respite and educational facilities. Tara has over four years of supervisory experience in managing staff and is the Designated Safeguarding Lead — with the responsibility of reporting any safeguarding concerns to the Local Authority and LADO, as well as providing training and support to staff members.",
       ],
     },
     {
@@ -393,12 +397,6 @@ export const TEAM = {
       name: "Name to be confirmed",
       role: "Team Member",
     },
-    {
-      id: "team-member-2",
-      photoKey: "teamMember2",
-      name: "Name to be confirmed",
-      role: "Team Member",
-    },
   ],
 };
 
@@ -512,11 +510,34 @@ export const NEWS = {
   ],
 };
 
+export const POLICIES_PAGE = {
+  label: "Policies",
+  title: "Our Policies & Procedures",
+  intro:
+    "At Right Choice Services LTD, we follow all required legislation and proactively include advised best practice guidelines in all aspects of our organisation. Our dedicated policies and procedures shape how we support and safeguard our service users, visitors and other professionals within our settings, protecting and championing our staff and more.",
+  outro:
+    "If you have any questions or need clarification on any aspect of our work please don't hesitate to get in touch.",
+  items: [
+    { title: "Safeguarding Children & Young People", text: "Our core safeguarding framework — protecting every young person in our care and reporting concerns to the Local Authority and LADO." },
+    { title: "Health & Safety", text: "Risk assessments, accident reporting and safe environment standards across all of our supported accommodation sites." },
+    { title: "Equality, Diversity & Inclusion", text: "A commitment to fair, respectful and inclusive treatment for staff, service users and partners." },
+    { title: "Data Protection & GDPR", text: "How we collect, store and use personal information in line with UK GDPR and the Data Protection Act 2018." },
+    { title: "Complaints & Whistleblowing", text: "Clear and confidential routes for service users, families and staff to raise concerns." },
+    { title: "Behaviour & De-escalation", text: "Positive behaviour support, de-escalation techniques and the safe management of challenging behaviour." },
+    { title: "Missing from Home", text: "Procedures for responding to and supporting young people who go missing from placement." },
+    { title: "Child Sexual Exploitation & County Lines", text: "Identifying risks, partnership working and trauma-informed support for young people at risk of exploitation." },
+    { title: "Medication Management", text: "Safe storage, administration and recording of medication for young people in our care." },
+    { title: "Recruitment & Safer Recruitment", text: "Robust vetting, DBS checks, references and ongoing supervision for every member of staff." },
+  ],
+  note:
+    "Full policy documents are available on request. Please contact us via the contact page to request a copy.",
+};
+
 export const REFERRALS_PAGE = {
-  label: "Referral Programme",
+  label: "Referrals",
   title: "Make a Referral",
   intro:
-    "We strive to ensure that working with us is as easy as possible. To streamline our processes you can now refer directly and easily by completing the referral form. Please use it to request supported accommodation or support services for a young person.",
+    "We strive to ensure that working with us is as easy as possible. To streamline our processes we have now included an option for you to refer directly and easily by completing the referral form below. Please use this to request supported accommodation or support services for a young person. If you need to speak to us or have any questions please contact us directly and we will be more than happy to help.",
   steps: [
     { number: "01.", title: "Submit the Form", text: "Complete the referral form with the young person's details and your contact information." },
     { number: "02.", title: "We Get in Touch", text: "Our team reviews the referral and contacts you to discuss needs, timescales and availability." },
@@ -533,7 +554,8 @@ export const FOOTER = {
     { label: "About Us", href: "/about" },
     { label: "Our Services", href: "/services" },
     { label: "Our Team", href: "/team" },
-    { label: "FAQs", href: "/faq" },
+    { label: "Testimonials", href: "/testimonials" },
+    { label: "Policies", href: "/policies" },
     { label: "Contact Us", href: "/contact" },
   ],
   featuredLinks: [
@@ -541,7 +563,7 @@ export const FOOTER = {
     { label: "Keywork & Life Skills", href: "/services" },
     { label: "Outreach Support", href: "/services" },
     { label: "Safeguarding", href: "/about" },
-    { label: "Latest News", href: "/news" },
+    { label: "FAQs", href: "/faq" },
     { label: "Make a Referral", href: "/referrals" },
   ],
 };

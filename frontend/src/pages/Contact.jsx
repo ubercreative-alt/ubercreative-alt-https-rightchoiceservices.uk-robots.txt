@@ -7,8 +7,10 @@ const ContactDetails = () => (
   <div data-testid="contact-details">
     <h2 className="rc-h2">Get in touch.</h2>
     <p className="mt-5 text-[var(--rc-ink-soft)] leading-relaxed max-w-md">
-      If you&apos;re an agency or professional wanting to refer a young person to Right Choice Services Ltd, or you have any
-      questions about the services we offer, please don&apos;t hesitate to get in touch.
+      Thank you for visiting our website. You&apos;ll find a wealth of information here about our services. Our policies page may also be of interest. If you have any questions about the services we offer please don&apos;t hesitate to get in touch.
+    </p>
+    <p className="mt-4 text-[var(--rc-ink-soft)] leading-relaxed max-w-md">
+      Are you an agency or professional and ready to refer a young person to Right Choice Services LTD? If so, please fill in the form on our referral page. We look forward to hearing from you.
     </p>
     <ul className="mt-10 space-y-5 text-sm text-[var(--rc-ink)]">
       <li className="flex items-start gap-4">

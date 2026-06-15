@@ -2,7 +2,6 @@ import { PageShell, PageHero } from "@/components/site/PageShell";
 import { WhoWeAre } from "@/components/site/WhoWeAre";
 import { Approach } from "@/components/site/Approach";
 import { Safeguarding } from "@/components/site/Safeguarding";
-import { Testimonials } from "@/components/site/Testimonials";
 
 export default function About() {
   return (
@@ -10,13 +9,12 @@ export default function About() {
       <PageHero
         testId="about-hero"
         label="About Us"
-        title="About Right Choice Services."
-        description="A distinctive programme devoted to the welfare and development of young individuals navigating the transition from the care of local authorities and/or custody across the South East of England."
+        title="About Right Choice Services Ltd."
+        description="Welcome to Right Choice Services Ltd, where our commitment is to provide exceptional supported accommodation and bespoke support services to young people across the South East of England."
       />
       <WhoWeAre />
       <Approach />
       <Safeguarding />
-      <Testimonials />
     </PageShell>
   );
 }
