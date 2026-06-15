@@ -16,10 +16,10 @@ export const NAV_LINKS = [
 ];
 
 export const HERO = {
-  tagline: "Empowering Young Lives",
-  title: "Dedicated accommodation and support for young people.",
+  tagline: "Above the Fold",
+  title: "Empowering Young Lives: The South East's Dedicated Accommodation and Support Service.",
   description:
-    "Right Choice Services LTD offers a distinctive programme devoted to the welfare and development of young individuals navigating the transition from the care of local authorities and/or custody in the South East of England.",
+    "Right Choice Services LTD offers a distinctive programme devoted to the welfare and development of young individuals navigating the transition from the care of local authorities and/or custody in the South-East of England. We currently support young people in North London, Essex and Medway.",
   primaryCta: "Make a Referral",
   secondaryCta: "Our Services",
   cards: [
