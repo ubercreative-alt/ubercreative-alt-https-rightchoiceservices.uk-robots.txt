@@ -22,6 +22,9 @@ import gentiana from "@/assets/t-gentiana.jpg";
 import conrad from "@/assets/t-conrad.jpg";
 import raze from "@/assets/t-raze.jpg";
 import zoe from "@/assets/t-zoe.jpg";
+import shirley from "@/assets/t-shirley.jpg";
+import teamMember1 from "@/assets/t-team-1.jpg";
+import teamMember2 from "@/assets/t-team-2.jpg";
 
 const PHOTO_MAP = {
   robert,
@@ -39,6 +42,9 @@ const PHOTO_MAP = {
   conrad,
   raze,
   zoe,
+  shirley,
+  teamMember1,
+  teamMember2,
 };
 
 const photoFor = (key) => PHOTO_MAP[key] || placeholder;
