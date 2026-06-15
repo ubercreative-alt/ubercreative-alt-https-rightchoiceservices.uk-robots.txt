@@ -1,55 +1,34 @@
-import { PhoneCall, Mail, ArrowRight } from "lucide-react";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { ReferralForm } from "@/components/site/ReferralForm";
-import { CONTACT, REFERRALS_PAGE } from "@/data/content";
-
-const ReferralInfo = () => (
-  <div>
-    <h2 className="rc-h2">What happens next?</h2>
-    <div className="mt-9 space-y-7">
-      {REFERRALS_PAGE.steps.map((step) => (
-        <div key={step.number} className="flex gap-5">
-          <span className="font-heading font-bold text-3xl text-[var(--rc-lavender-deep)]">{step.number}</span>
-          <div>
-            <h4 className="font-heading font-bold text-[var(--rc-ink)]">{step.title}</h4>
-            <p className="mt-1.5 text-sm text-[var(--rc-ink-soft)] leading-relaxed">{step.text}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-    <div className="mt-10 rounded-2xl bg-[var(--rc-indigo-800)] p-7">
-      <h4 className="font-heading font-bold text-white text-lg">Got questions?</h4>
-      <p className="mt-2 text-sm text-white/70">
-        If you need to speak to us or have any questions, please contact us directly and we will be more than happy to help.
-      </p>
-      <div className="mt-5 space-y-2 text-sm text-white/85">
-        <p className="flex items-center gap-2.5">
-          <PhoneCall size={14} className="text-[var(--rc-lavender)]" /> {CONTACT.phone} · {CONTACT.mobile}
-        </p>
-        <p className="flex items-center gap-2.5">
-          <Mail size={14} className="text-[var(--rc-lavender)]" /> {CONTACT.email}
-        </p>
-      </div>
-      <a href="/contact" data-testid="referrals-contact-link" className="mt-6 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[var(--rc-lavender)] hover:text-white transition-colors">
-        Contact Us <ArrowRight size={14} />
-      </a>
-    </div>
-  </div>
-);
 
 export default function Referrals() {
   return (
     <PageShell testId="referrals-page">
       <PageHero
         testId="referrals-hero"
-        label={REFERRALS_PAGE.label}
-        title={REFERRALS_PAGE.title}
-        description={REFERRALS_PAGE.intro}
+        label="Referrals"
+        title="Referrals."
+        description="We strive to ensure that working with us is as easy as possible."
       />
       <section className="bg-[var(--rc-paper)] py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-[1fr_1.2fr] gap-14 items-start">
-          <ReferralInfo />
-          <ReferralForm />
+        <div className="mx-auto max-w-3xl px-6 lg:px-10">
+          <div className="space-y-5 text-[var(--rc-ink-soft)] leading-relaxed text-center">
+            <p>
+              We strive to ensure that working with us is as easy as possible. To streamline our processes we have now included an option for you to refer directly and easily by completing the referral form below.
+            </p>
+            <p>
+              Please use this to request supported accommodation or support services for a young person.
+            </p>
+            <p>
+              If you need to speak to us or have any questions please contact us directly and we will be more than happy to help.
+            </p>
+          </div>
+
+          <h2 className="rc-h2 mt-16 text-center">Referral Form.</h2>
+
+          <div className="mt-10">
+            <ReferralForm />
+          </div>
         </div>
       </section>
     </PageShell>

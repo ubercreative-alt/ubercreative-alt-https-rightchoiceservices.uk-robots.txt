@@ -238,7 +238,26 @@ export const TEAM = {
   description:
     "Here at Right Choice Services LTD, we are incredibly proud of our staff and their level of professionalism, care and respect. Right Choice Services' ethos is to ensure that all staff are well-equipped to undertake their role safely and confidently.",
   staffNote:
-    "Our staff team ensures that effective care and support at an appropriate ratio is offered at all times. Our team includes Team Leaders, Support Workers, a Designated Safeguarding Lead, a Deputy Safeguarding Lead, plus valuable maintenance and administration roles.",
+    "Our staff team ensures that effective care and support at an appropriate ratio is offered at all times.",
+  staffRoles: [
+    "Team Leaders",
+    "Support Workers",
+    "Designated Safeguarding Lead",
+    "Deputy Safeguarding Lead",
+    "Other valuable roles include maintenance, administration and more",
+  ],
+  specialisms: {
+    title: "Staff Team Specialisms",
+    text: "We encourage all of our staff to explore and train in specialisms that interest them. This not only furthers their own professional development but also increases the value and the depth of support that our service users experience. The specialisms staff can train in are varied but include supporting Asylum-Seeking Children (UASC), supporting LGBTQ+, dealing with dependency, education and more.",
+  },
+  training: {
+    title: "Staff Training and Development",
+    text: "Right Choice Services' ethos is to ensure that all staff are well-equipped to undertake their role safely and confidently. We encourage our support staff to establish a specialism in an area of their choice and use their expertise to educate others.",
+  },
+  workWithUs: {
+    title: "Want to Work With Us?",
+    text: "If you want to know more about current or upcoming vacancies get in touch via our contact page.",
+  },
   members: [
     {
       id: "arjan",
@@ -266,8 +285,7 @@ export const TEAM = {
       name: "Florian Shabanaj",
       role: "Team Leader",
       bio: [
-        "Florian is a dedicated Team Leader supporting young people aged 16–18 in Ofsted-regulated supported accommodation. He has particular expertise in managing solo placements and challenging behaviours, ensuring each young person receives safe, consistent, and personalised care. Florian combines strong problem-solving and organisational skills with a compassionate, hands-on approach that helps young people feel supported and empowered.",
-        "Fluent in Albanian and English, with good Italian, Florian is highly trained in safeguarding children and adults, risk management, health and safety, mental health, and youth exploitation. He is committed to creating structured, safe, and nurturing environments where young people can thrive and achieve positive outcomes.",
+        "Florian is our deputy safeguarding lead, bringing invaluable expertise to our team. With a passion for creating safe and supportive environments, he has not only accumulated several years of experience working with young people but also possesses advanced training in safeguarding protocols, ensuring the highest standards of protection for those we support.",
       ],
     },
     {
@@ -371,7 +389,10 @@ export const TEAM = {
       id: "conrad-rowe",
       photoKey: "conrad",
       name: "Conrad Rowe",
-      role: "Team Member",
+      role: "Team Leader",
+      bio: [
+        "Conrad is our Exploitation, Gangs and County Lines specialist. He worked for St Giles Trust as a mentor/coach. Conrad had a rocky start when he was younger and as such has first-hand knowledge and experience of some of the issues he now helps others with. His past has provided valuable insight and Conrad also trains and guides many of the staff.",
+      ],
     },
     {
       id: "raze-cenalia",

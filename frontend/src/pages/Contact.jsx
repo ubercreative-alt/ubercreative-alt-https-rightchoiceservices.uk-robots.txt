@@ -5,13 +5,16 @@ import { CONTACT } from "@/data/content";
 
 const ContactDetails = () => (
   <div data-testid="contact-details">
-    <h2 className="rc-h2">Get in touch.</h2>
-    <p className="mt-5 text-[var(--rc-ink-soft)] leading-relaxed max-w-md">
-      Thank you for visiting our website. You&apos;ll find a wealth of information here about our services. Our policies page may also be of interest. If you have any questions about the services we offer please don&apos;t hesitate to get in touch.
-    </p>
-    <p className="mt-4 text-[var(--rc-ink-soft)] leading-relaxed max-w-md">
-      Are you an agency or professional and ready to refer a young person to Right Choice Services LTD? If so, please fill in the form on our referral page. We look forward to hearing from you.
-    </p>
+    <div className="space-y-5 text-[var(--rc-ink-soft)] leading-relaxed">
+      <p>
+        Thank you for visiting our website. You&apos;ll find a wealth of information here about our services. Our policies page may also be of interest. If you have any questions about the services we offer please don&apos;t hesitate to get in touch.
+      </p>
+      <p>
+        Are you an agency or professional and ready to refer a young person to Right Choice Services LTD? If so, please fill in the form on our referral page.
+      </p>
+      <p className="text-[var(--rc-ink)] font-heading font-bold text-lg">We look forward to hearing from you.</p>
+    </div>
+
     <ul className="mt-10 space-y-5 text-sm text-[var(--rc-ink)]">
       <li className="flex items-start gap-4">
         <span className="grid place-items-center w-11 h-11 rounded-2xl bg-[var(--rc-indigo-50,#eef0ff)] text-[var(--rc-indigo-600)] shrink-0">
@@ -56,8 +59,8 @@ export default function Contact() {
       <PageHero
         testId="contact-hero"
         label="Contact"
-        title="We'd love to hear from you."
-        description="Reach our team directly for referrals, partnerships or any question about our supported accommodation and keywork services."
+        title="Contact Page."
+        description="Get in touch with our team for referrals, partnerships or any question about our supported accommodation and keywork services."
       />
       <section className="bg-[var(--rc-paper)] py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-[1fr_1.2fr] gap-14 items-start">
