@@ -23,7 +23,6 @@ import conrad from "@/assets/t-conrad.jpg";
 import raze from "@/assets/t-raze.jpg";
 import zoe from "@/assets/t-zoe.jpg";
 import shirley from "@/assets/t-shirley.jpg";
-import teamMember1 from "@/assets/t-team-1.jpg";
 import arjan from "@/assets/t-arjan.jpg";
 
 const PHOTO_MAP = {
@@ -43,7 +42,6 @@ const PHOTO_MAP = {
   raze,
   zoe,
   shirley,
-  teamMember1,
   arjan,
 };
 

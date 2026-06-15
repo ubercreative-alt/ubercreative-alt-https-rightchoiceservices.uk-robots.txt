@@ -391,12 +391,6 @@ export const TEAM = {
       name: "Shirley Marie Cecile Bennett",
       role: "Team Member",
     },
-    {
-      id: "team-member-1",
-      photoKey: "teamMember1",
-      name: "Name to be confirmed",
-      role: "Team Member",
-    },
   ],
 };
 
