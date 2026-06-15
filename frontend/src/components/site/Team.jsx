@@ -8,7 +8,7 @@ import {
 import { TEAM } from "@/data/content";
 import placeholder from "@/assets/t-placeholder.svg";
 import robert from "@/assets/t-robert.jpg";
-import tara from "@/assets/t-placeholder.svg";
+import tara from "@/assets/t-tara.jpg";
 import florian from "@/assets/t-florian.jpg";
 import brikelda from "@/assets/t-placeholder.svg";
 import deborah from "@/assets/t-deborah.jpg";
@@ -80,7 +80,7 @@ const BioDialog = ({ member, photo }) => (
 
 const TeamCard = ({ member }) => {
   const photo = photoFor(member.photoKey);
-  const hasPhoto = PHOTO_MAP[member.photoKey] && member.photoKey !== "tara" && member.photoKey !== "brikelda";
+  const hasPhoto = PHOTO_MAP[member.photoKey] && member.photoKey !== "brikelda";
   const hasBio = Array.isArray(member.bio) && member.bio.length > 0;
 
   return (
