@@ -268,13 +268,6 @@ export const TEAM = {
   },
   members: [
     {
-      id: "robert-toska",
-      photoKey: "robert",
-      name: "Robert Toska",
-      role: "Nominated Individual",
-      bio: "Robert is a highly accomplished social care professional with over 20 years of experience in safeguarding, quality assurance, and leadership within children's services. He has held a range of senior roles, including Independent Reviewing Officer (IRO), Team Manager, and Deputy Head of Service for a Leaving Care Service. His extensive expertise spans Looked After Children, safeguarding practice, fostering regulations, court proceedings, and transition planning. As an IRO for over a decade, Robert has been a consistent advocate for the voice of the child, ensuring care and permanency plans are child-centred, legally compliant, and outcome-focused. He has led multi-agency reviews, chaired complex planning meetings, conducted in-depth case audits, and managed formal dispute resolution processes to drive improvements in care quality. In his leadership roles, Robert has managed teams of Social Workers, overseen service budgets, developed and implemented policies, and embedded health and safety and risk management protocols. He has also delivered workforce training, chaired transition panels, and played a key role in preparing services for Ofsted inspections, contributing to positive outcomes. With a strong track record in service development, robust safeguarding knowledge, and proven leadership capabilities, Robert is deeply committed to promoting the welfare of children and young people while ensuring full compliance with statutory and regulatory framework standards.",
-    },
-    {
       id: "eugen-bardho",
       photoKey: "eugen",
       name: "Eugen Bardho",
@@ -322,6 +315,13 @@ export const TEAM = {
       name: "Gentiana (Genta) Vasili",
       role: "Admin Officer & Health and Safety Officer",
       bio: "Gentiana is a proactive and detail-oriented Admin and Health & Safety Officer with over four years' experience in supported accommodation and organizational operations. She has a proven track record in HR administration, recruitment, onboarding, compliance, and staff training, combined with expertise in health and safety management across multiple housing sites. Skilled in conducting audits, risk assessments, and ensuring regulatory compliance, she excels in developing policies that maintain safe, well-governed environments. Gentiana is highly organized, dependable, and confident in liaising with external agencies, regulators, and payroll providers. With strong interpersonal and problem-solving skills, she builds effective working relationships while ensuring high standards of operational and safety compliance across the organization.",
+    },
+    {
+      id: "robert-toska",
+      photoKey: "robert",
+      name: "Robert Toska",
+      role: "Nominated Individual",
+      bio: "Robert is a highly accomplished social care professional with over 20 years of experience in safeguarding, quality assurance, and leadership within children's services. He has held a range of senior roles, including Independent Reviewing Officer (IRO), Team Manager, and Deputy Head of Service for a Leaving Care Service. His extensive expertise spans Looked After Children, safeguarding practice, fostering regulations, court proceedings, and transition planning. As an IRO for over a decade, Robert has been a consistent advocate for the voice of the child, ensuring care and permanency plans are child-centred, legally compliant, and outcome-focused. He has led multi-agency reviews, chaired complex planning meetings, conducted in-depth case audits, and managed formal dispute resolution processes to drive improvements in care quality. In his leadership roles, Robert has managed teams of Social Workers, overseen service budgets, developed and implemented policies, and embedded health and safety and risk management protocols. He has also delivered workforce training, chaired transition panels, and played a key role in preparing services for Ofsted inspections, contributing to positive outcomes. With a strong track record in service development, robust safeguarding knowledge, and proven leadership capabilities, Robert is deeply committed to promoting the welfare of children and young people while ensuring full compliance with statutory and regulatory framework standards.",
     },
   ],
 };
