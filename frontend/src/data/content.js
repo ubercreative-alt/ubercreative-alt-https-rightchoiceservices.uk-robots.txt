@@ -1,8 +1,8 @@
 export const CONTACT = {
-  address: "22 Mount Pleasant Road, Barnet, EN4 9HH",
+  address: "109 The Grange, 100 High Street, Southgate, N14 6BN",
   phone: "01992 850277",
   mobile: "07830 107651",
-  email: "info@rightchoiceservices.org",
+  email: "info@rightchoiceservices.org.uk",
 };
 
 export const NAV_LINKS = [
