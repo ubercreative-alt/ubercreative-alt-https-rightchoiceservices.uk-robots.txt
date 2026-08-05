@@ -15,6 +15,36 @@ import zoe from "@/assets/t-zoe.jpg";
 const PHOTO_MAP = { brikelda, erjona, eugen, fatmira, gentiana, riada, zoe };
 const photoFor = (key) => PHOTO_MAP[key] || placeholder;
 
+// ---- director spotlight (blue hero continuation) ----------------------------
+
+const DirectorSpotlight = ({ director }) => {
+  if (!director) return null;
+  return (
+    <section
+      data-testid="director-spotlight"
+      className="relative bg-[var(--rc-indigo-900)] text-white pb-24 lg:pb-32 -mt-1"
+    >
+      <div className="mx-auto max-w-4xl px-6 lg:px-10">
+        <div className="rounded-[2rem] bg-white/[0.06] backdrop-blur-sm border border-white/10 p-8 lg:p-12">
+          <p className="rc-label text-[var(--rc-lavender)]">
+            <span className="rc-label-line bg-[var(--rc-lavender)]" />
+            Meet Our Director
+          </p>
+          <h2 className="mt-4 font-heading font-bold text-white text-3xl sm:text-4xl">{director.name}</h2>
+          <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--rc-lavender)]">
+            {director.role}
+          </p>
+          <div className="mt-7 space-y-5 text-white/80 leading-relaxed">
+            {director.bio.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // ---- roster card ------------------------------------------------------------
 
 const RosterCard = ({ member }) => {
@@ -132,6 +162,7 @@ export default function TeamPage() {
         title="The Right Choice Services Team."
         description={TEAM.description}
       />
+      <DirectorSpotlight director={TEAM.director} />
       <TeamRoster members={TEAM.members} />
       <StaffTeamSection />
       <Specialisms />

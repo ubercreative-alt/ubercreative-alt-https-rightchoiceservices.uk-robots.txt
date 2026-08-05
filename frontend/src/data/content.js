@@ -237,6 +237,14 @@ export const TEAM = {
   title: "The Right Choice Services Team.",
   description:
     "Here at Right Choice Services LTD, we are incredibly proud of our staff and their level of professionalism, care and respect. Right Choice Services' ethos is to ensure that all staff are well-equipped to undertake their role safely and confidently.",
+  director: {
+    name: "Arjan",
+    role: "Director",
+    bio: [
+      "Arjan is the Director at Right Choice Services and brings over 24 years of experience working within Health and Social Care. He holds a Diploma in Leadership and Management and an NVQ Level 3 in Health and Social Care, with extensive experience across supported accommodation, residential children's homes, fostering services, outreach services, charities and mental health support. Alongside his professional career, Arjan has over 13 years of experience as a foster carer, providing stable and nurturing homes for children and young people and has developed a particular specialism in supporting unaccompanied asylum-seeking children to settle, build resilience and achieve positive outcomes.",
+      "Throughout his career Arjan has demonstrated a strong commitment to improving the lives of vulnerable children and young people through compassionate, relationship-based practice and effective leadership. His broad management experience includes service development, leadership and management, recruitment, health and safety, governance, quality assurance property development, ensuring services consistently deliver high standards of care, accommodation and support. In recognition of his dedication to supporting individuals and strengthening communities, Arjan was honoured with the Ambassador for Peace Award for his outstanding contributions to community development. He remains passionate about creating safe, nurturing environments where children and young people are empowered to overcome adversity, develop independence and achieve their full potential.",
+    ],
+  },
   staffNote:
     "Our staff team ensures that effective care and support at an appropriate ratio is offered at all times.",
   staffRoles: [
