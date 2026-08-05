@@ -11,8 +11,9 @@ import fatmira from "@/assets/t-fatmira.jpg";
 import gentiana from "@/assets/t-gentiana.jpg";
 import riada from "@/assets/t-riada.jpg";
 import zoe from "@/assets/t-zoe.jpg";
+import robert from "@/assets/t-robert.jpg";
 
-const PHOTO_MAP = { brikelda, erjona, eugen, fatmira, gentiana, riada, zoe };
+const PHOTO_MAP = { brikelda, erjona, eugen, fatmira, gentiana, riada, zoe, robert };
 const photoFor = (key) => PHOTO_MAP[key] || placeholder;
 
 // ---- director spotlight (blue hero continuation) ----------------------------
