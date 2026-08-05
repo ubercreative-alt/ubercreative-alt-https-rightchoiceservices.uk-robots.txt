@@ -274,6 +274,20 @@ export const TEAM = {
       bio: "Fatmira Pjetri is an accomplished social work and child protection professional with over 20 years of experience in disability services, education, and community development. She served as Project Manager for the Community Centre for Disability Services at World Vision Albania, where she leaded a multidisciplinary team to provide specialized support to children and youth with disabilities, both in the centre and through mobile and school-based services. Throughout her career, Fatmira has demonstrated strong expertise in project management, team leadership, stakeholder engagement, and advocacy for social inclusion. She has successfully overseen programs impacting thousands of children and youth, delivered life skills and vocational training, coordinated emergency responses, and built sustainable partnerships with local authorities and NGOs. Fatmira holds a degree in English from \"Aleksander Xhuvani\" University and has completed numerous professional development programs, including international child protection training, project management for development practitioners, and specialized courses in disability rights and inclusive education. She is fluent in English, proficient in Italian, and is passionate about empowering vulnerable communities, promoting equity, and ensuring high-quality, sustainable services for children and youth.",
     },
     {
+      id: "riada-mjeshtri",
+      photoKey: "riada",
+      name: "Riada Mjeshtri",
+      role: "Team Leader",
+      bio: "Riada is a highly experienced educator and children's support professional with over a decade of teaching experience in primary and secondary schools. She combines her expertise in curriculum planning, special needs education, and modern teaching methods with extensive training in safeguarding, child protection, and managing challenging behaviours. Trained in key areas including Safeguarding Children and Adults, Mental Health for Young People, De-escalation Techniques, First Aid, and Risk Management, Riada is equipped to lead a team in providing safe, nurturing, and structured support for children and young people in residential or supported living settings. Riada is a skilled communicator and team leader, adept at mentoring staff, managing day-to-day operations, and creating positive, developmental environments where young people can thrive. Her leadership, professional integrity, and dedication make her a trusted figure for both colleagues and the children in her care.",
+    },
+    {
+      id: "zoe-elina",
+      photoKey: "zoe",
+      name: "Zoe Elina",
+      role: "Team Leader",
+      bio: "Zoe is a dedicated and experienced Team Leader with extensive expertise in supporting young people and adults in care settings. She excels in emotional, social, and practical support, helping clients achieve independence, manage finances, and engage in education, training, and employment. With a strong background in leadership roles across social care and retail management, Zoe combines excellent interpersonal, organizational, and time-management skills with a positive, professional approach. She is highly trained in safeguarding, risk management, and health and safety, and holds qualifications in residential childcare and children, young people, and family practice.",
+    },
+    {
       id: "brikelda-shabanaj",
       photoKey: "brikelda",
       name: "Brikelda",

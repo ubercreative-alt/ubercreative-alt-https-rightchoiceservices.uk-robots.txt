@@ -9,8 +9,10 @@ import erjona from "@/assets/t-erjona.jpg";
 import eugen from "@/assets/t-eugen.jpg";
 import fatmira from "@/assets/t-fatmira.jpg";
 import gentiana from "@/assets/t-gentiana.jpg";
+import riada from "@/assets/t-riada.jpg";
+import zoe from "@/assets/t-zoe.jpg";
 
-const PHOTO_MAP = { brikelda, erjona, eugen, fatmira, gentiana };
+const PHOTO_MAP = { brikelda, erjona, eugen, fatmira, gentiana, riada, zoe };
 const photoFor = (key) => PHOTO_MAP[key] || placeholder;
 
 // ---- roster card ------------------------------------------------------------
