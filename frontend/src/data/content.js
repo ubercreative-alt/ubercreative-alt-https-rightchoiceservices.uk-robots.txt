@@ -237,14 +237,30 @@ export const TEAM = {
   title: "The Right Choice Services Team.",
   description:
     "Here at Right Choice Services LTD, we are incredibly proud of our staff and their level of professionalism, care and respect. Right Choice Services' ethos is to ensure that all staff are well-equipped to undertake their role safely and confidently.",
-  director: {
-    name: "Arjan",
-    role: "Director",
-    bio: [
-      "Arjan is the Director at Right Choice Services and brings over 24 years of experience working within Health and Social Care. He holds a Diploma in Leadership and Management and an NVQ Level 3 in Health and Social Care, with extensive experience across supported accommodation, residential children's homes, fostering services, outreach services, charities and mental health support. Alongside his professional career, Arjan has over 13 years of experience as a foster carer, providing stable and nurturing homes for children and young people and has developed a particular specialism in supporting unaccompanied asylum-seeking children to settle, build resilience and achieve positive outcomes.",
-      "Throughout his career Arjan has demonstrated a strong commitment to improving the lives of vulnerable children and young people through compassionate, relationship-based practice and effective leadership. His broad management experience includes service development, leadership and management, recruitment, health and safety, governance, quality assurance property development, ensuring services consistently deliver high standards of care, accommodation and support. In recognition of his dedication to supporting individuals and strengthening communities, Arjan was honoured with the Ambassador for Peace Award for his outstanding contributions to community development. He remains passionate about creating safe, nurturing environments where children and young people are empowered to overcome adversity, develop independence and achieve their full potential.",
-    ],
-  },
+  director: null,
+  leadership: [
+    {
+      id: "arjan",
+      photoKey: null,
+      name: "Arjan",
+      role: "Director",
+      bio: [
+        "Arjan is the Director at Right Choice Services and brings over 24 years of experience working within Health and Social Care. He holds a Diploma in Leadership and Management and an NVQ Level 3 in Health and Social Care, with extensive experience across supported accommodation, residential children's homes, fostering services, outreach services, charities and mental health support. Alongside his professional career, Arjan has over 13 years of experience as a foster carer, providing stable and nurturing homes for children and young people and has developed a particular specialism in supporting unaccompanied asylum-seeking children to settle, build resilience and achieve positive outcomes.",
+        "Throughout his career Arjan has demonstrated a strong commitment to improving the lives of vulnerable children and young people through compassionate, relationship-based practice and effective leadership. His broad management experience includes service development, leadership and management, recruitment, health and safety, governance, quality assurance property development, ensuring services consistently deliver high standards of care, accommodation and support. In recognition of his dedication to supporting individuals and strengthening communities, Arjan was honoured with the Ambassador for Peace Award for his outstanding contributions to community development. He remains passionate about creating safe, nurturing environments where children and young people are empowered to overcome adversity, develop independence and achieve their full potential.",
+      ],
+    },
+    {
+      id: "tara",
+      photoKey: "tara",
+      name: "Tara",
+      role: "Registered Service Manager",
+      bio: [
+        "Tara is the Registered Service Manager at Right Choice Services and brings over 20 years of experience working with children, young people and families across residential care, supported accommodation, respite services and educational settings. She holds a BA (Hons) in Education Studies and a Level 5 Diploma in Leadership and Management for Children and Young People's Services.",
+        "Tara is passionate about achieving positive outcomes for children and young people, particularly those with complex needs and challenging life experiences. She has built a strong reputation for developing trusting relationships, creating nurturing environments and delivering personalised, child-centred support that enables young people to develop independence, resilience and confidence. As the Designated Safeguarding Lead, she has completed enhanced safeguarding training and works closely with Local Authorities, the LADO and partner agencies to ensure the highest standards of safeguarding and care. She is also committed to continually developing her knowledge through therapeutic training, ensuring her practice remains trauma-informed and relationship-based.",
+        "Under Tara's leadership, Right Choice Services achieved the highest possible grading of Outcome 1 at its first Ofsted inspection, reflecting her commitment to excellence, strong leadership and the positive outcomes achieved by young people. She is dedicated to continuous improvement and empowering both her team and the young people they support to achieve their full potential and successfully transition into adulthood.",
+      ],
+    },
+  ],
   staffNote:
     "Our staff team ensures that effective care and support at an appropriate ratio is offered at all times.",
   staffRoles: [

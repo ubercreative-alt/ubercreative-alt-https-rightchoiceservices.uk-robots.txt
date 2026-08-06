@@ -15,34 +15,60 @@ import florian from "@/assets/t-florian.jpg";
 import deborah from "@/assets/t-deborah.jpg";
 import linda from "@/assets/t-linda.jpg";
 import shirley from "@/assets/t-shirley.jpg";
+import tara from "@/assets/t-tara.jpg";
 
-const PHOTO_MAP = { brikelda, erjona, eugen, fatmira, gentiana, riada, zoe, florian, deborah, linda, shirley };
+const PHOTO_MAP = { brikelda, erjona, eugen, fatmira, gentiana, riada, zoe, florian, deborah, linda, shirley, tara };
 const photoFor = (key) => PHOTO_MAP[key] || placeholder;
 
-// ---- director spotlight (blue hero continuation) ----------------------------
+// ---- leadership spotlight (blue hero continuation) --------------------------
 
-const DirectorSpotlight = ({ director }) => {
-  if (!director) return null;
+const LeaderCard = ({ leader }) => {
+  const photo = leader.photoKey ? photoFor(leader.photoKey) : null;
+  return (
+    <article
+      data-testid="leadership-card"
+      className="rounded-[2rem] bg-white/[0.06] backdrop-blur-sm border border-white/10 p-7 lg:p-9 flex flex-col"
+    >
+      {photo && (
+        <div className="relative rounded-2xl overflow-hidden aspect-[4/5] mb-7 bg-[var(--rc-indigo-800)]">
+          <img
+            src={photo}
+            alt={leader.name}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "center 25%" }}
+          />
+        </div>
+      )}
+      <h3 className="font-heading font-bold text-white text-2xl sm:text-3xl">{leader.name}</h3>
+      <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--rc-lavender)]">
+        {leader.role}
+      </p>
+      <div className="mt-5 space-y-4 text-white/80 leading-relaxed text-sm">
+        {leader.bio.map((paragraph) => (
+          <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+        ))}
+      </div>
+    </article>
+  );
+};
+
+const LeadershipSpotlight = ({ leaders }) => {
+  if (!leaders || leaders.length === 0) return null;
   return (
     <section
-      data-testid="director-spotlight"
+      data-testid="leadership-spotlight"
       className="relative bg-[var(--rc-indigo-900)] text-white pb-24 lg:pb-32 -mt-1"
     >
-      <div className="mx-auto max-w-4xl px-6 lg:px-10">
-        <div className="rounded-[2rem] bg-white/[0.06] backdrop-blur-sm border border-white/10 p-8 lg:p-12">
-          <p className="rc-label text-[var(--rc-lavender)]">
-            <span className="rc-label-line bg-[var(--rc-lavender)]" />
-            Meet Our Director
-          </p>
-          <h2 className="mt-4 font-heading font-bold text-white text-3xl sm:text-4xl">{director.name}</h2>
-          <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--rc-lavender)]">
-            {director.role}
-          </p>
-          <div className="mt-7 space-y-5 text-white/80 leading-relaxed">
-            {director.bio.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-            ))}
-          </div>
+      <div className="mx-auto max-w-6xl px-6 lg:px-10">
+        <p className="rc-label text-[var(--rc-lavender)]">
+          <span className="rc-label-line bg-[var(--rc-lavender)]" />
+          Senior Management
+        </p>
+        <h2 className="rc-h2 mt-4 text-white">Meet Our Leadership.</h2>
+        <div className="mt-10 grid lg:grid-cols-2 gap-7 items-start">
+          {leaders.map((leader) => (
+            <LeaderCard key={leader.id} leader={leader} />
+          ))}
         </div>
       </div>
     </section>
@@ -166,7 +192,7 @@ export default function TeamPage() {
         title="The Right Choice Services Team."
         description={TEAM.description}
       />
-      <DirectorSpotlight director={TEAM.director} />
+      <LeadershipSpotlight leaders={TEAM.leadership} />
       <TeamRoster members={TEAM.members} />
       <StaffTeamSection />
       <Specialisms />
