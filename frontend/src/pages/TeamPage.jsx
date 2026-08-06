@@ -11,9 +11,12 @@ import fatmira from "@/assets/t-fatmira.jpg";
 import gentiana from "@/assets/t-gentiana.jpg";
 import riada from "@/assets/t-riada.jpg";
 import zoe from "@/assets/t-zoe.jpg";
-import robert from "@/assets/t-robert.jpg";
+import florian from "@/assets/t-florian.jpg";
+import deborah from "@/assets/t-deborah.jpg";
+import linda from "@/assets/t-linda.jpg";
+import shirley from "@/assets/t-shirley.jpg";
 
-const PHOTO_MAP = { brikelda, erjona, eugen, fatmira, gentiana, riada, zoe, robert };
+const PHOTO_MAP = { brikelda, erjona, eugen, fatmira, gentiana, riada, zoe, florian, deborah, linda, shirley };
 const photoFor = (key) => PHOTO_MAP[key] || placeholder;
 
 // ---- director spotlight (blue hero continuation) ----------------------------
