@@ -319,7 +319,7 @@ export const TEAM = {
     {
       id: "florian-shabanaj",
       photoKey: "florian",
-      name: "Florian Shabanja",
+      name: "Florin Shabanaj",
       role: "Team Leader",
       bio: "Florian is an experienced Team Leader with a strong background in operations management, social care, and safeguarding. With over a decade managing production and operations at FA & BI SH.P.K he has developed excellent leadership, organizational, and problem-solving skills. Florian has also supported international organizations such as OSCE/ODIHR as a long-term observer, demonstrating reliability, professionalism, and adaptability. Alongside his managerial expertise, he has completed extensive specialist training in safeguarding children and adults, risk management, health and safety (Level 3/4), mental health, challenging behaviour, and youth exploitation. Fluent in Albanian and English, with good Italian, Florian is highly committed to building safe, supportive environments and guiding teams to achieve positive outcomes for young people and communities.",
     },
@@ -327,14 +327,14 @@ export const TEAM = {
       id: "brikelda-shabanaj",
       photoKey: "brikelda",
       name: "Brikelda",
-      role: "Support Worker / Keyworker",
+      role: "Team Leader",
       bio: "Brikelda has a strong academic background in language, communication, and linguistics. She has a deep interest in learning, communication, and personal development, and continues to build her knowledge through training, research, and professional courses. Brikelda is a multilingual language professional and educator with over a decade of experience in teaching, interpreting, translation, and support work. Currently, she works as a support worker/key worker, helping young people develop independence, life skills, and confidence through person-centred care and close collaboration with professional networks. Known for her friendly and reliable nature, Brikelda brings a positive and people-focused approach to everything she does. She communicates clearly, listens carefully, and pays close attention to detail. Her strengths include strong organisation, adaptability, critical thinking, and the ability to work comfortably with people from different backgrounds. Brikelda values professionalism, trust, and clear communication, and is known for creating respectful, supportive, and effective working relationships.",
     },
     {
       id: "erjona-selko",
       photoKey: "erjona",
       name: "Erjona Selko",
-      role: "Support Worker",
+      role: "Team Leader",
       bio: "Erjona is a highly qualified academic and care professional with a Postgraduate Diploma in Cancer and Therapeutics from Queen Mary University of London, where she graduated with distinction. She also holds a Master's degree in Environmental Protection, a graded certification in Ecology, Behaviour, Evolution and Biosystematics from the Norwegian University of Science and Technology, and a Bachelor's degree in Biochemistry, all completed with honours. Her professional experience includes two years working in supported living, where she has provided direct care and guidance to young people, promoting independence and wellbeing. Before this, she worked as an Assistant Lecturer in University where she delivered seminars, supervised dissertations, and supported students in laboratory practices. Alongside her teaching, she has conducted research in biodiversity, environmental protection, cancer therapeutics, and genomics. Erjona is passionate about education, mentoring, and creating positive environments for growth. She has also volunteered as a mentor for children with special educational needs and represented student voices to improve learning experiences. With a strong balance of academic excellence, hands-on care experience, and organisational skills, she brings knowledge, compassion, and dedication to her role in supported living.",
     },
     {
