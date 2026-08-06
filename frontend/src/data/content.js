@@ -317,6 +317,13 @@ export const TEAM = {
       bio: "With over 20 years of experience supporting children, young people and families, I have worked across Youth Offending Services, substance misuse services, the Probation Service and Parenting Support. My career has been dedicated to safeguarding vulnerable young people, reducing risk, promoting positive outcomes and helping individuals overcome barriers to success. I bring extensive expertise in trauma-informed practice, child protection, risk assessment, multi-agency partnership working and supporting young people with complex needs. At Right Choice Services, I am committed to delivering high-quality, young person-centred support that empowers young people to develop independence, build resilience and achieve their full potential in safe, nurturing environments.",
     },
     {
+      id: "florian-shabanaj",
+      photoKey: "florian",
+      name: "Florian Shabanja",
+      role: "Team Leader",
+      bio: "Florian is an experienced Team Leader with a strong background in operations management, social care, and safeguarding. With over a decade managing production and operations at FA & BI SH.P.K he has developed excellent leadership, organizational, and problem-solving skills. Florian has also supported international organizations such as OSCE/ODIHR as a long-term observer, demonstrating reliability, professionalism, and adaptability. Alongside his managerial expertise, he has completed extensive specialist training in safeguarding children and adults, risk management, health and safety (Level 3/4), mental health, challenging behaviour, and youth exploitation. Fluent in Albanian and English, with good Italian, Florian is highly committed to building safe, supportive environments and guiding teams to achieve positive outcomes for young people and communities.",
+    },
+    {
       id: "brikelda-shabanaj",
       photoKey: "brikelda",
       name: "Brikelda",
@@ -336,13 +343,6 @@ export const TEAM = {
       name: "Gentiana (Genta) Vasili",
       role: "Admin Officer & Health and Safety Officer",
       bio: "Gentiana is a proactive and detail-oriented Admin and Health & Safety Officer with over four years' experience in supported accommodation and organizational operations. She has a proven track record in HR administration, recruitment, onboarding, compliance, and staff training, combined with expertise in health and safety management across multiple housing sites. Skilled in conducting audits, risk assessments, and ensuring regulatory compliance, she excels in developing policies that maintain safe, well-governed environments. Gentiana is highly organized, dependable, and confident in liaising with external agencies, regulators, and payroll providers. With strong interpersonal and problem-solving skills, she builds effective working relationships while ensuring high standards of operational and safety compliance across the organization.",
-    },
-    {
-      id: "florian-shabanaj",
-      photoKey: "florian",
-      name: "Florian Shabanja",
-      role: "Team Leader",
-      bio: "Florian is an experienced Team Leader with a strong background in operations management, social care, and safeguarding. With over a decade managing production and operations at FA & BI SH.P.K he has developed excellent leadership, organizational, and problem-solving skills. Florian has also supported international organizations such as OSCE/ODIHR as a long-term observer, demonstrating reliability, professionalism, and adaptability. Alongside his managerial expertise, he has completed extensive specialist training in safeguarding children and adults, risk management, health and safety (Level 3/4), mental health, challenging behaviour, and youth exploitation. Fluent in Albanian and English, with good Italian, Florian is highly committed to building safe, supportive environments and guiding teams to achieve positive outcomes for young people and communities.",
     },
   ],
 };
