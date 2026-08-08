@@ -241,8 +241,8 @@ export const TEAM = {
   leadership: [
     {
       id: "arjan",
-      photoKey: null,
-      name: "Arjan",
+      photoKey: "arjan",
+      name: "Arjan Terziu",
       role: "Director",
       bio: [
         "Arjan is the Director at Right Choice Services and brings over 24 years of experience working within Health and Social Care. He holds a Diploma in Leadership and Management and an NVQ Level 3 in Health and Social Care, with extensive experience across supported accommodation, residential children's homes, fostering services, outreach services, charities and mental health support. Alongside his professional career, Arjan has over 13 years of experience as a foster carer, providing stable and nurturing homes for children and young people and has developed a particular specialism in supporting unaccompanied asylum-seeking children to settle, build resilience and achieve positive outcomes.",
@@ -252,7 +252,7 @@ export const TEAM = {
     {
       id: "tara",
       photoKey: "tara",
-      name: "Tara",
+      name: "Tara Young",
       role: "Registered Service Manager",
       bio: [
         "Tara is the Registered Service Manager at Right Choice Services and brings over 20 years of experience working with children, young people and families across residential care, supported accommodation, respite services and educational settings. She holds a BA (Hons) in Education Studies and a Level 5 Diploma in Leadership and Management for Children and Young People's Services.",
@@ -342,7 +342,7 @@ export const TEAM = {
     {
       id: "brikelda-shabanaj",
       photoKey: "brikelda",
-      name: "Brikelda",
+      name: "Brikelda Shabanaj",
       role: "Team Leader",
       bio: "Brikelda has a strong academic background in language, communication, and linguistics. She has a deep interest in learning, communication, and personal development, and continues to build her knowledge through training, research, and professional courses. Brikelda is a multilingual language professional and educator with over a decade of experience in teaching, interpreting, translation, and support work. Currently, she works as a support worker/key worker, helping young people develop independence, life skills, and confidence through person-centred care and close collaboration with professional networks. Known for her friendly and reliable nature, Brikelda brings a positive and people-focused approach to everything she does. She communicates clearly, listens carefully, and pays close attention to detail. Her strengths include strong organisation, adaptability, critical thinking, and the ability to work comfortably with people from different backgrounds. Brikelda values professionalism, trust, and clear communication, and is known for creating respectful, supportive, and effective working relationships.",
     },

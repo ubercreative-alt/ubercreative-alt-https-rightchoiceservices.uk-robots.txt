@@ -16,8 +16,9 @@ import deborah from "@/assets/t-deborah.jpg";
 import linda from "@/assets/t-linda.jpg";
 import shirley from "@/assets/t-shirley.jpg";
 import tara from "@/assets/t-tara.jpg";
+import arjan from "@/assets/t-arjan.jpg";
 
-const PHOTO_MAP = { brikelda, erjona, eugen, fatmira, gentiana, riada, zoe, florian, deborah, linda, shirley, tara };
+const PHOTO_MAP = { brikelda, erjona, eugen, fatmira, gentiana, riada, zoe, florian, deborah, linda, shirley, tara, arjan };
 const photoFor = (key) => PHOTO_MAP[key] || placeholder;
 
 // ---- leadership spotlight (blue hero continuation) --------------------------
