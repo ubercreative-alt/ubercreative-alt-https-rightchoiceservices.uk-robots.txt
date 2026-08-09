@@ -48,7 +48,7 @@ export default function ServiceDetailPage() {
 
             {/* Main */}
             <div className="lg:col-span-2 order-1 lg:order-2">
-              <Reveal className="rounded-3xl overflow-hidden">
+              <Reveal className="rounded-3xl overflow-hidden" variant="right">
                 <img src={service.image} alt={service.title} className="w-full h-[380px] md:h-[460px] object-cover" />
               </Reveal>
               <Reveal>
@@ -65,7 +65,7 @@ export default function ServiceDetailPage() {
               </Reveal>
               <div className="grid grid-cols-3 gap-4 mt-8">
                 {service.gallery.map((g, i) => (
-                  <Reveal key={i} delay={i * 90} className="rounded-2xl overflow-hidden">
+                  <Reveal key={i} delay={i * 90} variant="zoom" className="rounded-2xl overflow-hidden">
                     <img src={g} alt={`${service.title} example ${i + 1}`} className="w-full h-32 md:h-44 object-cover" />
                   </Reveal>
                 ))}
@@ -83,7 +83,7 @@ export default function ServiceDetailPage() {
               </Reveal>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {roofingServices.items.map((r, i) => (
-                  <Reveal key={r.title} delay={(i % 3) * 90}>
+                  <Reveal key={r.title} delay={(i % 3) * 90} variant="zoom">
                     <div className="group rounded-3xl overflow-hidden bg-white ring-1 ring-black/5 hover:shadow-xl transition-shadow h-full">
                       <div className="relative h-52 overflow-hidden">
                         <img src={r.image} alt={r.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />

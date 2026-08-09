@@ -38,17 +38,17 @@ export default function ProjectDetailPage() {
 
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-6">
-            <Reveal className="rounded-3xl overflow-hidden">
+            <Reveal className="rounded-3xl overflow-hidden" variant="up">
               <img src={project.image} alt={project.title} className="w-full h-[420px] md:h-[560px] object-cover" />
             </Reveal>
 
             <div className="grid lg:grid-cols-3 gap-10 mt-12">
-              <Reveal className="lg:col-span-2">
+              <Reveal className="lg:col-span-2" variant="left">
                 <span className="inline-block text-brand font-semibold tracking-[0.2em] text-sm mb-4">PROJECT OVERVIEW</span>
                 <h2 className="font-heading font-extrabold text-ink text-3xl md:text-4xl leading-tight">{project.title}</h2>
                 <p className="mt-5 text-mute text-[17px] leading-relaxed">{project.overview}</p>
               </Reveal>
-              <Reveal>
+              <Reveal variant="right">
                 <div className="rounded-3xl bg-ink text-white p-8">
                   <h3 className="font-heading font-bold text-xl mb-5">Project Details</h3>
                   <ul className="space-y-4">
@@ -82,10 +82,10 @@ export default function ProjectDetailPage() {
                 const reversed = i % 2 === 1;
                 return (
                   <div key={ph.key} className="grid lg:grid-cols-2 gap-10 items-center">
-                    <Reveal className={`rounded-3xl overflow-hidden ${reversed ? "lg:order-2" : ""}`}>
+                    <Reveal className={`rounded-3xl overflow-hidden ${reversed ? "lg:order-2" : ""}`} variant={reversed ? "right" : "left"}>
                       <img src={data.image} alt={`${project.title} \u2013 ${ph.label}`} className="w-full h-[360px] md:h-[440px] object-cover" />
                     </Reveal>
-                    <Reveal className={reversed ? "lg:order-1" : ""}>
+                    <Reveal className={reversed ? "lg:order-1" : ""} variant={reversed ? "left" : "right"}>
                       <div className="flex items-center gap-4">
                         <span className="font-heading font-extrabold text-5xl text-brand/20">{ph.tag}</span>
                         <span className="inline-block bg-brand text-white text-sm font-semibold px-4 py-1.5 rounded-full">{ph.label}</span>

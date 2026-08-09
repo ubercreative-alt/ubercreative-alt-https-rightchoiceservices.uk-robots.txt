@@ -21,7 +21,7 @@ export default function RecentWork() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {projects.items.map((p, i) => (
-            <Reveal key={p.title} delay={(i % 3) * 90}>
+            <Reveal key={p.title} delay={(i % 3) * 90} variant="zoom">
               <Link to={`/projects/${p.slug}`} className="group relative rounded-3xl overflow-hidden h-[300px] block">
                 <img src={p.image} alt={p.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />

@@ -9,11 +9,11 @@ export default function Faq() {
   return (
     <section className="bg-ink text-white py-24">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
-        <Reveal className="rounded-3xl overflow-hidden">
+        <Reveal className="rounded-3xl overflow-hidden" variant="left">
           <img src={faqs.image} alt="Renovation planning" className="w-full h-[480px] object-cover" />
         </Reveal>
 
-        <Reveal>
+        <Reveal variant="right">
           <span className="inline-block text-brand-400 font-semibold tracking-[0.2em] text-sm mb-4">{faqs.eyebrow}</span>
           <h2 className="font-heading font-extrabold text-4xl md:text-5xl leading-tight">{faqs.title}</h2>
           <div className="mt-8 space-y-4">

@@ -15,7 +15,7 @@ export default function Services() {
 
         <div className="grid sm:grid-cols-2 gap-6 mt-12">
           {services.items.map((s, i) => (
-            <Reveal key={s.slug} delay={i * 90}>
+            <Reveal key={s.slug} delay={i * 90} variant="zoom">
               <Link to={`/services/${s.slug}`} className="group block relative rounded-3xl overflow-hidden h-[340px]">
                 <img src={s.image} alt={s.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />

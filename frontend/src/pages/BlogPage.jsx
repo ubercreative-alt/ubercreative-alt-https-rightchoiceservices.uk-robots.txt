@@ -22,7 +22,7 @@ export default function BlogPage() {
             </Reveal>
             <div className="grid md:grid-cols-3 gap-6">
               {blog.items.map((b, i) => (
-                <Reveal key={b.slug} delay={i * 100}>
+                <Reveal key={b.slug} delay={i * 100} variant="zoom">
                   <article className="group rounded-3xl overflow-hidden bg-white ring-1 ring-black/5 hover:shadow-xl transition-shadow h-full flex flex-col">
                     <Link to={`/blog/${b.slug}`} className="relative h-56 overflow-hidden block">
                       <img src={b.image} alt={b.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />

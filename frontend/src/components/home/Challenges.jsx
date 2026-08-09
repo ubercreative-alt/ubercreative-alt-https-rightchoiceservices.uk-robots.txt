@@ -8,7 +8,7 @@ export default function Challenges() {
   return (
     <section className="bg-cream py-24">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
-        <Reveal className="relative">
+        <Reveal className="relative" variant="left">
           <div className="rounded-3xl overflow-hidden">
             <img src={challenges.image} alt="Modern construction" className="w-full h-[500px] object-cover" />
           </div>
@@ -18,7 +18,7 @@ export default function Challenges() {
           </div>
         </Reveal>
 
-        <Reveal>
+        <Reveal variant="right">
           <span className="inline-block text-brand font-semibold tracking-[0.2em] text-sm mb-4">{challenges.eyebrow}</span>
           <h2 className="font-heading font-extrabold text-ink text-4xl md:text-5xl leading-tight">{challenges.title}</h2>
           <p className="mt-6 text-mute text-[17px] leading-relaxed">{challenges.text}</p>

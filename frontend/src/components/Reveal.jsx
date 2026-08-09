@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 // Scroll-reveal wrapper using IntersectionObserver.
-export default function Reveal({ children, className = "", delay = 0, as: Tag = "div" }) {
+export default function Reveal({ children, className = "", delay = 0, variant = "up", as: Tag = "div" }) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
 
@@ -17,14 +17,14 @@ export default function Reveal({ children, className = "", delay = 0, as: Tag = 
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.12 }
     );
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
 
   return (
-    <Tag ref={ref} style={{ transitionDelay: `${delay}ms` }} className={`reveal ${inView ? "in-view" : ""} ${className}`}>
+    <Tag ref={ref} style={{ transitionDelay: `${delay}ms` }} className={`reveal reveal--${variant} ${inView ? "in-view" : ""} ${className}`}>
       {children}
     </Tag>
   );
