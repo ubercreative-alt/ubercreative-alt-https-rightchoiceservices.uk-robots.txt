@@ -9,6 +9,7 @@ import Challenges from "../components/home/Challenges";
 import Story from "../components/home/Story";
 import RecentWork from "../components/home/RecentWork";
 import Testimonials from "../components/home/Testimonials";
+import ReviewsSlider from "../components/home/ReviewsSlider";
 import Faq from "../components/home/Faq";
 import ProcessSteps from "../components/home/ProcessSteps";
 import Blog from "../components/home/Blog";
@@ -27,6 +28,7 @@ export default function FixhomePage() {
         <Story />
         <RecentWork />
         <Testimonials />
+        <ReviewsSlider />
         <Faq />
         <ProcessSteps />
         <Blog />

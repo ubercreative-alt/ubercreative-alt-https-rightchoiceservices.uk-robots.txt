@@ -17,14 +17,14 @@ export default function Blog() {
           {blog.items.map((b, i) => (
             <Reveal key={b.title} delay={i * 100}>
               <article className="group rounded-3xl overflow-hidden bg-white ring-1 ring-black/5 hover:shadow-xl transition-shadow">
-                <div className="relative h-56 overflow-hidden">
+                <Link to={`/blog/${b.slug}`} className="relative h-56 overflow-hidden block">
                   <img src={b.image} alt={b.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <span className="absolute top-4 left-4 bg-brand text-white text-xs font-semibold px-3 py-1.5 rounded-full">{b.category}</span>
-                </div>
+                </Link>
                 <div className="p-7">
                   <div className="flex items-center gap-2 text-sm text-mute"><Calendar className="h-4 w-4 text-brand" />{b.date}</div>
-                  <h3 className="mt-3 font-heading font-bold text-xl text-ink group-hover:text-brand transition-colors leading-snug">{b.title}</h3>
-                  <Link to="/fixhome#blog" className="inline-flex items-center gap-2 mt-5 font-semibold text-ink group-hover:text-brand transition-colors">
+                  <h3 className="mt-3 font-heading font-bold text-xl text-ink group-hover:text-brand transition-colors leading-snug"><Link to={`/blog/${b.slug}`}>{b.title}</Link></h3>
+                  <Link to={`/blog/${b.slug}`} className="inline-flex items-center gap-2 mt-5 font-semibold text-ink group-hover:text-brand transition-colors">
                     Read More <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 </div>
