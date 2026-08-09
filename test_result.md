@@ -132,6 +132,20 @@ backend:
         -working: true
         -agent: "testing"
         -comment: "✅ ALL TESTS PASSED (4/4). Verified: POST /api/subscribe creates subscriber with uuid, email, created_at; Idempotency works - posting same email returns existing subscriber without creating duplicate; Invalid email rejected with 422; GET /api/subscribers returns list with no duplicates, confirming idempotency."
+  - task: "MongoDB field projections and query limits (regression test)"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Added MongoDB field projections to GET /api/contact (line 78), POST /api/subscribe (line 101), and GET /api/subscribers (line 112). Added .limit(100) to GET endpoints. Projections explicitly exclude _id and include all required fields."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ REGRESSION TEST PASSED (46/46 - 100%). Verified MongoDB projections and query limits didn't break functionality. POST /api/contact: All 8 fields present (id, name, email, phone, service, message, status, created_at), no _id leaked. GET /api/contact: Projection didn't drop any fields, all 8 fields present in list items, no _id leaked. PATCH /api/contact/{id}/read: Status changed to 'read', 404 for non-existent ID. DELETE /api/contact/{id}: Deletion successful, 404 on second delete. POST /api/subscribe: All 3 fields present (id, email, created_at), idempotency works (same id/created_at returned), invalid email rejected with 422, no _id leaked. GET /api/subscribers: All 3 fields present, no _id leaked, no duplicates for idempotent email. Backend API fully functional after optimization."
 
 frontend:
   - task: "Contact form + newsletter wired to backend; Admin dashboard"
@@ -310,3 +324,7 @@ agent_communication:
     -message: "Test two new animation enhancements: (1) Hero headline word-by-word reveal on /fixhome first load - confirm H1 split into word spans (>=6), later words start hidden, all reach opacity 1 within ~1.2s, text fully readable. (2) Grid stagger cascade - Services/Recent Work/Blog grids on /fixhome and 9 roofing cards on /services/roofing should reveal with staggered delays, all ending fully visible. Regression: confirm no elements stuck hidden after full scroll, contact form still works."
     -agent: "testing"
     -message: "✅ ALL ANIMATION ENHANCEMENT TESTS PASSED (7/7 - 100%). HERO WORD-BY-WORD REVEAL: 7 word spans found, words 5-6 start at opacity 0, all reach opacity 1.0 after animation, heading fully readable. GRID STAGGER CASCADE: Services (5 cards, variance 0.95), Recent Work (6 cards, variance 0.21), Blog (3 cards, variance 0.48), Roofing sub-services (9 cards, variance 0.16) - all grids show staggered reveal with all cards ending at opacity 1.0. REGRESSION: All 40 reveal elements on /fixhome fully visible after scroll (0 stuck), contact form submission successful (success toast shown). NO CRITICAL ISSUES. Both animation enhancements working perfectly. Ready for production."
+    -agent: "main"
+    -message: "Regression test the backend after adding MongoDB field projections and reducing query limits to 100. Verify: (1) POST /api/contact returns all 8 fields (id, name, email, phone, service, message, status, created_at), no _id leaked. (2) GET /api/contact returns list with all fields present, projection didn't drop any field, no _id leaked. (3) PATCH /api/contact/{id}/read marks as read, 404 for non-existent. (4) DELETE /api/contact/{id} deletes, 404 on second delete. (5) POST /api/subscribe returns all 3 fields (id, email, created_at), idempotency works, invalid email rejected with 422, no _id leaked. (6) GET /api/subscribers returns list with all fields, no _id leaked, no duplicates for idempotent email."
+    -agent: "testing"
+    -message: "✅ REGRESSION TEST COMPLETE - ALL 46 TESTS PASSED (100% success rate). MongoDB projections and query limits working correctly. VERIFIED: (1) POST /api/contact: All 8 fields present, status='new', no _id leaked ✅. (2) GET /api/contact: Projection didn't drop any fields, all 8 fields present in list items, no _id leaked ✅. (3) PATCH /api/contact/{id}/read: Status changed to 'read', verified in GET list, 404 for non-existent ID ✅. (4) DELETE /api/contact/{id}: Deletion successful, removed from list, 404 on second delete ✅. (5) POST /api/subscribe: All 3 fields present, idempotency works (same id/created_at returned on duplicate email), invalid email rejected with 422, no _id leaked ✅. (6) GET /api/subscribers: All 3 fields present, no _id leaked, no duplicates for idempotent email (found exactly 1 record) ✅. NO CRITICAL ISSUES. Backend API fully functional after MongoDB optimization changes. Ready for production."

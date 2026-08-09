@@ -27,9 +27,9 @@ export default function ProcessDark() {
               <img src={processStats.images[0]} alt="Renovation in progress" loading="lazy" decoding="async" className="rounded-2xl h-44 w-full object-cover" />
               <img src={processStats.images[1]} alt="Craftsman at work" loading="lazy" decoding="async" className="rounded-2xl h-44 w-full object-cover" />
             </div>
-            {processStats.stats.map((st) => (
+            {processStats.stats.map((st, i) => (
               <div key={st.label} className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
-                <div className="font-heading font-extrabold text-4xl text-brand-400"><CountUp value={st.value} /></div>
+                <div className="font-heading font-extrabold text-4xl text-brand-400"><CountUp value={st.value} delay={i * 350} /></div>
                 <div className="mt-1 text-white/70 text-sm">{st.label}</div>
               </div>
             ))}

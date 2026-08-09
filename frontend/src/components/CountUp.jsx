@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 // Animated counter that triggers when scrolled into view.
 // Accepts values like "500+", "15K", "1250", "4.9".
-export default function CountUp({ value, duration = 1600 }) {
+export default function CountUp({ value, duration = 1600, delay = 0 }) {
   const ref = useRef(null);
   const [display, setDisplay] = useState("0");
 
@@ -14,7 +14,7 @@ export default function CountUp({ value, duration = 1600 }) {
     const decimals = (match[1].split(".")[1] || "").length;
     const el = ref.current;
     if (!el) return;
-    let raf; let started = false;
+    let raf; let timer; let started = false;
 
     const run = () => {
       const start = performance.now();
@@ -30,12 +30,16 @@ export default function CountUp({ value, duration = 1600 }) {
 
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
-        if (e.isIntersecting && !started) { started = true; run(); obs.unobserve(e.target); }
+        if (e.isIntersecting && !started) {
+          started = true;
+          timer = setTimeout(run, delay);
+          obs.unobserve(e.target);
+        }
       });
     }, { threshold: 0.4 });
     obs.observe(el);
-    return () => { obs.disconnect(); cancelAnimationFrame(raf); };
-  }, [value, duration]);
+    return () => { obs.disconnect(); cancelAnimationFrame(raf); clearTimeout(timer); };
+  }, [value, duration, delay]);
 
   return <span ref={ref}>{display}</span>;
 }

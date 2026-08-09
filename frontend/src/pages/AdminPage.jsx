@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import Logo from "../components/Logo";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
-const PASSCODE = "jkadmin2025"; // demo gate only
+const PASSCODE = process.env.REACT_APP_ADMIN_PASSCODE || "jkadmin2025";
 
 export default function AdminPage() {
   const [authed, setAuthed] = useState(() => localStorage.getItem("jk_admin") === "1");

@@ -2,7 +2,7 @@ import React from "react";
 import SiteHeader from "../components/SiteHeader";
 import Footer from "../components/Footer";
 import PageHeader from "../components/PageHeader";
-import RecentWork from "../components/home/RecentWork";
+import ProjectsGrid from "../components/ProjectsGrid";
 import Story from "../components/home/Story";
 import Cta from "../components/home/Cta";
 
@@ -12,7 +12,7 @@ export default function ProjectsPage() {
       <SiteHeader />
       <main>
         <PageHeader title="Our Projects" crumbs={["Projects"]} />
-        <RecentWork />
+        <ProjectsGrid />
         <Story />
         <Cta />
       </main>

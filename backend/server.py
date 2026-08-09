@@ -75,8 +75,9 @@ async def create_contact(payload: ContactCreate):
 
 @api_router.get("/contact", response_model=List[ContactEnquiry])
 async def list_contacts():
-    items = await db.enquiries.find().sort("created_at", -1).to_list(1000)
-    return [ContactEnquiry(**{k: v for k, v in it.items() if k != "_id"}) for it in items]
+    projection = {"_id": 0, "id": 1, "name": 1, "email": 1, "phone": 1, "service": 1, "message": 1, "status": 1, "created_at": 1}
+    items = await db.enquiries.find({}, projection).sort("created_at", -1).limit(100).to_list(100)
+    return [ContactEnquiry(**it) for it in items]
 
 
 @api_router.patch("/contact/{enquiry_id}/read")
@@ -97,9 +98,10 @@ async def delete_contact(enquiry_id: str):
 
 @api_router.post("/subscribe", response_model=Subscriber)
 async def subscribe(payload: SubscribeCreate):
-    existing = await db.subscribers.find_one({"email": payload.email})
+    projection = {"_id": 0, "id": 1, "email": 1, "created_at": 1}
+    existing = await db.subscribers.find_one({"email": payload.email}, projection)
     if existing:
-        return Subscriber(**{k: v for k, v in existing.items() if k != "_id"})
+        return Subscriber(**existing)
     sub = Subscriber(email=payload.email)
     await db.subscribers.insert_one(sub.dict())
     return sub
@@ -107,8 +109,9 @@ async def subscribe(payload: SubscribeCreate):
 
 @api_router.get("/subscribers", response_model=List[Subscriber])
 async def list_subscribers():
-    items = await db.subscribers.find().sort("created_at", -1).to_list(1000)
-    return [Subscriber(**{k: v for k, v in it.items() if k != "_id"}) for it in items]
+    projection = {"_id": 0, "id": 1, "email": 1, "created_at": 1}
+    items = await db.subscribers.find({}, projection).sort("created_at", -1).limit(100).to_list(100)
+    return [Subscriber(**it) for it in items]
 
 
 # Include the router in the main app

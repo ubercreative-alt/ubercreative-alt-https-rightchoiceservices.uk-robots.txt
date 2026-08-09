@@ -16,9 +16,9 @@ export default function Story() {
           <h2 className="font-heading font-extrabold text-4xl md:text-6xl leading-[1.05]">{story.title}</h2>
         </Reveal>
         <div className="grid grid-cols-2 sm:flex sm:items-center gap-10 sm:gap-16 mt-12">
-          {story.stats.map((st) => (
-            <Reveal key={st.label}>
-              <div className="font-heading font-extrabold text-5xl md:text-6xl text-brand-400"><CountUp value={st.value} /></div>
+          {story.stats.map((st, i) => (
+            <Reveal key={st.label} delay={i * 120}>
+              <div className="font-heading font-extrabold text-5xl md:text-6xl text-brand-400"><CountUp value={st.value} delay={i * 350} /></div>
               <div className="mt-2 text-white/80">{st.label}</div>
             </Reveal>
           ))}
