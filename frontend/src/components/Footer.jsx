@@ -1,19 +1,27 @@
 import React from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin, ArrowUpRight, ArrowRight } from "lucide-react";
 import Logo from "./Logo";
 import { brand, socials, marquee } from "../mock";
 import { toast } from "sonner";
 
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const iconMap = { facebook: Facebook, instagram: Instagram, twitter: Twitter, linkedin: Linkedin };
 
 export default function Footer() {
-  const onSubscribe = (e) => {
+  const onSubscribe = async (e) => {
     e.preventDefault();
-    const email = new FormData(e.currentTarget).get("email");
+    const formEl = e.currentTarget;
+    const email = new FormData(formEl).get("email");
     if (!email) return;
-    e.currentTarget.reset();
-    toast.success("Thanks for subscribing!", { description: `We'll keep ${email} posted on renovation tips.` });
+    try {
+      await axios.post(`${API}/subscribe`, { email });
+      formEl.reset();
+      toast.success("Thanks for subscribing!", { description: `We'll keep ${email} posted on renovation tips.` });
+    } catch (err) {
+      toast.error("Please enter a valid email address.");
+    }
   };
 
   return (

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
 import { toast } from "sonner";
 import SiteHeader from "../components/SiteHeader";
@@ -7,20 +8,30 @@ import PageHeader from "../components/PageHeader";
 import Reveal from "../components/Reveal";
 import { brand } from "../mock";
 
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const initial = { name: "", email: "", phone: "", service: "", message: "" };
 
 export default function ContactPage() {
   const [form, setForm] = useState(initial);
+  const [submitting, setSubmitting] = useState(false);
 
   const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
       toast.error("Please fill in your name, email and message.");
       return;
     }
-    toast.success("Message sent!", { description: `Thanks ${form.name}, our team will contact you shortly.` });
-    setForm(initial);
+    try {
+      setSubmitting(true);
+      await axios.post(`${API}/contact`, form);
+      toast.success("Message sent!", { description: `Thanks ${form.name}, our team will contact you shortly.` });
+      setForm(initial);
+    } catch (err) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const info = [
@@ -67,8 +78,8 @@ export default function ContactPage() {
                   <input name="service" value={form.service} onChange={onChange} placeholder="Service Needed" className="bg-white/10 rounded-xl px-4 py-3.5 outline-none focus:ring-2 focus:ring-brand placeholder:text-white/40" />
                 </div>
                 <textarea name="message" value={form.message} onChange={onChange} rows={5} placeholder="Tell us about your project..." className="w-full mt-4 bg-white/10 rounded-xl px-4 py-3.5 outline-none focus:ring-2 focus:ring-brand placeholder:text-white/40 resize-none" />
-                <button type="submit" className="mt-6 inline-flex items-center gap-3 bg-brand hover:bg-brand-600 text-white pl-6 pr-2 py-3 rounded-full font-semibold transition-colors group">
-                  Send Message
+                <button type="submit" disabled={submitting} className="mt-6 inline-flex items-center gap-3 bg-brand hover:bg-brand-600 disabled:opacity-60 text-white pl-6 pr-2 py-3 rounded-full font-semibold transition-colors group">
+                  {submitting ? "Sending..." : "Send Message"}
                   <span className="grid place-items-center h-9 w-9 rounded-full bg-white/20 group-hover:bg-white group-hover:text-brand transition-colors"><ArrowUpRight className="h-5 w-5" /></span>
                 </button>
               </form>

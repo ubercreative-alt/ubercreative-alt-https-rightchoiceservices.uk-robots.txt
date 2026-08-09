@@ -101,3 +101,67 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+user_problem_statement: "JK PRO Builders (Fixhome clone) - add backend to persist Contact/Quote enquiries and newsletter subscribers in MongoDB, viewable on an /admin page. Option B (DB + admin, no email)."
+
+backend:
+  - task: "Contact enquiry endpoints (POST/GET/PATCH read/DELETE)"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Implemented POST /api/contact, GET /api/contact, PATCH /api/contact/{id}/read, DELETE /api/contact/{id}. Uses uuid ids, status new|read, created_at ISO. EmailStr validation."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ ALL TESTS PASSED (10/10). Verified: POST /api/contact creates enquiry with uuid, status=new, created_at; EmailStr validation rejects invalid emails (422); Missing required fields (name, message) rejected (422); GET /api/contact returns list sorted newest first; PATCH /api/contact/{id}/read marks as read; PATCH with non-existent id returns 404; DELETE /api/contact/{id} removes enquiry; DELETE again returns 404; Deleted enquiry no longer in GET list."
+  - task: "Newsletter subscribe endpoints (POST/GET)"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Implemented POST /api/subscribe (idempotent on email) and GET /api/subscribers."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ ALL TESTS PASSED (4/4). Verified: POST /api/subscribe creates subscriber with uuid, email, created_at; Idempotency works - posting same email returns existing subscriber without creating duplicate; Invalid email rejected with 422; GET /api/subscribers returns list with no duplicates, confirming idempotency."
+
+frontend:
+  - task: "Contact form + newsletter wired to backend; Admin dashboard"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/pages/ContactPage.jsx, frontend/src/components/Footer.jsx, frontend/src/pages/AdminPage.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Frontend integrated. Will ask user before frontend automated testing."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 2
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Contact enquiry endpoints (POST/GET/PATCH read/DELETE)"
+    - "Newsletter subscribe endpoints (POST/GET)"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+    -agent: "main"
+    -message: "Please test the backend API endpoints under /api: contact CRUD and subscribe. Validate happy paths, validation errors (invalid email, missing required fields), mark-read, delete, and subscribe idempotency. Use REACT_APP_BACKEND_URL base."
+    -agent: "testing"
+    -message: "✅ BACKEND TESTING COMPLETE - ALL 14 TESTS PASSED (100% success rate). Contact endpoints: All CRUD operations working correctly with proper validation (EmailStr, required fields), 404 handling, and deletion verification. Newsletter endpoints: Subscribe working with proper idempotency (no duplicates), email validation, and list retrieval. Backend API is fully functional and ready for production."
