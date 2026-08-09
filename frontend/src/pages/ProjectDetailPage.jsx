@@ -5,6 +5,7 @@ import SiteHeader from "../components/SiteHeader";
 import Footer from "../components/Footer";
 import PageHeader from "../components/PageHeader";
 import Reveal from "../components/Reveal";
+import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import Cta from "../components/home/Cta";
 import { projects } from "../mock";
 
@@ -74,6 +75,11 @@ export default function ProjectDetailPage() {
             <Reveal className="text-center max-w-2xl mx-auto mb-14">
               <span className="inline-block text-brand font-semibold tracking-[0.2em] text-sm mb-4">THE TRANSFORMATION</span>
               <h2 className="font-heading font-extrabold text-ink text-3xl md:text-5xl leading-tight">Before, During &amp; After</h2>
+              <p className="mt-4 text-mute">Drag the slider to reveal the transformation.</p>
+            </Reveal>
+
+            <Reveal className="mb-16" variant="zoom">
+              <BeforeAfterSlider before={project.phases.before.image} after={project.phases.after.image} />
             </Reveal>
 
             <div className="space-y-16">

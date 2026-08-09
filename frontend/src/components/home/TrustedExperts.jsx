@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Users, CalendarCheck } from "lucide-react";
+import CountUp from "../CountUp";
 import Reveal from "../Reveal";
 import { about } from "../../mock";
 
@@ -16,7 +17,7 @@ export default function TrustedExperts() {
           </div>
           {/* Experience badge */}
           <div className="absolute -bottom-6 left-6 bg-brand text-white rounded-2xl px-8 py-6 shadow-xl">
-            <div className="font-heading font-extrabold text-5xl leading-none">{about.experience.value}<span className="text-brand-100">{about.experience.suffix}</span></div>
+            <div className="font-heading font-extrabold text-5xl leading-none"><CountUp value={about.experience.value} /><span className="text-brand-100">{about.experience.suffix}</span></div>
             <div className="mt-2 text-sm text-white/85">{about.experience.label}</div>
           </div>
         </Reveal>

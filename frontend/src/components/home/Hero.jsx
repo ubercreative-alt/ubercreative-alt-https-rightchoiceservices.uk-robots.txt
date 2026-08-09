@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Play, CheckCircle2 } from "lucide-react";
+import CountUp from "../CountUp";
 import { hero } from "../../mock";
 
 export default function Hero() {
@@ -33,7 +34,7 @@ export default function Hero() {
       {/* Floating stat card */}
       <div className="hidden lg:flex absolute right-8 bottom-24 z-10 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20 bg-white">
         <div className="bg-brand text-white p-7 flex flex-col justify-center w-44">
-          <span className="font-heading font-extrabold text-5xl">{hero.stat.value}</span>
+          <span className="font-heading font-extrabold text-5xl"><CountUp value={hero.stat.value} /></span>
           <span className="mt-2 text-white/85 text-sm">{hero.stat.label}</span>
           <span className="mt-4 inline-flex items-center gap-1 text-xs text-white/80"><CheckCircle2 className="h-4 w-4" /> Guaranteed</span>
         </div>
