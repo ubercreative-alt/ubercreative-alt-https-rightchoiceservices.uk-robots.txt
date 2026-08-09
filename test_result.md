@@ -136,7 +136,7 @@ backend:
 frontend:
   - task: "Contact form + newsletter wired to backend; Admin dashboard"
     implemented: true
-    working: "NA"
+    working: true
     file: "frontend/src/pages/ContactPage.jsx, frontend/src/components/Footer.jsx, frontend/src/pages/AdminPage.jsx"
     stuck_count: 0
     priority: "medium"
@@ -145,6 +145,9 @@ frontend:
         -working: "NA"
         -agent: "main"
         -comment: "Frontend integrated. Will ask user before frontend automated testing."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ EXHAUSTIVE UI TESTING COMPLETE - 89/89 TESTS PASSED (100%). Verified: Header (logo, email info@jkprobuilders.co.uk, phone 07872 164 350, all nav items, Get In Touch button); All dropdown menus (Services, Projects, Pages, Blog) appear correctly; All navigation routes work (/about, /services/*, /projects, /blog, /contact); All home page sections render (Hero, Trusted Experts, Services, Process stats, Challenges, Story, Recent Work, Testimonials, Google Reviews slider with working controls, FAQ, Process Steps, Blog, Footer marquee); Projects page shows 6 cards including 'Roofing Replacement & Repair' (NO Heritage Home Refurb - correct); Project detail pages show Before/During/After sections with 3 phases, View Next works; Roofing service page shows 'Trusted Roofing & Guttering Services' with all 9 sub-services (New Roof Installations, Roof Repairs, Pitched Roofing, Flat Roofing, Slate Roofing, Chimney Services, Guttering Services, Fascia Services, Soffit Services) and sidebar phone 07872 164 350; All other service pages render correctly; Blog page shows 3 articles, blog detail shows content and Recent Articles sidebar; Contact form submission works (success toast 'Message sent!'), validation works (error toast for empty fields); Newsletter subscription works (success toast); Admin dashboard: passcode 'jkadmin2025' works, Submissions Dashboard loads, Enquiries tab shows submitted enquiry with NEW badge and message, mark read removes NEW badge, delete removes enquiry, Subscribers tab shows subscribed email; Mobile responsive: hamburger menu opens, drawer shows nav links, navigation works; All footer links work correctly. NO CRITICAL ISSUES FOUND."
 
 metadata:
   created_by: "main_agent"
@@ -165,3 +168,19 @@ agent_communication:
     -message: "Please test the backend API endpoints under /api: contact CRUD and subscribe. Validate happy paths, validation errors (invalid email, missing required fields), mark-read, delete, and subscribe idempotency. Use REACT_APP_BACKEND_URL base."
     -agent: "testing"
     -message: "✅ BACKEND TESTING COMPLETE - ALL 14 TESTS PASSED (100% success rate). Contact endpoints: All CRUD operations working correctly with proper validation (EmailStr, required fields), 404 handling, and deletion verification. Newsletter endpoints: Subscribe working with proper idempotency (no duplicates), email validation, and list retrieval. Backend API is fully functional and ready for production."
+    -agent: "testing"
+    -message: "✅ EXHAUSTIVE FRONTEND UI TESTING COMPLETE - ALL 89 TESTS PASSED (100% success rate). Tested all requirements from user's review request: General/Navigation (header, dropdowns, all routes), Home page (all sections, animations, reviews slider), Projects (6 cards, Roofing project exists, NO Heritage, project detail pages with Before/During/After), Services (roofing with 9 sub-services, all other service pages), Blog (list + detail pages), Contact form (submission + validation), Newsletter (subscription), Admin dashboard (login, enquiries tab with mark read/delete, subscribers tab), Mobile responsive (hamburger menu, navigation), Footer links. NO CRITICAL ISSUES. All integrations working. Ready for production."
+
+## Frontend automated testing requested by user (run_ui: true)
+frontend_ui_test_plan:
+  focus:
+    - "Home /fixhome: header sticky, dropdown nav, hero, all sections render, reveal animations, marquee, reviews slider (auto-rotate + arrows + dots)"
+    - "Navigation: every nav link + footer link routes correctly with no broken links"
+    - "Projects: /projects grid; clicking a card arrow opens /projects/:slug with Before/During/After sections"
+    - "Roofing: project roofing-replacement-repair exists (Heritage removed); service /services/roofing shows 9 roofing sub-services"
+    - "Services: /services list + /services/:slug detail pages (kitchen, bathroom, interior, flooring, roofing)"
+    - "Blog: /blog list + /blog/:slug detail with content and recent articles"
+    - "Contact form: submit valid -> success toast; appears in /admin"
+    - "Footer newsletter subscribe -> success toast"
+    - "Admin /admin: passcode jkadmin2025 -> dashboard; enquiries + subscribers tabs; mark read; delete"
+    - "Mobile responsive: hamburger sheet menu opens and links work"
