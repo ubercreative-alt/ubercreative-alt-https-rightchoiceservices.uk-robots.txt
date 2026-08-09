@@ -15,11 +15,19 @@ export default function Hero() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-24 pt-40">
         <div className="max-w-2xl">
-          <span className="inline-block text-brand-400 font-semibold tracking-[0.2em] text-sm mb-5 animate-fade-up">{hero.eyebrow}</span>
-          <h1 className="font-heading font-extrabold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.02] animate-fade-up">
-            {hero.title}
+          <span className="inline-block text-brand-400 font-semibold tracking-[0.2em] text-sm mb-5 animate-fade-up" style={{ animationDelay: "60ms", animationFillMode: "both" }}>{hero.eyebrow}</span>
+          <h1 className="font-heading font-extrabold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.02]">
+            {hero.title.split(" ").map((word, i) => (
+              <span
+                key={i}
+                className="inline-block mr-[0.22em] animate-fade-up"
+                style={{ animationDelay: `${180 + i * 85}ms`, animationFillMode: "both" }}
+              >
+                {word}
+              </span>
+            ))}
           </h1>
-          <div className="flex items-center gap-4 mt-9 animate-fade-up">
+          <div className="flex items-center gap-4 mt-9 animate-fade-up" style={{ animationDelay: `${180 + hero.title.split(" ").length * 85 + 120}ms`, animationFillMode: "both" }}>
             <Link to="/contact" className="inline-flex items-center gap-3 bg-white text-ink pl-6 pr-2 py-2.5 rounded-full font-semibold hover:bg-brand hover:text-white transition-colors group">
               Contact Us
               <span className="grid place-items-center h-9 w-9 rounded-full bg-brand text-white group-hover:bg-white group-hover:text-brand transition-colors"><ArrowUpRight className="h-5 w-5" /></span>

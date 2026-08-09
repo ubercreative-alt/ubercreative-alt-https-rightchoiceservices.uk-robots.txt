@@ -18,7 +18,7 @@ export default function ProcessSteps() {
 
           <div className="space-y-5">
             {steps.items.map((s, i) => (
-              <Reveal key={s.no} delay={i * 90}>
+              <Reveal key={s.no} delay={i * 120}>
                 <div className="group flex items-start gap-5 rounded-2xl bg-white ring-1 ring-black/5 p-6 hover:bg-ink hover:ring-ink transition-colors">
                   <span className="font-heading font-extrabold text-4xl text-brand shrink-0">{s.no}</span>
                   <div>

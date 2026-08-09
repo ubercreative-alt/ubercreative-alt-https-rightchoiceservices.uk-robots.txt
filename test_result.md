@@ -273,3 +273,40 @@ agent_communication:
     -message: "Verify entrance animations actually PLAY. On /fixhome: a below-the-fold element (e.g. the About/Trusted Experts image, Services cards, Challenges image) should have computed opacity < 0.2 and a non-identity transform (translateX/Y offset) BEFORE it is scrolled into view, then transition to opacity 1 and identity transform AFTER scrolling into view. Confirm the transition is observable (values change over ~0.9s), not instant. Check on /projects/:slug (before/during/after images slide in) and /services/roofing (cards). Regression: ensure nothing stays permanently hidden."
     -agent: "testing"
     -message: "✅ ALL ANIMATION TESTS PASSED (6/6 - 100%). VERIFIED: Scroll-triggered entrance animations are working PERFECTLY. Tested with 800px viewport to ensure elements truly below fold. RESULTS: (1) Trusted Experts image (reveal--left): starts hidden (opacity 0, translateX -90px), animates GRADUALLY over 900ms (0.000→0.730→0.933→0.989→1.000), reaches identity transform. (2) Services cards (reveal--zoom): start hidden (opacity 0, scale 0.85), animate gradually to visible. (3) Recent Work section: elements start hidden, animate in. (4) /projects/roofing-replacement-repair: 12 elements start hidden below fold, ALL become visible after scroll (0 stuck). (5) /services/roofing: 15/17 elements start hidden, ALL animate in correctly (0 stuck). (6) REGRESSION PASS: Full /fixhome scroll shows 40 reveal elements, ZERO stuck hidden. KEY PROOF: Animation is GRADUAL not instant - sampled opacity values show smooth transition (e.g., 0.000→0.730→0.933→1.000 over 900ms). Transform values also transition smoothly (translateX -90px→-24px→-6px→0px). All animations use 0.9s cubic-bezier transition as specified. NO ISSUES FOUND. Ready for production."
+
+## Enhancement: Hero headline word-by-word reveal + Grid stagger cascade animations
+frontend_anim_enhancements:
+  - task: "Hero headline word-by-word reveal animation on first load"
+    implemented: true
+    working: true
+    file: "frontend/src/components/home/Hero.jsx, frontend/tailwind.config.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Implemented word-by-word reveal for hero H1. Title split into individual word spans, each with animate-fade-up class and incremental animation delay (180ms + i*85ms). Uses Tailwind fade-up keyframe (0.7s ease-out, opacity 0→1, translateY 24px→0)."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ PASS. Hero H1 contains 7 word spans with animate-fade-up class. Words 5 and 6 sampled at ~100ms showed opacity 0 (hidden), confirming stagger effect. After 1.2s all 7 words reached opacity 1.0 (fully visible). Heading text 'Expert Renovation Services Designed Around Your Lifestyle' is fully readable. Word-by-word reveal animation working as specified."
+  - task: "Grid stagger cascade animations (Services, Recent Work, Blog, Roofing sub-services)"
+    implemented: true
+    working: true
+    file: "frontend/src/components/home/Services.jsx, frontend/src/components/home/RecentWork.jsx, frontend/src/components/home/Blog.jsx, frontend/src/pages/ServiceDetailPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Implemented staggered cascade reveal for grid cards using Reveal component with incremental delay prop. Services: delay i*130ms, Recent Work: delay (i%3)*130ms, Blog: delay i*140ms, Roofing sub-services: delay (i%3)*120ms. Cards animate with zoom variant (scale 0.85→1.0, opacity 0→1, 0.9s transition)."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ ALL GRIDS PASS. Services grid (/fixhome): 5 cards, stagger variance 0.95 (clearly observable), all cards opacity 1.0 final. Recent Work grid (/fixhome): 6 cards, stagger variance 0.21 (observable), all cards opacity 1.0 final. Blog grid (/fixhome): 3 cards, stagger variance 0.48 (clearly observable), all cards opacity 1.0 final. Roofing sub-services (/services/roofing): 9 cards, stagger variance 0.16 (subtle but present), all cards opacity 1.0 final. Stagger cascade animations working correctly on all grids."
+
+agent_communication:
+    -agent: "main"
+    -message: "Test two new animation enhancements: (1) Hero headline word-by-word reveal on /fixhome first load - confirm H1 split into word spans (>=6), later words start hidden, all reach opacity 1 within ~1.2s, text fully readable. (2) Grid stagger cascade - Services/Recent Work/Blog grids on /fixhome and 9 roofing cards on /services/roofing should reveal with staggered delays, all ending fully visible. Regression: confirm no elements stuck hidden after full scroll, contact form still works."
+    -agent: "testing"
+    -message: "✅ ALL ANIMATION ENHANCEMENT TESTS PASSED (7/7 - 100%). HERO WORD-BY-WORD REVEAL: 7 word spans found, words 5-6 start at opacity 0, all reach opacity 1.0 after animation, heading fully readable. GRID STAGGER CASCADE: Services (5 cards, variance 0.95), Recent Work (6 cards, variance 0.21), Blog (3 cards, variance 0.48), Roofing sub-services (9 cards, variance 0.16) - all grids show staggered reveal with all cards ending at opacity 1.0. REGRESSION: All 40 reveal elements on /fixhome fully visible after scroll (0 stuck), contact form submission successful (success toast shown). NO CRITICAL ISSUES. Both animation enhancements working perfectly. Ready for production."
