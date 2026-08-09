@@ -23,7 +23,7 @@ export default function BlogDetailPage() {
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2">
               <Reveal className="rounded-3xl overflow-hidden">
-                <img src={post.image} alt={post.title} className="w-full h-[380px] md:h-[480px] object-cover" />
+                <img src={post.image} alt={post.title} loading="lazy" decoding="async" className="w-full h-[380px] md:h-[480px] object-cover" />
               </Reveal>
               <Reveal>
                 <div className="flex flex-wrap items-center gap-5 mt-8 text-sm text-mute">

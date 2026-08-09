@@ -7,7 +7,7 @@ export default function PageHeader({ title, crumbs = [] }) {
   return (
     <section className="relative pt-44 pb-20 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={images.reno2} alt="" className="h-full w-full object-cover" />
+        <img src={images.reno2} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-ink/85" />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">

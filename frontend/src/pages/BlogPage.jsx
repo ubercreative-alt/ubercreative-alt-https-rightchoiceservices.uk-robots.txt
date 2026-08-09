@@ -25,7 +25,7 @@ export default function BlogPage() {
                 <Reveal key={b.slug} delay={i * 100} variant="zoom">
                   <article className="group rounded-3xl overflow-hidden bg-white ring-1 ring-black/5 hover:shadow-xl transition-shadow h-full flex flex-col">
                     <Link to={`/blog/${b.slug}`} className="relative h-56 overflow-hidden block">
-                      <img src={b.image} alt={b.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <img src={b.image} alt={b.title} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                       <span className="absolute top-4 left-4 bg-brand text-white text-xs font-semibold px-3 py-1.5 rounded-full">{b.category}</span>
                     </Link>
                     <div className="p-7 flex flex-col flex-1">

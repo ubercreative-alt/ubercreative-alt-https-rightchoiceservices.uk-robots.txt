@@ -49,7 +49,7 @@ export default function ServiceDetailPage() {
             {/* Main */}
             <div className="lg:col-span-2 order-1 lg:order-2">
               <Reveal className="rounded-3xl overflow-hidden" variant="right">
-                <img src={service.image} alt={service.title} className="w-full h-[380px] md:h-[460px] object-cover" />
+                <img src={service.image} alt={service.title} loading="lazy" decoding="async" className="w-full h-[380px] md:h-[460px] object-cover" />
               </Reveal>
               <Reveal>
                 <h2 className="mt-8 font-heading font-extrabold text-ink text-3xl md:text-4xl">{service.title}</h2>
@@ -66,7 +66,7 @@ export default function ServiceDetailPage() {
               <div className="grid grid-cols-3 gap-4 mt-8">
                 {service.gallery.map((g, i) => (
                   <Reveal key={i} delay={i * 90} variant="zoom" className="rounded-2xl overflow-hidden">
-                    <img src={g} alt={`${service.title} example ${i + 1}`} className="w-full h-32 md:h-44 object-cover" />
+                    <img src={g} alt={`${service.title} example ${i + 1}`} loading="lazy" decoding="async" className="w-full h-32 md:h-44 object-cover" />
                   </Reveal>
                 ))}
               </div>
@@ -86,7 +86,7 @@ export default function ServiceDetailPage() {
                   <Reveal key={r.title} delay={(i % 3) * 90} variant="zoom">
                     <div className="group rounded-3xl overflow-hidden bg-white ring-1 ring-black/5 hover:shadow-xl transition-shadow h-full">
                       <div className="relative h-52 overflow-hidden">
-                        <img src={r.image} alt={r.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <img src={r.image} alt={r.title} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                       </div>
                       <div className="p-7">
                         <h3 className="font-heading font-bold text-xl text-ink group-hover:text-brand transition-colors">{r.title}</h3>

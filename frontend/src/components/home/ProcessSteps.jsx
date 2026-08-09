@@ -13,7 +13,7 @@ export default function ProcessSteps() {
 
         <div className="grid lg:grid-cols-2 gap-14 items-center mt-14">
           <Reveal className="rounded-3xl overflow-hidden" variant="left">
-            <img src={steps.image} alt="Our process" className="w-full h-[460px] object-cover" />
+            <img src={steps.image} alt="Our process" loading="lazy" decoding="async" className="w-full h-[460px] object-cover" />
           </Reveal>
 
           <div className="space-y-5">

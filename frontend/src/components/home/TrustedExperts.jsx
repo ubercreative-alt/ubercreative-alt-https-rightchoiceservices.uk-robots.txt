@@ -13,7 +13,7 @@ export default function TrustedExperts() {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
         <Reveal className="relative" variant="left">
           <div className="relative rounded-3xl overflow-hidden">
-            <img src={about.image} alt="Trusted renovation experts" className="w-full h-[520px] object-cover" />
+            <img src={about.image} alt="Trusted renovation experts" loading="lazy" decoding="async" className="w-full h-[520px] object-cover" />
           </div>
           {/* Experience badge */}
           <div className="absolute -bottom-6 left-6 bg-brand text-white rounded-2xl px-8 py-6 shadow-xl">

@@ -10,7 +10,7 @@ export default function Faq() {
     <section className="bg-ink text-white py-24">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
         <Reveal className="rounded-3xl overflow-hidden" variant="left">
-          <img src={faqs.image} alt="Renovation planning" className="w-full h-[480px] object-cover" />
+          <img src={faqs.image} alt="Renovation planning" loading="lazy" decoding="async" className="w-full h-[480px] object-cover" />
         </Reveal>
 
         <Reveal variant="right">

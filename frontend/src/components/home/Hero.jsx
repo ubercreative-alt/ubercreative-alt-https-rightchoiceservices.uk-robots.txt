@@ -9,7 +9,7 @@ export default function Hero() {
     <section className="relative min-h-[760px] lg:min-h-[820px] flex items-end overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={hero.bg} alt="Renovation professional at work" className="h-full w-full object-cover" />
+        <img src={hero.bg} alt="Renovation professional at work" fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/60 to-ink/30" />
       </div>
 
@@ -38,7 +38,7 @@ export default function Hero() {
           <span className="mt-2 text-white/85 text-sm">{hero.stat.label}</span>
           <span className="mt-4 inline-flex items-center gap-1 text-xs text-white/80"><CheckCircle2 className="h-4 w-4" /> Guaranteed</span>
         </div>
-        <img src={hero.card} alt="Completed project" className="w-52 h-full object-cover" />
+        <img src={hero.card} alt="Completed project" loading="lazy" decoding="async" className="w-52 h-full object-cover" />
       </div>
     </section>
   );

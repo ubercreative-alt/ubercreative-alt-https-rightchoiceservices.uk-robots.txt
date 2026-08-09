@@ -7,7 +7,7 @@ export default function Story() {
   return (
     <section className="relative py-28 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={story.image} alt="Renovation story" className="h-full w-full object-cover" />
+        <img src={story.image} alt="Renovation story" loading="lazy" decoding="async" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-ink/80" />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-white">

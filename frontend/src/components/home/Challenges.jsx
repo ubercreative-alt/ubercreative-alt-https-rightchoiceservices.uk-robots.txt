@@ -10,7 +10,7 @@ export default function Challenges() {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
         <Reveal className="relative" variant="left">
           <div className="rounded-3xl overflow-hidden">
-            <img src={challenges.image} alt="Modern construction" className="w-full h-[500px] object-cover" />
+            <img src={challenges.image} alt="Modern construction" loading="lazy" decoding="async" className="w-full h-[500px] object-cover" />
           </div>
           <div className="absolute top-6 -right-4 md:right-6 bg-ink text-white rounded-2xl px-7 py-5 shadow-xl">
             <div className="font-heading font-extrabold text-4xl leading-none">{challenges.badge.value}<span className="text-brand-400">{challenges.badge.suffix}</span></div>

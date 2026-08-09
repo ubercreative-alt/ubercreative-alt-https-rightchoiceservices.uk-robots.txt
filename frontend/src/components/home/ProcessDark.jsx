@@ -24,8 +24,8 @@ export default function ProcessDark() {
 
           <Reveal className="grid grid-cols-2 gap-5">
             <div className="col-span-2 grid grid-cols-2 gap-5">
-              <img src={processStats.images[0]} alt="Renovation in progress" className="rounded-2xl h-44 w-full object-cover" />
-              <img src={processStats.images[1]} alt="Craftsman at work" className="rounded-2xl h-44 w-full object-cover" />
+              <img src={processStats.images[0]} alt="Renovation in progress" loading="lazy" decoding="async" className="rounded-2xl h-44 w-full object-cover" />
+              <img src={processStats.images[1]} alt="Craftsman at work" loading="lazy" decoding="async" className="rounded-2xl h-44 w-full object-cover" />
             </div>
             {processStats.stats.map((st) => (
               <div key={st.label} className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">

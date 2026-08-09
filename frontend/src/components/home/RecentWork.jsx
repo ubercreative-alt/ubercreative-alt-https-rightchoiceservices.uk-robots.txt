@@ -23,7 +23,7 @@ export default function RecentWork() {
           {projects.items.map((p, i) => (
             <Reveal key={p.title} delay={(i % 3) * 90} variant="zoom">
               <Link to={`/projects/${p.slug}`} className="group relative rounded-3xl overflow-hidden h-[300px] block">
-                <img src={p.image} alt={p.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={p.image} alt={p.title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 flex items-end justify-between text-white translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <div>

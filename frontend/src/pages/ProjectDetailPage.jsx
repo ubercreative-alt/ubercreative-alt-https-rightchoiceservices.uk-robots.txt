@@ -40,7 +40,7 @@ export default function ProjectDetailPage() {
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-6">
             <Reveal className="rounded-3xl overflow-hidden" variant="up">
-              <img src={project.image} alt={project.title} className="w-full h-[420px] md:h-[560px] object-cover" />
+              <img src={project.image} alt={project.title} loading="lazy" decoding="async" className="w-full h-[420px] md:h-[560px] object-cover" />
             </Reveal>
 
             <div className="grid lg:grid-cols-3 gap-10 mt-12">
@@ -89,7 +89,7 @@ export default function ProjectDetailPage() {
                 return (
                   <div key={ph.key} className="grid lg:grid-cols-2 gap-10 items-center">
                     <Reveal className={`rounded-3xl overflow-hidden ${reversed ? "lg:order-2" : ""}`} variant={reversed ? "right" : "left"}>
-                      <img src={data.image} alt={`${project.title} \u2013 ${ph.label}`} className="w-full h-[360px] md:h-[440px] object-cover" />
+                      <img src={data.image} alt={`${project.title} \u2013 ${ph.label}`} loading="lazy" decoding="async" className="w-full h-[360px] md:h-[440px] object-cover" />
                     </Reveal>
                     <Reveal className={reversed ? "lg:order-1" : ""} variant={reversed ? "left" : "right"}>
                       <div className="flex items-center gap-4">
