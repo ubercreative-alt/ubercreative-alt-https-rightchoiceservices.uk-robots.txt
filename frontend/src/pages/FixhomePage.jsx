@@ -1,0 +1,38 @@
+import React from "react";
+import SiteHeader from "../components/SiteHeader";
+import Footer from "../components/Footer";
+import Hero from "../components/home/Hero";
+import TrustedExperts from "../components/home/TrustedExperts";
+import Services from "../components/home/Services";
+import ProcessDark from "../components/home/ProcessDark";
+import Challenges from "../components/home/Challenges";
+import Story from "../components/home/Story";
+import RecentWork from "../components/home/RecentWork";
+import Testimonials from "../components/home/Testimonials";
+import Faq from "../components/home/Faq";
+import ProcessSteps from "../components/home/ProcessSteps";
+import Blog from "../components/home/Blog";
+import Cta from "../components/home/Cta";
+
+export default function FixhomePage() {
+  return (
+    <div className="bg-cream">
+      <SiteHeader />
+      <main>
+        <Hero />
+        <TrustedExperts />
+        <Services />
+        <ProcessDark />
+        <Challenges />
+        <Story />
+        <RecentWork />
+        <Testimonials />
+        <Faq />
+        <ProcessSteps />
+        <Blog />
+        <Cta />
+      </main>
+      <Footer />
+    </div>
+  );
+}
