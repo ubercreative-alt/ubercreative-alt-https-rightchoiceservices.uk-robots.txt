@@ -64,7 +64,11 @@ export default function ReviewsSlider() {
                 <div className="h-full rounded-3xl bg-white ring-1 ring-black/5 p-8 shadow-sm hover:shadow-xl transition-shadow flex flex-col">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <img src={r.avatar} alt={r.name} loading="lazy" decoding="async" className="h-12 w-12 rounded-full object-cover" />
+                      {r.avatar ? (
+                        <img src={r.avatar} alt={r.name} loading="lazy" decoding="async" className="h-12 w-12 rounded-full object-cover" />
+                      ) : (
+                        <span className="grid place-items-center h-12 w-12 rounded-full bg-brand/10 text-brand font-heading font-bold text-lg">{r.name.charAt(0)}</span>
+                      )}
                       <div>
                         <div className="font-heading font-bold text-ink leading-tight">{r.name}</div>
                         <div className="text-xs text-mute">{r.role}</div>
