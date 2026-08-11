@@ -1,6 +1,7 @@
 import { Mail, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageShell, PageHero } from "@/components/site/PageShell";
+import { Reveal } from "@/components/site/Reveal";
 import { TEAM } from "@/data/content";
 import { ICON_SM } from "@/constants/ui";
 import placeholder from "@/assets/t-placeholder.svg";
@@ -68,8 +69,10 @@ const LeadershipSpotlight = ({ leaders }) => {
         </p>
         <h2 className="rc-h2 mt-4 text-white">Meet Our Leadership.</h2>
         <div className="mt-10 grid lg:grid-cols-2 gap-7 items-start">
-          {leaders.map((leader) => (
-            <LeaderCard key={leader.id} leader={leader} />
+          {leaders.map((leader, idx) => (
+            <Reveal key={leader.id} delay={idx * 0.12}>
+              <LeaderCard leader={leader} />
+            </Reveal>
           ))}
         </div>
       </div>
@@ -111,8 +114,10 @@ const TeamRoster = ({ members }) => {
         </p>
         <h2 className="rc-h2 mt-4">Our people, in their own words.</h2>
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
-          {members.map((member) => (
-            <RosterCard key={member.id} member={member} />
+          {members.map((member, idx) => (
+            <Reveal key={member.id} delay={(idx % 3) * 0.1}>
+              <RosterCard member={member} />
+            </Reveal>
           ))}
         </div>
       </div>

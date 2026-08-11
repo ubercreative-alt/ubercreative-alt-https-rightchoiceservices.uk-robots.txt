@@ -1,6 +1,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageShell, PageHero } from "@/components/site/PageShell";
+import { Reveal } from "@/components/site/Reveal";
 import { ICON_SM } from "@/constants/ui";
 
 const PARTNER_AGENCIES = [
@@ -95,11 +96,11 @@ const PartnerAgencies = () => (
         We work closely with social services, the police and other agencies and professionals to offer dedicated support when needed. These include but are not limited to:
       </p>
       <ul className="mt-8 grid sm:grid-cols-2 gap-3">
-        {PARTNER_AGENCIES.map((agency) => (
-          <li key={agency} className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
+        {PARTNER_AGENCIES.map((agency, idx) => (
+          <Reveal key={agency} delay={(idx % 4) * 0.06} as="li" className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
             <Check size={18} className="text-[var(--rc-indigo-600)] mt-0.5 shrink-0" strokeWidth={3} />
             <span className="text-sm text-[var(--rc-ink)] leading-relaxed">{agency}</span>
-          </li>
+          </Reveal>
         ))}
       </ul>
       <p className="mt-8 text-[var(--rc-ink-soft)] leading-relaxed">
@@ -125,18 +126,20 @@ const KeyServicesGrid = () => (
       </p>
 
       <div className="mt-14 grid md:grid-cols-2 gap-7">
-        {KEY_SERVICES.map((group) => (
-          <div key={group.title} data-testid="services-key-card" className="rounded-3xl bg-[var(--rc-paper)] p-8 lg:p-10">
-            <h3 className="font-heading font-bold text-[var(--rc-ink)] text-xl">{group.title}</h3>
-            <ul className="mt-6 space-y-3">
-              {group.items.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[var(--rc-ink-soft)]">
-                  <Check size={16} className="text-[var(--rc-indigo-600)] mt-0.5 shrink-0" strokeWidth={3} />
-                  <span className="text-sm leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {KEY_SERVICES.map((group, idx) => (
+          <Reveal key={group.title} delay={(idx % 2) * 0.12}>
+            <div data-testid="services-key-card" className="rounded-3xl bg-[var(--rc-paper)] p-8 lg:p-10">
+              <h3 className="font-heading font-bold text-[var(--rc-ink)] text-xl">{group.title}</h3>
+              <ul className="mt-6 space-y-3">
+                {group.items.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-[var(--rc-ink-soft)]">
+                    <Check size={16} className="text-[var(--rc-indigo-600)] mt-0.5 shrink-0" strokeWidth={3} />
+                    <span className="text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         ))}
       </div>
     </div>

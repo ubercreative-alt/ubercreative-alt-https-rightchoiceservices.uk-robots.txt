@@ -1,6 +1,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageShell, PageHero } from "@/components/site/PageShell";
+import { Reveal } from "@/components/site/Reveal";
 import { ICON_SM } from "@/constants/ui";
 
 const LEGISLATION = [
@@ -22,14 +23,16 @@ const Section = ({ id, label, title, children, dark, testId }) => (
     className={`py-20 lg:py-28 ${dark ? "bg-[var(--rc-indigo-900)] text-white" : "bg-[var(--rc-paper)] text-[var(--rc-ink)]"}`}
   >
     <div className="mx-auto max-w-4xl px-6 lg:px-10">
-      <p className={`rc-label ${dark ? "text-[var(--rc-lavender)]" : "text-[var(--rc-indigo-600)]"}`}>
-        <span className={`rc-label-line ${dark ? "bg-[var(--rc-lavender)]" : "bg-[var(--rc-indigo-600)]"}`} />
-        {label}
-      </p>
-      <h2 className={`rc-h2 mt-4 ${dark ? "text-white" : ""}`}>{title}</h2>
-      <div className={`mt-7 space-y-5 leading-relaxed ${dark ? "text-white/80" : "text-[var(--rc-ink-soft)]"}`}>
-        {children}
-      </div>
+      <Reveal>
+        <p className={`rc-label ${dark ? "text-[var(--rc-lavender)]" : "text-[var(--rc-indigo-600)]"}`}>
+          <span className={`rc-label-line ${dark ? "bg-[var(--rc-lavender)]" : "bg-[var(--rc-indigo-600)]"}`} />
+          {label}
+        </p>
+        <h2 className={`rc-h2 mt-4 ${dark ? "text-white" : ""}`}>{title}</h2>
+        <div className={`mt-7 space-y-5 leading-relaxed ${dark ? "text-white/80" : "text-[var(--rc-ink-soft)]"}`}>
+          {children}
+        </div>
+      </Reveal>
     </div>
   </section>
 );
@@ -37,12 +40,14 @@ const Section = ({ id, label, title, children, dark, testId }) => (
 const WhiteSection = ({ id, label, title, children, testId }) => (
   <section data-testid={testId} id={id} className="bg-white py-20 lg:py-28">
     <div className="mx-auto max-w-4xl px-6 lg:px-10">
-      <p className="rc-label text-[var(--rc-indigo-600)]">
-        <span className="rc-label-line bg-[var(--rc-indigo-600)]" />
-        {label}
-      </p>
-      <h2 className="rc-h2 mt-4">{title}</h2>
-      <div className="mt-7 space-y-5 leading-relaxed text-[var(--rc-ink-soft)]">{children}</div>
+      <Reveal>
+        <p className="rc-label text-[var(--rc-indigo-600)]">
+          <span className="rc-label-line bg-[var(--rc-indigo-600)]" />
+          {label}
+        </p>
+        <h2 className="rc-h2 mt-4">{title}</h2>
+        <div className="mt-7 space-y-5 leading-relaxed text-[var(--rc-ink-soft)]">{children}</div>
+      </Reveal>
     </div>
   </section>
 );

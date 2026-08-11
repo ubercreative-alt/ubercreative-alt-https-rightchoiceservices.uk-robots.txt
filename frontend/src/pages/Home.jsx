@@ -2,6 +2,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageShell } from "@/components/site/PageShell";
 import { Hero } from "@/components/site/Hero";
+import { Reveal } from "@/components/site/Reveal";
 import { ICON_SM } from "@/constants/ui";
 
 const HOW_WE_SUPPORT = [
@@ -83,17 +84,18 @@ const HowWeSupport = () => (
       <h2 className="rc-h2 mt-4">How We Support Young People in Need.</h2>
       <div className="mt-12 grid md:grid-cols-2 gap-7">
         {HOW_WE_SUPPORT.map((item, idx) => (
-          <article
-            key={item.title}
-            data-testid="home-how-card"
-            className="rounded-3xl bg-[var(--rc-paper)] p-8 lg:p-9"
-          >
-            <span className="text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--rc-indigo-500)]">
-              0{idx + 1}
-            </span>
-            <h3 className="mt-3 font-heading font-bold text-[var(--rc-ink)] text-xl">{item.title}</h3>
-            <p className="mt-4 text-sm text-[var(--rc-ink-soft)] leading-relaxed">{item.text}</p>
-          </article>
+          <Reveal key={item.title} delay={(idx % 2) * 0.12}>
+            <article
+              data-testid="home-how-card"
+              className="rounded-3xl bg-[var(--rc-paper)] p-8 lg:p-9"
+            >
+              <span className="text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--rc-indigo-500)]">
+                0{idx + 1}
+              </span>
+              <h3 className="mt-3 font-heading font-bold text-[var(--rc-ink)] text-xl">{item.title}</h3>
+              <p className="mt-4 text-sm text-[var(--rc-ink-soft)] leading-relaxed">{item.text}</p>
+            </article>
+          </Reveal>
         ))}
       </div>
       <p className="mt-12 text-[var(--rc-ink-soft)] leading-relaxed max-w-3xl">
@@ -118,11 +120,11 @@ const PartnerAgencies = () => (
         We actively collaborate with other agencies and professionals to provide dedicated support. Some of the agencies we currently work with include:
       </p>
       <ul className="mt-8 grid sm:grid-cols-2 gap-3">
-        {PARTNER_AGENCIES.map((agency) => (
-          <li key={agency} className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
+        {PARTNER_AGENCIES.map((agency, idx) => (
+          <Reveal key={agency} delay={(idx % 4) * 0.06} as="li" className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
             <Check size={18} className="text-[var(--rc-indigo-600)] mt-0.5 shrink-0" strokeWidth={3} />
             <span className="text-sm text-[var(--rc-ink)] leading-relaxed">{agency}</span>
-          </li>
+          </Reveal>
         ))}
       </ul>
       <p className="mt-8 text-[var(--rc-ink-soft)] leading-relaxed">
