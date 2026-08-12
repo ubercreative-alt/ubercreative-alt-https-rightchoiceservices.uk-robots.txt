@@ -4,7 +4,7 @@ export const brand = {
   name: "JK PRO Builders",
   website: "www.jkprobuilders.co.uk",
   websiteUrl: "https://www.jkprobuilders.co.uk",
-  email: "info@jkprobuilders.co.uk",
+  email: "jkprobuilders@gmail.com",
   phone: "07872 164 350",
   hours: "Mon - Sat 8:00 am - 7:00 pm",
   address: "58 Sydenham Road, Croydon, CR0 2FJ",
