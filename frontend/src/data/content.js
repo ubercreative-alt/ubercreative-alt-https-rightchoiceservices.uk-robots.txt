@@ -271,6 +271,16 @@ export const TEAM = {
         "In his leadership roles, Robert has managed teams of Social Workers, overseen service budgets, developed and implemented policies, and embedded health and safety and risk management protocols. He has also delivered workforce training, chaired transition panels, and played a key role in preparing services for Ofsted inspections, contributing to positive outcomes. With a strong track record in service development, robust safeguarding knowledge, and proven leadership capabilities, Robert is deeply committed to promoting the welfare of children and young people while ensuring full compliance with statutory and regulatory framework standards.",
       ],
     },
+    {
+      id: "gentiana-vasili",
+      photoKey: "gentiana",
+      name: "Gentiana (Genta) Vasili",
+      role: "Admin Officer & Health and Safety Officer",
+      bio: [
+        "Gentiana is a proactive and detail-oriented Admin and Health & Safety Officer with over four years' experience in supported accommodation and organizational operations. She has a proven track record in HR administration, recruitment, onboarding, compliance, and staff training, combined with expertise in health and safety management across multiple housing sites.",
+        "Skilled in conducting audits, risk assessments, and ensuring regulatory compliance, she excels in developing policies that maintain safe, well-governed environments. Gentiana is highly organized, dependable, and confident in liaising with external agencies, regulators, and payroll providers. With strong interpersonal and problem-solving skills, she builds effective working relationships while ensuring high standards of operational and safety compliance across the organization.",
+      ],
+    },
   ],
   staffNote:
     "Our staff team ensures that effective care and support at an appropriate ratio is offered at all times.",
@@ -363,13 +373,6 @@ export const TEAM = {
       name: "Erjona Selko",
       role: "Team Leader",
       bio: "Erjona is a highly qualified academic and care professional with a Postgraduate Diploma in Cancer and Therapeutics from Queen Mary University of London, where she graduated with distinction. She also holds a Master's degree in Environmental Protection, a graded certification in Ecology, Behaviour, Evolution and Biosystematics from the Norwegian University of Science and Technology, and a Bachelor's degree in Biochemistry, all completed with honours. Her professional experience includes two years working in supported living, where she has provided direct care and guidance to young people, promoting independence and wellbeing. Before this, she worked as an Assistant Lecturer in University where she delivered seminars, supervised dissertations, and supported students in laboratory practices. Alongside her teaching, she has conducted research in biodiversity, environmental protection, cancer therapeutics, and genomics. Erjona is passionate about education, mentoring, and creating positive environments for growth. She has also volunteered as a mentor for children with special educational needs and represented student voices to improve learning experiences. With a strong balance of academic excellence, hands-on care experience, and organisational skills, she brings knowledge, compassion, and dedication to her role in supported living.",
-    },
-    {
-      id: "gentiana-vasili",
-      photoKey: "gentiana",
-      name: "Gentiana (Genta) Vasili",
-      role: "Admin Officer & Health and Safety Officer",
-      bio: "Gentiana is a proactive and detail-oriented Admin and Health & Safety Officer with over four years' experience in supported accommodation and organizational operations. She has a proven track record in HR administration, recruitment, onboarding, compliance, and staff training, combined with expertise in health and safety management across multiple housing sites. Skilled in conducting audits, risk assessments, and ensuring regulatory compliance, she excels in developing policies that maintain safe, well-governed environments. Gentiana is highly organized, dependable, and confident in liaising with external agencies, regulators, and payroll providers. With strong interpersonal and problem-solving skills, she builds effective working relationships while ensuring high standards of operational and safety compliance across the organization.",
     },
   ],
 };
