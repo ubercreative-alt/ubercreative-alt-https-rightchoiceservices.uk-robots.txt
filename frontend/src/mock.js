@@ -6,14 +6,14 @@ export const brand = {
   websiteUrl: "https://www.jkprobuilders.co.uk",
   email: "jkprobuilders@gmail.com",
   phone: "07872 164 350",
-  hours: "Mon - Sat 8:00 am - 7:00 pm",
+  hours: "Mon - Sat 8:00 am - 6:00 pm",
   address: "58 Sydenham Road, Croydon, CR0 2FJ",
   welcome: "Welcome to Expert Home Renovation Services",
 };
 
 export const socials = [
   { label: "Facebook", icon: "facebook", href: "https://facebook.com" },
-  { label: "Instagram", icon: "instagram", href: "https://instagram.com" },
+  { label: "Instagram", icon: "instagram", href: "https://www.instagram.com/jk_pro_builders" },
   { label: "Twitter", icon: "twitter", href: "https://twitter.com" },
   { label: "Linkedin", icon: "linkedin", href: "https://linkedin.com" },
 ];
@@ -23,25 +23,19 @@ export const nav = [
   { label: "About Us", to: "/about" },
   {
     label: "Services", to: "/services", children: [
+      { label: "Home Renovations", to: "/services/home-renovations" },
       { label: "Kitchen Remodeling", to: "/services/kitchen-remodeling" },
       { label: "Bathroom Renovation", to: "/services/bathroom-renovation" },
-      { label: "Interior Design", to: "/services/interior-design" },
+      { label: "Extensions", to: "/services/extensions" },
+      { label: "Plastering", to: "/services/plastering" },
       { label: "Flooring & Tiling", to: "/services/flooring-tiling" },
       { label: "Roofing & Guttering", to: "/services/roofing" },
-    ],
-  },
-  {
-    label: "Projects", to: "/projects", children: [
-      { label: "All Projects", to: "/projects" },
-      { label: "Residential", to: "/projects" },
-      { label: "Commercial", to: "/projects" },
     ],
   },
   {
     label: "Pages", to: "/about", children: [
       { label: "About Us", to: "/about" },
       { label: "Services", to: "/services" },
-      { label: "Projects", to: "/projects" },
       { label: "Contact", to: "/contact" },
     ],
   },
@@ -114,6 +108,13 @@ export const services = {
   title: "Tailored Renovation Services for Every Space",
   items: [
     {
+      slug: "home-renovations", title: "Home Renovations", image: IMG.reno1,
+      desc: "Full-property refurbishments delivered end to end by one trusted team.",
+      overview: "From single rooms to whole-house transformations, our team manages every trade under one roof \u2013 structural work, joinery, plastering, electrics, plumbing and decorating \u2013 so your renovation runs smoothly from first survey to final handover.",
+      features: ["Full project management", "Structural alterations", "Complete first & second fix", "One reliable team of trades", "On-time, on-budget delivery"],
+      gallery: [IMG.reno1, IMG.intreno1, IMG.remodel2],
+    },
+    {
       slug: "kitchen-remodeling", title: "Kitchen Remodeling", image: IMG.kitchen,
       desc: "Bespoke kitchen design, fitting and worktops built around how you live.",
       overview: "We design and build kitchens that work as beautifully as they look \u2013 from clever storage and durable worktops to integrated appliances and statement islands. Every project is planned around your routine and finished to an exacting standard.",
@@ -128,11 +129,18 @@ export const services = {
       gallery: [IMG.bath1, IMG.bath2, IMG.floor2],
     },
     {
-      slug: "interior-design", title: "Interior Design", image: IMG.interior1,
-      desc: "Complete interior makeovers that balance style, comfort and function.",
-      overview: "Our interior specialists reimagine how your home looks and flows \u2013 combining materials, lighting and colour into a cohesive scheme that suits your lifestyle and adds lasting value.",
-      features: ["Space planning & layouts", "Bespoke joinery & storage", "Lighting design", "Colour & material schemes", "Full project management"],
-      gallery: [IMG.interior1, IMG.intreno1, IMG.intreno2],
+      slug: "extensions", title: "Extensions", image: IMG.remodel1,
+      desc: "Single & double-storey extensions and loft conversions that add space and value.",
+      overview: "Need more room? We design and build rear, side-return and wrap-around extensions as well as loft conversions \u2013 handling steels, foundations, roofing and full fit-out to create seamless new living space that blends with your existing home.",
+      features: ["Rear & side-return extensions", "Loft & garage conversions", "Steelwork & foundations", "Building-regs compliant", "Seamless finish to match"],
+      gallery: [IMG.remodel1, IMG.exterior1, IMG.progress1],
+    },
+    {
+      slug: "plastering", title: "Plastering", image: IMG.progress2,
+      desc: "Smooth, flawless plastering and rendering for walls and ceilings.",
+      overview: "Our skilled plasterers deliver a glass-smooth finish every time \u2013 from skimming and re-skimming to full re-plasters, ceilings, coving and external rendering. Tidy, fast and finished ready for decoration.",
+      features: ["Skimming & re-skimming", "Ceilings & coving", "Full re-plasters", "External rendering", "Clean, dust-managed work"],
+      gallery: [IMG.progress2, IMG.paint1, IMG.interior1],
     },
     {
       slug: "flooring-tiling", title: "Flooring & Tiling", image: IMG.floor1,

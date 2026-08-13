@@ -27,10 +27,10 @@ module.exports = {
   				700: '#330000'
   			},
   			ink: {
-  				DEFAULT: '#0A1F3D',
-  				900: '#0A1F3D',
-  				800: '#102a4f',
-  				700: '#1b3a63'
+  				DEFAULT: '#2b0606',
+  				900: '#2b0606',
+  				800: '#3a0a0a',
+  				700: '#4d1111'
   			},
   			cream: {
   				DEFAULT: '#faf7f2',

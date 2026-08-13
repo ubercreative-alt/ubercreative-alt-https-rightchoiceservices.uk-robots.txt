@@ -24,7 +24,7 @@ code {
         --popover-foreground: 210 30% 8%;
         --primary: 0 100% 17%;
         --primary-foreground: 0 0% 100%;
-        --secondary: 214 72% 14%;
+        --secondary: 0 79% 9%;
         --secondary-foreground: 0 0% 98%;
         --muted: 30 20% 96%;
         --muted-foreground: 210 8% 45%;
@@ -75,5 +75,5 @@ code {
 
 /* Thin scrollbar */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #0A1F3D; }
+::-webkit-scrollbar-track { background: #2b0606; }
 ::-webkit-scrollbar-thumb { background: #550000; border-radius: 20px; }
