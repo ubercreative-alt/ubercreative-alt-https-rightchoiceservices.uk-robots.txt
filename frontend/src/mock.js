@@ -214,6 +214,21 @@ export const story = {
   ],
 };
 
+export const realProjects = {
+  eyebrow: "OUR RECENT WORK",
+  title: "Real Projects, Real Craftsmanship",
+  subtitle: "A selection of recent jobs completed by our own team \u2013 drag the sliders to reveal the transformation.",
+  items: [
+    { title: "Bathroom Renovation", category: "Bathroom", before: "/projects/bathroom-before.jpg", after: "/projects/bathroom-after.jpg" },
+    { title: "Kitchen & Home Renovation", category: "Kitchen", before: "/projects/kitchen-before.jpg", after: "/projects/kitchen-after.jpg" },
+  ],
+  gallery: [
+    { title: "Bathroom Renovation", category: "Bathroom", image: "/projects/bathroom2-after.jpg" },
+    { title: "Slate Roofing", category: "Roofing", image: "/projects/roofing.jpg" },
+    { title: "Plastering", category: "Plastering", image: "/projects/plastering.jpg" },
+  ],
+};
+
 export const projects = {
   eyebrow: "RECENT PROJECTS",
   title: "Recent Renovation Work",
@@ -358,7 +373,8 @@ export const faqs = {
   title: "Everything You Need to Know Before You Begin",
   image: IMG.floor2,
   items: [
-    { q: "How long does a typical renovation take?", a: "Timelines depend on scope \u2013 a bathroom takes 2\u20133 weeks, a full-house refurb 8\u201316 weeks. We provide a detailed schedule before we start." },
+    { q: "How long does a typical renovation take?", a: "Every renovation project is different. The timeframe depends on the size, complexity and scope of the work. We will provide you with an estimated timeframe before work begins and keep you updated throughout the project." },
+    { q: "Do you offer warranty on work?", a: "We provide a workmanship warranty on all work carried out by us, with no fixed expiry period." },
     { q: "Do you provide free quotations?", a: "Yes. We offer a free, no-obligation site survey and a fixed written quotation so you know exactly what to expect." },
     { q: "Are your tradespeople insured and accredited?", a: "Absolutely. All our craftsmen are fully insured, DBS-checked and hold the relevant trade accreditations." },
     { q: "Can I stay in my home during the works?", a: "In most cases, yes. We plan works in phases and keep the site clean and safe to minimise disruption." },

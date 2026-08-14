@@ -7,6 +7,7 @@ import Services from "../components/home/Services";
 import ProcessDark from "../components/home/ProcessDark";
 import Challenges from "../components/home/Challenges";
 import Story from "../components/home/Story";
+import RealProjects from "../components/home/RealProjects";
 import Testimonials from "../components/home/Testimonials";
 import ReviewsSlider from "../components/home/ReviewsSlider";
 import Faq from "../components/home/Faq";
@@ -25,6 +26,7 @@ export default function FixhomePage() {
         <ProcessDark />
         <Challenges />
         <Story />
+        <RealProjects />
         <Testimonials />
         <ReviewsSlider />
         <Faq />
