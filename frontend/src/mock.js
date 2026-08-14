@@ -223,9 +223,16 @@ export const realProjects = {
     { title: "Kitchen & Home Renovation", category: "Kitchen", before: "/projects/kitchen-before.jpg", after: "/projects/kitchen-after.jpg" },
   ],
   gallery: [
-    { title: "Bathroom Renovation", category: "Bathroom", image: "/projects/bathroom2-after.jpg" },
+    { title: "Bathroom Renovation", category: "Bathroom", image: "/projects/bathroom-a-after2.jpg" },
+    { title: "Bathroom Renovation", category: "Bathroom", image: "/projects/bathroom-a-before.jpg" },
+    { title: "Finished Kitchen", category: "Kitchen", image: "/projects/kitchen-after.jpg" },
+    { title: "Bathroom Renovation 2", category: "Bathroom", image: "/projects/bathroom2-after.jpg" },
+    { title: "Bathroom Renovation 2", category: "Bathroom", image: "/projects/bathroom-b-after2.jpg" },
+    { title: "Bathroom Renovation 2", category: "Bathroom", image: "/projects/bathroom-b-progress.jpg" },
     { title: "Slate Roofing", category: "Roofing", image: "/projects/roofing.jpg" },
+    { title: "Slate Roofing", category: "Roofing", image: "/projects/roofing-a.jpg" },
     { title: "Plastering", category: "Plastering", image: "/projects/plastering.jpg" },
+    { title: "Plastering", category: "Plastering", image: "/projects/plastering-a.jpg" },
   ],
 };
 
