@@ -22,6 +22,18 @@ db = client[os.environ['DB_NAME']]
 # Create the main app without a prefix
 app = FastAPI()
 
+
+# Health check endpoints (root-level, no /api prefix) for Kubernetes probes
+@app.get("/health")
+async def health():
+    return {"status": "healthy"}
+
+
+@app.get("/healthz")
+async def healthz():
+    return {"status": "healthy"}
+
+
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
@@ -64,6 +76,11 @@ class Subscriber(BaseModel):
 @api_router.get("/")
 async def root():
     return {"message": "JK PRO Builders API"}
+
+
+@api_router.get("/health")
+async def api_health():
+    return {"status": "healthy"}
 
 
 @api_router.post("/contact", response_model=ContactEnquiry)
