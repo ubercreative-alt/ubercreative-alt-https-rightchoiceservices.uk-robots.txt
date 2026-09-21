@@ -359,3 +359,30 @@ agent_communication:
     -message: "IMPORTANT: The Kubernetes deployment liveness/readiness probe calls the backend process DIRECTLY on its internal port (127.0.0.1:xxxxx). This does NOT go through the public ingress. Please test against LOCAL backend process (use http://localhost:8001): (1) GET http://localhost:8001/health, (2) GET http://localhost:8001/healthz, (3) GET http://localhost:8001/api/health, (4) GET http://localhost:8001/api/. Report exact HTTP status code and response body/content-type for each."
     -agent: "testing"
     -message: "✅ HEALTH ENDPOINT VERIFICATION COMPLETE - ALL TESTS PASSED (4/4 - 100%). Tested backend DIRECTLY on localhost:8001 (bypassing ingress). RESULTS: (1) GET http://localhost:8001/health -> HTTP 200, content-type: application/json, body: {\"status\":\"healthy\"} ✅ (CRITICAL: previously 404 in deploy logs, now FIXED). (2) GET http://localhost:8001/healthz -> HTTP 200, content-type: application/json, body: {\"status\":\"healthy\"} ✅. (3) GET http://localhost:8001/api/health -> HTTP 200, content-type: application/json, body: {\"status\":\"healthy\"} ✅. (4) GET http://localhost:8001/api/ -> HTTP 200, content-type: application/json, body: {\"message\":\"JK PRO Builders API\"} ✅. RESOLUTION: Previous test error was due to testing through public ingress URL (which routes non-/api paths to frontend). Kubernetes health probes call backend DIRECTLY on internal port, bypassing ingress. All health endpoints working correctly. Health probe 404 issue is RESOLVED. Backend is healthy and ready for deployment."
+
+
+## Bug Fix: React Duplicate Key Errors in "Our Recent Work" Gallery
+frontend:
+  - task: "Fix duplicate React keys in 'Our Recent Work' gallery (RealProjects component)"
+    implemented: true
+    working: true
+    file: "frontend/src/components/home/RealProjects.jsx"
+    stuck_count: 0
+    priority: "critical"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "user"
+        -comment: "User reported app crashes on load/refresh with script error (handleError in bundle.js). Root cause: duplicate React keys in homepage 'Our Recent Work' gallery. Previously encountered errors: 'Encountered two children with the same key' for 'Bathroom Renovation', 'Bathroom Renovation 2', 'Slate Roofing', 'Plastering'."
+        -working: true
+        -agent: "main"
+        -comment: "Fixed duplicate key issue in RealProjects.jsx by changing gallery item keys from `key={g.title}` to `key={`${g.title}-${i}`}` (line 32). This makes each key unique even when titles are duplicated in the gallery array."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ ALL TESTS PASSED (100% - 0 errors). CRITICAL SUCCESS: Duplicate React key bug is COMPLETELY FIXED. TEST RESULTS: (1) Initial page load on /fixhome: NO console errors, NO duplicate key warnings, 'Our Recent Work' section renders correctly ✅. (2) Page reload: NO crashes, NO errors, all sections (header, hero, recent work, footer) present ✅. (3) Navigation test: All 6 routes (/fixhome, /about, /services, /services/roofing, /blog, /contact) load successfully with HTTP 200, NO duplicate key errors, NO console errors ✅. (4) Gallery verification: All 10 gallery items render correctly including items with duplicate titles: 'Bathroom Renovation' (2 occurrences), 'Bathroom Renovation 2' (3 occurrences), 'Slate Roofing' (2 occurrences), 'Plastering' (2 occurrences) ✅. (5) Reload consistency: Same 10 items after reload, NO items lost, NO errors ✅. CONSOLE LOG ANALYSIS: Only external CDN/analytics request failures (ERR_ABORTED), NO React warnings or errors. VERDICT: ✅ PASS - No duplicate key errors, ✅ PASS - App loads and refreshes without crashing, ✅ PASS - All routes navigable without crashes. The fix (using index-based unique keys) has completely resolved the reported crash issue."
+
+agent_communication:
+    -agent: "user"
+    -message: "User reported app crashes on load/refresh with script error. Root cause found: duplicate React keys in 'Our Recent Work' gallery. Keys made unique. Please VERIFY: (1) /fixhome loads with NO console errors, specifically NO 'Encountered two children with the same key' warnings for 'Bathroom Renovation', 'Bathroom Renovation 2', 'Slate Roofing', 'Plastering'. (2) Reload/refresh works without crashes, page renders fully. (3) Navigate to /about, /services, /services/roofing, /blog, /contact and back to /fixhome - no crashes. (4) Report PASS/FAIL for 'no duplicate key errors' and 'app loads and refreshes without crashing'."
+    -agent: "testing"
+    -message: "✅ VERIFICATION COMPLETE - ALL TESTS PASSED (100%). CRITICAL BUG FIX CONFIRMED SUCCESSFUL. Comprehensive testing performed: (1) Initial load test: /fixhome loads cleanly with ZERO console errors, ZERO duplicate key warnings, 'Our Recent Work' section fully rendered ✅. (2) Reload test: Page reloads successfully, NO crashes, all sections present (header, hero, recent work, footer), ZERO errors ✅. (3) Multi-route navigation: All 6 routes tested (/fixhome, /about, /services, /services/roofing, /blog, /contact) - all return HTTP 200, all have content, NO error overlays, ZERO duplicate key errors, ZERO console errors ✅. (4) Gallery-specific verification: All 10 gallery items render correctly including the problematic items with duplicate titles (Bathroom Renovation x2, Bathroom Renovation 2 x3, Slate Roofing x2, Plastering x2), NO React key errors before or after reload ✅. FINAL VERDICT: ✅ PASS - No duplicate key errors (the specific React warnings mentioned by user are completely gone), ✅ PASS - App loads and refreshes without crashing, ✅ PASS - All routes navigable without crashes. The duplicate React key bug that caused the app to crash is COMPLETELY FIXED. App is stable and ready for production."

@@ -15,7 +15,7 @@ export default function RealProjects() {
 
         <div className="grid lg:grid-cols-2 gap-6">
           {realProjects.items.map((p, i) => (
-            <Reveal key={p.title} delay={i * 120} variant={i % 2 ? "right" : "left"}>
+            <Reveal key={`${p.title}-${i}`} delay={i * 120} variant={i % 2 ? "right" : "left"}>
               <div className="rounded-3xl overflow-hidden bg-white ring-1 ring-black/5 p-4">
                 <BeforeAfterSlider before={p.before} after={p.after} className="h-[320px] md:h-[380px]" />
                 <div className="flex items-center justify-between px-2 pt-4 pb-1">
@@ -29,7 +29,7 @@ export default function RealProjects() {
 
         <div className="grid sm:grid-cols-3 gap-6 mt-6">
           {realProjects.gallery.map((g, i) => (
-            <Reveal key={g.title} delay={i * 110} variant="zoom">
+            <Reveal key={`${g.title}-${i}`} delay={i * 110} variant="zoom">
               <div className="group relative rounded-3xl overflow-hidden h-[300px]">
                 <img src={g.image} alt={g.title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
