@@ -2,8 +2,8 @@
 
 export const brand = {
   name: "JK PRO Builders",
-  website: "www.jkprobuilders.co.uk",
-  websiteUrl: "https://www.jkprobuilders.co.uk",
+  website: "www.jkprobuilders.site",
+  websiteUrl: "https://www.jkprobuilders.site",
   email: "jkprobuilders@gmail.com",
   phone: "07872 164 350",
   hours: "Mon - Sat 8:00 am - 6:00 pm",
