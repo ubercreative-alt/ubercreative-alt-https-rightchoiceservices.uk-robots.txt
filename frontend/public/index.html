@@ -2,6 +2,35 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <script>
+            /* Suppress opaque cross-origin "Script error." events (e.g. from third-party
+               analytics/session-recording) so the dev error overlay doesn't cover the app.
+               Registered first so it runs before other error listeners. Real app errors
+               (which include an error object / message) are left untouched. */
+            (function () {
+                var isOpaque = function (msg, err) {
+                    return (!err) && (msg === "Script error." || msg === "Script error");
+                };
+                window.addEventListener(
+                    "error",
+                    function (e) {
+                        if (e && isOpaque(e.message, e.error)) {
+                            e.stopImmediatePropagation();
+                            e.preventDefault();
+                            return true;
+                        }
+                    },
+                    true
+                );
+                window.addEventListener("unhandledrejection", function (e) {
+                    var r = e && e.reason;
+                    if (!r || (typeof r === "object" && !r.stack && !r.message)) {
+                        e.stopImmediatePropagation();
+                        e.preventDefault();
+                    }
+                });
+            })();
+        </script>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="description" content="JK PRO Builders (All Trade Construction) - expert home renovation, remodeling and roofing services across the UK. Free quotes and quality craftsmanship you can trust." />
