@@ -127,14 +127,15 @@ def _assert_safe_email(subject: str, html: str) -> None:
                 raise ValueError(f"Anchor text {m.group(1)!r} != real link host {real!r} (G3)")
 
 
-async def send_email(*, to: str, subject: str, html: str) -> Optional[str]:
+async def send_email(*, to: str, subject: str, html: str, reply_to: Optional[str] = None) -> Optional[str]:
     if not EMAIL_KEY:
         logger.warning("EMERGENT_EMAIL_KEY not set; skipping email send")
         return None
     _assert_safe_email(subject, html)
     payload = {"to": [to], "subject": subject, "html": html, "from_name": EMAIL_FROM_NAME}
-    if EMAIL_REPLY_TO:
-        payload["contact_email"] = EMAIL_REPLY_TO
+    reply = reply_to or EMAIL_REPLY_TO
+    if reply:
+        payload["contact_email"] = reply
     async with httpx.AsyncClient(timeout=30) as client:
         resp = await client.post(
             f"{EMAIL_BASE_URL}/api/v1/email/send",
@@ -211,7 +212,7 @@ async def create_contact(payload: ContactCreate):
                 'The customer\'s email and phone number are shown above so you can get back to them.</p>'
                 '</div></td></tr></table>'
             )
-            await send_email(to=OWNER_EMAIL, subject=subject, html=html)
+            await send_email(to=OWNER_EMAIL, subject=subject, html=html, reply_to=enquiry.email)
         except Exception as e:
             logger.error(f"Contact notification email failed: {e}")
     return enquiry
